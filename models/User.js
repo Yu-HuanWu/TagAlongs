@@ -13,6 +13,18 @@ const UserSchema = new Schema({
     password: {
         type: String,
         required: true
+    },
+    birthdate:{
+      type: Date,
+      required: true
+    },
+    firstName: {
+      type: String,
+      required: true
+    },
+    lastName:{
+      type: String,
+      required: true
     }
 }, {
     timestamps: true
