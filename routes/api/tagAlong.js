@@ -1,11 +1,15 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const express = require("express")
+const router = express.Router();
+const TagAlong = require("../../models/TagAlong")
+const keys = require('../../config/keys');
+const jwt = require('jsonwebtoken');
+const passport = require('passport');
 
 
-const TagAlongSchema = new Schema({
 
-},{
-  timestamls:true
-})
+router.get("/test", (req, res) => res.json({ msg: "This is the tagAlongs route" }));
 
-module.exports = TagAlong = mongoose.model("TagAlong",TagAlongSchema);
+
+
+
+module.exports = router
