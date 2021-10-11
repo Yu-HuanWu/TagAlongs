@@ -10,6 +10,9 @@ class SignupForm extends React.Component {
             handle: '',
             password: '',
             password2: '',
+            birthdate: '',
+            firstName: '',
+            lastName: '',
             errors: {}
         }
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -36,7 +39,10 @@ class SignupForm extends React.Component {
             email: this.state.email,
             handle: this.state.handle,
             password: this.state.password,
-            password2: this.state.password2
+            password2: this.state.password2,
+            birthdate: this.state.birthdate,
+            firstName: this.state.firstName,
+            lastName: this.state.lastName
         };
 
         this.props.signup(user, this.props.history);
@@ -59,31 +65,47 @@ class SignupForm extends React.Component {
             <div className="signup-form-container">
                 <form onSubmit={this.handleSubmit}>
                     <div className="signup-form">
-                        <br />
+                        <label className="signup-form-label">Email</label>
                         <input type="text"
                             value={this.state.email}
                             onChange={this.update('email')}
                             placeholder="Email"
                         />
-                        <br />
+                        <label className="signup-form-label">Username</label>
                         <input type="text"
                             value={this.state.handle}
                             onChange={this.update('handle')}
-                            placeholder="Handle"
+                            placeholder="Username"
                         />
-                        <br />
+                        <label className="signup-form-label">First Name</label>
+                        <input type="text"
+                            value={this.state.firstName}
+                            onChange={this.update('firstName')}
+                            placeholder="First Name"
+                        />
+                        <label className="signup-form-label">Last Name</label>
+                        <input type="text"
+                            value={this.state.lastName}
+                            onChange={this.update('lastName')}
+                            placeholder="Last Name"
+                        />
+                        <label className="signup-form-label">Date of Birth</label>
+                        <input type="date"
+                            value={this.state.birthdate}
+                            onChange={this.update('birthdate')}
+                        />
+                        <label className="signup-form-label">Password</label>
                         <input type="password"
                             value={this.state.password}
                             onChange={this.update('password')}
                             placeholder="Password"
                         />
-                        <br />
+                        <label className="signup-form-label">Confirm Password</label>
                         <input type="password"
                             value={this.state.password2}
                             onChange={this.update('password2')}
                             placeholder="Confirm Password"
                         />
-                        <br />
                         <input type="submit" value="Submit" />
                         {this.renderErrors()}
                     </div>
