@@ -1,0 +1,18 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #1F7A8C;
+    color: #E1E5F2;
+}
+
+.body {
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 800px) {
+  html {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #022B3A;
+    color: #E1E5F2;
+  }
+}
