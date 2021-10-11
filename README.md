@@ -29,3 +29,29 @@ TagAlongs is a Volunteer based Buddy system website that allows users to request
  * Jim Nardi
  * John Feng
  * Tony Zhang
+
+
+
+Oct 11  - 15
+
+
+Day 1 - Oct 11
+* Start File structure - All
+* Build backend User Auth - Tony
+* Build frontend Sign-in/Sign-out/
+
+Day 2 - Oct 12
+* Build
+
+Day 3 - Oct 13
+* Build
+
+Day 4 - Oct 14
+* Build
+
+Day 5 - Oct 15
+* Build
+
+
+
+
