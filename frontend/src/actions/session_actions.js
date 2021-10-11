@@ -14,7 +14,7 @@ export const receiveCurrentUser = currentUser => ({
 export const receiveUserSignIn = () => ({
     type: RECEIVE_USER_SIGN_IN
 });
-  
+
 export const receiveErrors = errors => ({
     type: RECEIVE_SESSION_ERRORS,
     errors
@@ -40,9 +40,9 @@ export const login = user => dispatch => (
         const decoded = jwt_decode(token);
         dispatch(receiveCurrentUser(decoded))
     })
-    .catch(err => {
-        dispatch(receiveErrors(err.response.data));
-    })
+        .catch(err => {
+            dispatch(receiveErrors(err.response.data));
+        })
 )
 
 export const logout = () => dispatch => {
