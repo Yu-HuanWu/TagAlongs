@@ -4,7 +4,7 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import { Switch } from 'react-router-dom';
 import NavBar from "./navbar/nav_bar"
-
+import '../app.css'
 
 const App = () => (
     <div className="body">
