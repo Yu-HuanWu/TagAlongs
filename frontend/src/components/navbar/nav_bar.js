@@ -1,17 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import './nav.scss'
 
 const Nav = ({ user, logout }) => {
-    if (user) {
+    if (user && user.handle) {
         return (
             <div className="main-nav">
                 <Link to="/">
                     TagAlongs
                 </Link>
-                <div>
+                <div className="nav-user-info">
                     <p className="users-name">Hello, {user.handle}</p>
+                    <button className="logout-button" onClick={logout}>Sign Out</button>
                 </div>
-                <button className="logout-button" onClick={logout}>Sign Out</button>
             </div>
         )
     } else {
