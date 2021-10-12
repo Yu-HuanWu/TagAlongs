@@ -10,12 +10,18 @@ class TagAlongIndex extends React.Component {
         }
     }
 
-    filter(category) {
+    componentDidMount() {
+        this.props.fetchTagAlongs();
+    }
 
+    filter(category) {
+        this.setState({
+            filter: `${category}`
+        })
     }
 
     renderTagAlongs() {
-
+        
     }
 
     render() {
