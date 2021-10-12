@@ -25,6 +25,40 @@
 	margin: 10px;
 	background-color: #E8DAB2;
 	&:hover {
-			background-color: rgb(192, 228, 228);
+		background-color: rgb(192, 228, 228);
+	}
+	&:active {
+		background-color: rgb(158, 197, 197);
+		position: relative;
+		top: 2px;
+	}
+}
+
+.nav-user-info {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.nav-user-info > button {
+  background-color: #C0D6DF;
+  border: none;
+  border-radius: 10px;
+  color: #4F6D7A;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+	cursor: pointer;
+  transition: all 0.25s ease-in-out;
+
+	&:hover{
+		background-color: #4F6D7A;
+		color: #C0D6DF;
+	}
+	&:active{
+		background-color: #3a535e;
+		margin-top:5px;
 	}
 }
