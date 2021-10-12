@@ -9,9 +9,9 @@ const Nav = ({ user, logout }) => {
                 <Link to="/">
                     TagAlongs
                 </Link>
-                <div>
+                <div className="nav-user-info">
                     <p className="users-name">Hello, {user.handle}</p>
-                <button className="logout-button" onClick={logout}>Sign Out</button>
+                    <button className="logout-button" onClick={logout}>Sign Out</button>
                 </div>
             </div>
         )
