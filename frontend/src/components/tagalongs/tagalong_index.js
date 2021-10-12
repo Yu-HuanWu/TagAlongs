@@ -17,11 +17,28 @@ class TagAlongIndex extends React.Component {
     filter(category) {
         this.setState({
             filter: `${category}`
-        })
+        });
     }
 
     renderTagAlongs() {
-        
+        let all = this.state.tagAlongs;
+        // let filtered = all.filter()
+        if (all && this.state.filter === 'all') {
+            return (
+                <ul className="tagalong-index-list">
+                    { all.map((tagalong, i) => {
+                        <li key={`tagalong-${i}`}
+                            className="tagalong-index-item">
+                                <h1>{tagalong.title}</h1>
+                                {tagalong.category}
+                                {tagalong.startLocation}
+                                {tagalong.endLocation}
+                                {tagalong.body}
+                        </li>
+                    })}
+                </ul>
+            )
+        }
     }
 
     render() {
@@ -31,7 +48,7 @@ class TagAlongIndex extends React.Component {
                     <ul className="filter-bar-list">
                         <li className="filter-bar-item">
                             <button className="filter-bar-button"
-                                onClick={this.filter(all)}>All</button>
+                                onChange={() => this.filter('all')}>All</button>
                         </li>
                     </ul>
                 </div>

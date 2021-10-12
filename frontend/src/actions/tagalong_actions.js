@@ -1,4 +1,4 @@
-import * as APIUtil from '../util/taglong_api_util';
+import * as APIUtil from '../util/tagalong_api_util';
 
 export const RECEIVE_TAGALONG = "RECEIVE_TAGALONG";
 export const RECEIVE_TAGALONGS = "RECEIVE_TAGALONGS";

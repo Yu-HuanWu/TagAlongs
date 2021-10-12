@@ -10,7 +10,7 @@ const tagAlongsReducer = (initialState = { all: {}, user: {}, new: undefined }, 
     switch(action.type) {
         case RECEIVE_TAGALONG:
             newState.new = action.tagAlong.data;
-            return tagAlong;
+            return newState;
         case RECEIVE_TAGALONGS:
             newState.all = action.tagAlongs.data;
             return newState;
