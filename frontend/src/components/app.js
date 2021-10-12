@@ -4,11 +4,11 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import { Switch } from 'react-router-dom';
 import NavBar from "./navbar/nav_bar"
-import '../app.css'
+import '../app.scss'
 
 const App = () => (
     <div className="body">
-        <div>
+        <div className="splash">
             <div className="header">
                 <NavBar /> 
             </div>
