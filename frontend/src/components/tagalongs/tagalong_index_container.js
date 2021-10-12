@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { createTagAlong } from '../../actions/tagalong_actions';
+import { fetchTagAlongs } from '../../actions/tagalong_actions';
 import TagAlongIndex from './tagalong_index';
 
 const mapStateToProps = (state) => {
@@ -10,8 +10,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        createTagAlong: tagAlong => dispatch(createTagAlong(tagAlong))
+        fetchTagAlongs: () => dispatch(fetchTagAlongs()),
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(TagAlongForm);
+export default connect(mapStateToProps, mapDispatchToProps)(TagAlongIndex);
