@@ -1,23 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import { useLocation } from "react-router";
+import './nav.scss'
 
-class Nav extends React.Component {
-    constructor(props ) {
-        super(props);
-    };
-
-
-    componentDidMount() {
-        this.props.receiveUser(this.props.user)
-    }
-
-    render() {
-
-      const thisClass = (this.props.location === "/signup") ? "sign-up" : "signed-in"
-      const {user, logout} = this.props
-
-        if ({user}) {
+const Nav = ({ user, logout }) => {
+    if (user && user.handle) {
         return (
             <div className="main-nav">
                 <Link to="/">
@@ -25,8 +11,8 @@ class Nav extends React.Component {
                 </Link>
                 <div>
                     <p className="users-name">Hello, {user.handle}</p>
-                </div>
                 <button className="logout-button" onClick={logout}>Sign Out</button>
+                </div>
             </div>
             )
         } else {
