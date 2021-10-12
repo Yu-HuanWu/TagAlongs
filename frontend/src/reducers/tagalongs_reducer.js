@@ -5,7 +5,7 @@ const tagAlongsReducer = (initialState = {}, action) => {
 
     switch(action.type) {
         case RECEIVE_TAGALONG:
-            return Object.assign(initialState, action.tagAlong);
+            return Object.assign({}, initialState, action.tagAlong.data);
         default:
             return initialState;
     }

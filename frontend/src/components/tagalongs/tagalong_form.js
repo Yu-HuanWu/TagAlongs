@@ -10,7 +10,7 @@ class TagAlongForm extends React.Component {
             body: '',
             startLocation: '',
             endLocation: '',
-            category: '',
+            category: 'Chat',
             user: this.props.currentUser.id,
             errors: {}
         }
@@ -36,7 +36,6 @@ class TagAlongForm extends React.Component {
             category: this.state.category,
             user: this.props.currentUser.id
         }
-
         this.props.createTagAlong(tagalong);
     }
 
