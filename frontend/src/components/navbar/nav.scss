@@ -1,0 +1,19 @@
+.main-nav {
+  display: flex;
+//   flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  background-color: #DD6E42;
+  width: 90%;
+  min-width: 500px;
+  margin: 0 auto;
+  box-shadow: 5px 5px 5px #4F6D7A;
+}
+
+.user-auth > a{
+  background-color: red;
+  &:hover {
+    background-color: rgb(192, 228, 228);
+  }
+}
