@@ -10,8 +10,8 @@ class TagAlongForm extends React.Component {
             body: '',
             startLocation: '',
             endLocation: '',
-            type: '',
-            userId: this.props.currentUser.id,
+            category: '',
+            user: this.props.currentUser.id,
             errors: {}
         }
 
@@ -33,8 +33,8 @@ class TagAlongForm extends React.Component {
             body: this.state.body,
             startLocation: this.state.startLocation,
             endLocation: this.state.endLocation,
-            type: this.state.type,
-            userId: this.props.currentUser.id
+            category: this.state.category,
+            user: this.props.currentUser.id
         }
 
         this.props.createTagAlong(tagalong);
@@ -82,7 +82,8 @@ class TagAlongForm extends React.Component {
                             placeholder="Enter Ending Locaton" 
                         />
                         <label className="tagalong-form-label">Type of TagAlong:</label>
-                        <select id="tagalong-type" name="tagalong-type">
+                        <select id="tagalong-category" name="tagalong-category"
+                            onChange={this.update('category')}>
                             <option value="chat">Chat</option>
                             <option value="stroll">Stroll</option>
                             <option value="jog">Jog</option>
