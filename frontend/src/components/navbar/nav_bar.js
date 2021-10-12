@@ -1,10 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router";
 
-const Nav = ({ user, logout, location }) => {
-    // let = thisClass = ()
+class Nav extends React.Component {
+    constructor(props ) {
+        super(props);
+    };
 
-    if (user) {
+
+    componentDidMount() {
+        this.props.recieveUser(this.props.user)
+    }
+
+    render() {
+
+      const thisClass = (this.props.location === "/signup") ? "sign-up" : "signed-in"
+      const {user, logout} = this.props
+
+        if ({user}) {
         return (
             <div className="main-nav">
                 <Link to="/">
@@ -15,20 +28,20 @@ const Nav = ({ user, logout, location }) => {
                 </div>
                 <button className="logout-button" onClick={logout}>Sign Out</button>
             </div>
-        )
-    } else {
-        return (
-            <div className="main-nav">
-                <Link to="/">
-                    TagAlongs
-                </Link>
-                <div className="user-auth">
-                    <Link className="sign-up-button" to="/signup">Sign Up</Link>
-                    <Link className="sign-in-button" to="/login">Log In</Link>
+            )
+        } else {
+            return (
+                <div className="main-nav">
+                    <Link to="/">
+                        TagAlongs
+                    </Link>
+                    <div className="user-auth">
+                        <Link className={thisClass} to="/signup">Sign Up</Link>
+                        <Link className={thisClass} to="/login">Log In</Link>
+                    </div>
                 </div>
-            </div>
-        )
-    }
+            )}
+        }
 }
 
 export default Nav
