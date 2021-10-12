@@ -21,28 +21,31 @@ class TagAlongIndex extends React.Component {
     }
 
     renderTagAlongs() {
-        if (!this.props.tagAlongs) {
-            return null;
-        }
         let all = Object.values(this.props.tagAlongs);
-        console.log(all);
-        // let filtered = all.filter()
-        if (all && this.state.filter === 'all') {
-            return (
-                <ul className="tagalong-index-list">
-                    { all.map((tagalong, i) => (
-                        <li key={`tagalong-${i}`}
-                            className="tagalong-index-item">
-                                <h1>{tagalong.title}</h1>
-                                {tagalong.category}
-                                {tagalong.startLocation}
-                                {tagalong.endLocation}
-                                {tagalong.body}
-                        </li>
-                    ))}
-                </ul>
-            )
+        let filtered = all.filter(tagalong => {
+            return tagalong.category === this.state.filter
+        })
+        let tagAlongs;
+        if (this.state.filter === 'all') {
+            tagAlongs = all;
+        } else {
+            tagAlongs = filtered;
         }
+
+        return (
+            <ul className="tagalong-index-list">
+                { tagAlongs.map((tagalong, i) => (
+                    <li key={`tagalong-${i}`}
+                        className="tagalong-index-item">
+                            <h1>{tagalong.title}</h1>
+                            <h3>{tagalong.category}</h3>
+                            <h3>{tagalong.startLocation}</h3>
+                            <h3>{tagalong.endLocation}</h3>
+                            <h2>{tagalong.body}</h2>
+                    </li>
+                ))}
+            </ul>
+        )
     }
 
     render() {
@@ -52,7 +55,31 @@ class TagAlongIndex extends React.Component {
                     <ul className="filter-bar-list">
                         <li className="filter-bar-item">
                             <button className="filter-bar-button"
-                                onChange={() => this.filter('all')}>All</button>
+                                onClick={() => this.filter('all')}>All</button>
+                        </li>
+                        <li className="filter-bar-item">
+                            <button className="filter-bar-button"
+                                onClick={() => this.filter('chat')}>Chat</button>
+                        </li>
+                        <li className="filter-bar-item">
+                            <button className="filter-bar-button"
+                                onClick={() => this.filter('stroll')}>Stroll</button>
+                        </li>
+                        <li className="filter-bar-item">
+                            <button className="filter-bar-button"
+                                onClick={() => this.filter('jog')}>Jog</button>
+                        </li>
+                        <li className="filter-bar-item">
+                            <button className="filter-bar-button"
+                                onClick={() => this.filter('groceries')}>Groceries</button>
+                        </li>
+                        <li className="filter-bar-item">
+                            <button className="filter-bar-button"
+                                onClick={() => this.filter('chores')}>Other Trip</button>
+                        </li>
+                        <li className="filter-bar-item">
+                            <button className="filter-bar-button"
+                                onClick={() => this.filter('misc')}>Miscellaneous</button>
                         </li>
                     </ul>
                 </div>
