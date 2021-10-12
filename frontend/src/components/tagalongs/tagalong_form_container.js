@@ -11,7 +11,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        createTagAlong: tagalong => dispatch(createTagAlong(tagalong))
+        createTagAlong: tagAlong => dispatch(createTagAlong(tagAlong))
     }
 }
 
