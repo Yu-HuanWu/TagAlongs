@@ -1,18 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Nav = ({ user, signOut }) => {
-    // if (user) {
-    //     return (
-    //         <div className="main-nav">
-    //             {logo}
-    //             <div>
-    //                 <p className="users-name">Hello, {user.first_name}</p>
-    //             </div>
-    //             <button className="sign-out-button" onClick={signOut}>Sign Out</button>
-    //         </div>
-    //     )
-    // } else {
+const Nav = ({ user, logout }) => {
+    if (user) {
+        return (
+            <div className="main-nav">
+                <Link to="/">
+                    TagAlongs
+                </Link>
+                <div>
+                    <p className="users-name">Hello, {user.handle}</p>
+                </div>
+                <button className="logout-button" onClick={logout}>Sign Out</button>
+            </div>
+        )
+    } else {
         return (
             <div className="main-nav">
                 <Link to="/">
@@ -24,7 +26,7 @@ const Nav = ({ user, signOut }) => {
                 </div>
             </div>
         )
-    // }
+    }
 }
 
 export default Nav
