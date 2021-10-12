@@ -37,8 +37,8 @@ import React, { Component } from 'react';
 import { Map, GoogleApiWrapper ,InfoWindow,Marker} from 'google-maps-react';
 
 const mapStyles = {
-  width: '100%',
-  height: '100%'
+  width: '500px',
+  height: '500px'
 };
 
 export class MapContainer extends Component {
@@ -64,23 +64,16 @@ export class MapContainer extends Component {
     }
   };
 
-  // render() {
-  //   return (
-  //     <Map id="map-component"
-  //       google={this.props.google}
-  //       zoom={13}
-  //       style={mapStyles}
-  //       initialCenter={
-  //         {
-  //           lat: 37.7749,
-  //           lng: -122.4194
-  //         }
-  //       }
-  //     />
-  //   );
-  // }
+
   render() {
+    const style={
+      width: "500px",
+      height: "500px",
+      position:"relative"
+    }
     return (
+      <div style={style}>
+
       <Map
         google={this.props.google}
         zoom={14}
@@ -91,7 +84,7 @@ export class MapContainer extends Component {
             lng: -122.401138
           }
         }
-      >
+        >
         <Marker
           onClick={this.onMarkerClick}
           name={"App Academy"}
@@ -99,7 +92,7 @@ export class MapContainer extends Component {
             lat: 37.799278,
             lng: -122.401138,
           }}
-        />
+          />
         <Marker
           onClick={this.onMarkerClick}
           name={"Fisherman's Wharf"}
@@ -107,17 +100,18 @@ export class MapContainer extends Component {
             lat: 37.8080,
             lng: -122.4177,
           }}
-        />
+          />
         <InfoWindow
           marker={this.state.activeMarker}
           visible={this.state.showingInfoWindow}
           onClose={this.onClose}
-        >
+          >
           <div>
             <h4>{this.state.selectedPlace.name}</h4>
           </div>
         </InfoWindow>
-      </Map>
+        </Map>
+      </div>
     );
   }
 }
