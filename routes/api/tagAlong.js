@@ -10,6 +10,12 @@ const validateTagAlongs = require("../validation/createTagAlong")
 router.get("/test", (req, res) => res.json({ msg: "This is the tagAlongs route" }));
 
 
+router.get("/all", (req,res)=>{
+  TagAlong.find().then((data)=>res.json(data))
+})
+
+
+
 router.post("/createTagAlong",
  (req,res) => {
   const {errors,isValid} = validateTagAlongs(req.body)
