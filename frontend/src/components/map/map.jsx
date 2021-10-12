@@ -37,8 +37,8 @@ import React, { Component } from 'react';
 import { Map, GoogleApiWrapper ,InfoWindow,Marker} from 'google-maps-react';
 
 const mapStyles = {
-  width: '500px',
-  height: '500px'
+  width: '100%',
+  height: '100%'
 };
 
 export class MapContainer extends Component {
