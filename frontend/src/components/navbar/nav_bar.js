@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useLocation } from "react-router";
+// import { useLocation } from "react-router";
 
 class Nav extends React.Component {
     constructor(props ) {
@@ -9,7 +9,7 @@ class Nav extends React.Component {
 
 
     componentDidMount() {
-        this.props.recieveUser(this.props.user)
+        this.props.receiveUser(this.props.user)
     }
 
     render() {

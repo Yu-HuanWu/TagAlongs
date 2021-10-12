@@ -5,13 +5,13 @@ import { logout, receiveCurrentUser } from '../../actions/session_actions';
 const mapStateToProps = (state) => {
   console.log(state.entities)
    return {
-    user: state.entities.users[state.session.currentUserId]
+    user: state.entities.users
    }
 };
 
 const mapDispatchToProps = (dispatch) => ({
   logout: () => dispatch(logout()),
-  receiveUser: (user ) => dispatch(receiveCurrentUser(user)) 
+  receiveUser: (user) => dispatch(receiveCurrentUser(user)) 
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Nav);
