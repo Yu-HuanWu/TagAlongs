@@ -5,6 +5,8 @@ import SignupFormContainer from './session/signup_form_container';
 import TagAlongFormContainer from './tagalongs/tagalong_form_container';
 import { Switch } from 'react-router-dom';
 import NavBar from "./navbar/nav_bar_container"
+import MapContainer from './map/map_container';
+import { Route } from 'react-router';
 import '../app.scss'
 
 
@@ -20,6 +22,7 @@ const App = () => (
                     <AuthRoute exact path="/login" component={LoginFormContainer} />
                     <AuthRoute exact path="/signup" component={SignupFormContainer} />
                     <ProtectedRoute exact path="/newtagalong" component={TagAlongFormContainer} />
+                    <Route path="/map" component={MapContainer}/>
                 </Switch>
             </div>
         </div>
