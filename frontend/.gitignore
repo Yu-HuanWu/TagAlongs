@@ -3,10 +3,6 @@
 #api keys
 .env
 
-
-#api keys
-.env
-
 # dependencies
 /node_modules
 /.pnp
