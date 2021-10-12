@@ -3,7 +3,6 @@ import Nav from './nav_bar';
 import { logout } from '../../actions/session_actions';
 
 const mapStateToProps = (state) => {
-    console.log(state.session.user)
    return {
      user: state.session.user
    }
