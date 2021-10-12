@@ -9,6 +9,7 @@ const validateTagAlongs = require("../validation/createTagAlong")
 
 router.get("/test", (req, res) => res.json({ msg: "This is the tagAlongs route" }));
 
+
 router.post("/createTagAlong",
 passport.authenticate("jwt", { session: false }),
  (req,res) => {
@@ -44,6 +45,22 @@ router.get("/show/:id",(req,res)=>{
     .catch(err=> res.status(404).json({noTagAlongFound: "No TagAlong was found with that ID"}))
 })
 
+router.get("/update/:id",(req,res)=>{
+  TagAlong.update({_id: req.params.id},{
+          title: req.body.title,
+          body: req.body.body,
+          user: req.body.user,
+          startLocation: req.body.startLocation,
+          endLocation: req.body.endLocation
+        }).then(() => res.json({updated: "tagalong was updated"}))
+        .catch(err=> res.status(404).json({noTagAlongFound: "No TagAlong was found with that ID"}))
+})
+
+router.post("/delete/:id",(req,res)=>{
+  TagAlong.deleteOne({id:req.params.id})
+    .then(() => res.json({deleted: "TagAlong was deleted"}))
+    .catch(err=> res.status(404).json({noTagAlongFound: "No TagAlong was found with that ID"}))
+})
 
 
 module.exports = router
