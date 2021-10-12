@@ -22,6 +22,10 @@ const TagAlongSchema = new Schema({
   endLocation: {
     type: String,
     required: true
+  },
+  category:{
+    type: String,
+    required:true
   }
 },{
   timestamps:true

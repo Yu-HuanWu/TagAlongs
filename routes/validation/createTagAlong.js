@@ -9,6 +9,7 @@ module.exports = function validateTagAlongs(data) {
     data.user = validText(data.user) ? data.user : '';
     data.startLocation = validText(data.startLocation) ? data.startLocation : '';
     data.endLocation = validText(data.endLocation) ? data.endLocation : '';
+    data.category = validText(data.category) ? data.category : '';
 
     // if (!Validator.isEmail(data.handle)) {
     //     errors.email = 'Email is invalid';
@@ -32,6 +33,9 @@ module.exports = function validateTagAlongs(data) {
 
     if (Validator.isEmpty(data.endLocation)) {
         errors.endLocation = 'endLocation field is required';
+    }
+    if (Validator.isEmpty(data.category)) {
+        errors.category = 'category field is required';
     }
 
     return {
