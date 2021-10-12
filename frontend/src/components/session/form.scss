@@ -81,7 +81,7 @@
   display: inline-block;
   font-size: 16px;
   box-shadow: 5px 5px 5px rgb(88, 88, 88);
-  transition: all 0.3s ease-in-out
+  transition: background-color 0.3s ease-in-out
 }
 
 .form-button:hover {
@@ -90,6 +90,9 @@
 
 .form-button:active {
   background-color: #022B3A;
+	position: relative;
+	top: 4px;
+	box-shadow: 1px 1px 5px rgb(88, 88, 88);
 }
 
 .renderError {

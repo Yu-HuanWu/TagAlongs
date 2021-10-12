@@ -1,11 +1,19 @@
-import { RECEIVE_TAGALONG } from "../actions/tagalong_actions";
+import { 
+    RECEIVE_TAGALONG,
+    RECEIVE_TAGALONGS
+} from "../actions/tagalong_actions";
 
-const tagAlongsReducer = (initialState = {}, action) => {
-    Object.freeze(initialState)
+const tagAlongsReducer = (initialState = { all: {}, user: {}, new: undefined }, action) => {
+    Object.freeze(initialState);
+    let newState = Object.assign({}, initialState);
 
     switch(action.type) {
         case RECEIVE_TAGALONG:
-            return Object.assign({}, initialState, action.tagAlong.data);
+            newState.new = action.tagAlong.data;
+            return newState;
+        case RECEIVE_TAGALONGS:
+            newState.all = action.tagAlongs.data;
+            return newState;
         default:
             return initialState;
     }
