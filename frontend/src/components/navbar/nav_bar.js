@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import './nav.scss'
 
 const Nav = ({ user, logout }) => {
-    if (user) {
+    if (user && user.handle) {
         return (
             <div className="main-nav">
                 <Link to="/">
@@ -10,8 +11,8 @@ const Nav = ({ user, logout }) => {
                 </Link>
                 <div>
                     <p className="users-name">Hello, {user.handle}</p>
-                </div>
                 <button className="logout-button" onClick={logout}>Sign Out</button>
+                </div>
             </div>
         )
     } else {
