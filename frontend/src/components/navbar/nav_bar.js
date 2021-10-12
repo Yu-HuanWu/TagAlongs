@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Nav = ({ user, logout }) => {
+const Nav = ({ user, logout, location }) => {
+    // let = thisClass = ()
+
     if (user) {
         return (
             <div className="main-nav">
