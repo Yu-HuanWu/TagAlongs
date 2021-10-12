@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import './form.scss'
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -42,13 +43,13 @@ class LoginForm extends React.Component {
 
     renderErrors() {
         return(
-        <ul>
-            {Object.keys(this.state.errors).map((error, i) => (
-            <li key={`error-${i}`}>
-                {this.state.errors[error]}
-            </li>
-            ))}
-        </ul>
+            <ul className="renderError">
+                {Object.keys(this.state.errors).map((error, i) => (
+                <li key={`error-${i}`}>
+                    {this.state.errors[error]}
+                </li>
+                ))}
+            </ul>
         );
     }
 
@@ -56,22 +57,30 @@ class LoginForm extends React.Component {
         return (
         <div className="login-form-container">
             <form onSubmit={this.handleSubmit}>
-            <div className="login-form">
-                <label className="login-form-label">Username</label>
-                <input type="text"
-                    value={this.state.handle}
-                    onChange={this.update('handle')}
-                    placeholder="Username"
-                />
-                <label className="login-form-label">Password</label>
-                <input type="password"
-                    value={this.state.password}
-                    onChange={this.update('password')}
-                    placeholder="Password"
-                />
-                <input type="submit" value="Log In" />
-                {this.renderErrors()}
-            </div>
+                <div className="login-form">
+
+                    <div className="input-container">
+                        <input type="text"
+                            value={this.state.handle}
+                            onChange={this.update('handle')}
+                            required
+                        />
+                        <label>Username</label>
+                    </div>
+
+                    <div className="input-container">
+                        <input type="password"
+                            value={this.state.password}
+                            onChange={this.update('password')}
+                            required
+                        />
+                        <label>Password</label>
+                    </div>
+
+                    <input className="form-button" type="submit" value="Log In" />
+                    
+                    {this.renderErrors()}
+                </div>
             </form>
         </div>
         );
