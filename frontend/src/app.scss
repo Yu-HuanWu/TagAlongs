@@ -14,17 +14,6 @@ html {
   align-items: center;
 }
 
-.header a{
-  text-decoration: none;
-  color: rgb(44, 44, 44);
-  background-color: #E1E5F2;
-  border-radius: 10px;
-  padding: 5px;
-  margin: 10px;
-  &:hover {
-    background-color: #b4b8c7;
-  }
-}
 
 .splash {
     display: flex;
