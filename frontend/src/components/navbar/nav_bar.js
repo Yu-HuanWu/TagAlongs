@@ -14,20 +14,20 @@ const Nav = ({ user, logout }) => {
                 <button className="logout-button" onClick={logout}>Sign Out</button>
                 </div>
             </div>
-            )
-        } else {
-            return (
-                <div className="main-nav">
-                    <Link to="/">
-                        TagAlongs
-                    </Link>
-                    <div className="user-auth">
-                        <Link className={thisClass} to="/signup">Sign Up</Link>
-                        <Link className={thisClass} to="/login">Log In</Link>
-                    </div>
+        )
+    } else {
+        return (
+            <div className="main-nav">
+                <Link to="/">
+                    TagAlongs
+                </Link>
+                <div className="user-auth">
+                    <Link className="sign-up-button" to="/signup">Sign Up</Link>
+                    <Link className="sign-in-button" to="/login">Log In</Link>
                 </div>
-            )}
-        }
+            </div>
+        )
+    }
 }
 
 export default Nav
