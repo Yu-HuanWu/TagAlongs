@@ -21,12 +21,16 @@ class TagAlongIndex extends React.Component {
     }
 
     renderTagAlongs() {
-        let all = this.state.tagAlongs;
+        if (!this.props.tagAlongs) {
+            return null;
+        }
+        let all = Object.values(this.props.tagAlongs);
+        console.log(all);
         // let filtered = all.filter()
         if (all && this.state.filter === 'all') {
             return (
                 <ul className="tagalong-index-list">
-                    { all.map((tagalong, i) => {
+                    { all.map((tagalong, i) => (
                         <li key={`tagalong-${i}`}
                             className="tagalong-index-item">
                                 <h1>{tagalong.title}</h1>
@@ -35,7 +39,7 @@ class TagAlongIndex extends React.Component {
                                 {tagalong.endLocation}
                                 {tagalong.body}
                         </li>
-                    })}
+                    ))}
                 </ul>
             )
         }
