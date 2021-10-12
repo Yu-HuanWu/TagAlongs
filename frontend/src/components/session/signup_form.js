@@ -65,48 +65,70 @@ class SignupForm extends React.Component {
             <div className="signup-form-container">
                 <form onSubmit={this.handleSubmit}>
                     <div className="signup-form">
-                        <label className="signup-form-label">Email</label>
-                        <input type="text"
-                            value={this.state.email}
-                            onChange={this.update('email')}
-                            placeholder="Email"
-                        />
-                        <label className="signup-form-label">Username</label>
-                        <input type="text"
-                            value={this.state.handle}
-                            onChange={this.update('handle')}
-                            placeholder="Username"
-                        />
-                        <label className="signup-form-label">First Name</label>
-                        <input type="text"
-                            value={this.state.firstName}
-                            onChange={this.update('firstName')}
-                            placeholder="First Name"
-                        />
-                        <label className="signup-form-label">Last Name</label>
-                        <input type="text"
-                            value={this.state.lastName}
-                            onChange={this.update('lastName')}
-                            placeholder="Last Name"
-                        />
-                        <label className="signup-form-label">Date of Birth</label>
-                        <input type="date"
-                            value={this.state.birthdate}
-                            onChange={this.update('birthdate')}
-                        />
-                        <label className="signup-form-label">Password</label>
-                        <input type="password"
-                            value={this.state.password}
-                            onChange={this.update('password')}
-                            placeholder="Password"
-                        />
-                        <label className="signup-form-label">Confirm Password</label>
-                        <input type="password"
-                            value={this.state.password2}
-                            onChange={this.update('password2')}
-                            placeholder="Confirm Password"
-                        />
-                        <input type="submit" value="Submit" />
+
+                        <div className="input-container">
+                            <input type="text"
+                                value={this.state.email}
+                                onChange={this.update('email')}
+                                required
+                            />
+                            <label>E-mail</label>
+                        </div>
+
+                        <div className="input-container">
+                            <input type="text"
+                                value={this.state.handle}
+                                onChange={this.update('handle')}
+                                required
+                            />
+                            <label>Username</label>
+                        </div>
+                        
+                        <div className="input-container">
+                            <input type="text"
+                                value={this.state.firstName}
+                                onChange={this.update('firstName')}
+                                required
+                            />
+                            <label>First Name</label>
+                        </div>
+
+                        <div className="input-container">
+                            <input type="text"
+                                value={this.state.lastName}
+                                onChange={this.update('lastName')}
+                                required
+                            />
+                            <label className="signup-form-label">Last Name</label>
+                        </div>
+
+                        <div className="input-container-date">
+                            <input type="date"
+                                value={this.state.birthdate}
+                                onChange={this.update('birthdate')}
+                            />
+                            <label className="signup-form-label">Date of Birth</label>
+                        </div>
+
+                        <div className="input-container">
+                            <input type="password"
+                                value={this.state.password}
+                                onChange={this.update('password')}
+                                required
+                            />
+                            <label className="signup-form-label">Password</label>
+                        </div>
+
+                        <div className="input-container">
+                            <input type="password"
+                                value={this.state.password2}
+                                onChange={this.update('password2')}
+                                required
+                            />
+                            <label className="signup-form-label">Confirm Password</label>
+                        </div>
+
+                        <input className="form-button" type="submit" value="Submit" />
                         {this.renderErrors()}
                     </div>
                 </form>
