@@ -11,7 +11,7 @@ class TagAlongForm extends React.Component {
             startLocation: '',
             endLocation: '',
             type: '',
-            // userId: this.props.currentUser.id,
+            userId: this.props.currentUser.id,
             errors: {}
         }
 
@@ -34,7 +34,7 @@ class TagAlongForm extends React.Component {
             startLocation: this.state.startLocation,
             endLocation: this.state.endLocation,
             type: this.state.type,
-            // userId: this.props.currentUser.id
+            userId: this.props.currentUser.id
         }
 
         this.props.createTagAlong(tagalong);
@@ -64,7 +64,7 @@ class TagAlongForm extends React.Component {
                             placeholder="Enter TagAlong Name" 
                         />
                         <label className="tagalong-form-label">Description</label>
-                        <input type="text"
+                        <textarea
                             value={this.state.body}
                             onChange={this.update('body')}
                             placeholder="Enter TagAlong Description" 
