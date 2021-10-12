@@ -11,7 +11,8 @@ class TagAlongForm extends React.Component {
             startLocation: '',
             endLocation: '',
             type: '',
-            // userId: this.props.currentUser.id
+            // userId: this.props.currentUser.id,
+            errors: {}
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -76,8 +77,8 @@ class TagAlongForm extends React.Component {
                         />
                         <label className="tagalong-form-label">End Location</label>
                         <input type="text"
-                            value={this.state.title}
-                            onChange={this.update('title')}
+                            value={this.state.endLocation}
+                            onChange={this.update('endLocation')}
                             placeholder="Enter Ending Locaton" 
                         />
                         <label className="tagalong-form-label">Type of TagAlong:</label>
