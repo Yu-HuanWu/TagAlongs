@@ -16,10 +16,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => (
     <div>
-        <div className="header">
-            <NavBar /> 
-        </div>
         <div className="body">
+            <div className="header">
+                <NavBar /> 
+            </div>
                 <Switch>
                     <AuthRoute exact path="/login" component={LoginFormContainer} />
                     <AuthRoute exact path="/signup" component={SignupFormContainer} />
@@ -28,7 +28,8 @@ const App = () => (
                     <Route path="/map" component={MapContainer}/>
                     <Route path="/" component={HomeContainer}/>
                 </Switch>
-        </div>   
+            <div className="background"></div>  
+        </div> 
         <footer>
             <FooterContainer/>
         </footer>
