@@ -24,7 +24,7 @@ const App = () => (
                     <AuthRoute exact path="/signup" component={SignupFormContainer} />
                     <ProtectedRoute exact path="/newtagalong" component={TagAlongFormContainer} />
                     <ProtectedRoute exact path="/tagalongs" component={TagAlongIndexContainer} />
-                    <Route path="/map" component={MapContainer}/>
+                    <Route path="/map/:TagID" component={MapContainer}/>
                 </Switch>
             </div>
         </div>

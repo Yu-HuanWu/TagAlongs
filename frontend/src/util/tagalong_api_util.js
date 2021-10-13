@@ -7,3 +7,7 @@ export const getTagAlongs = () => {
 export const createTagAlong = tagAlong => {
     return axios.post('/api/tagAlong/createTagAlong', tagAlong);
 };
+
+export const getTag = (id) => {
+  return axios.get(`/api/tagAlong/show/${id}`)
+}
