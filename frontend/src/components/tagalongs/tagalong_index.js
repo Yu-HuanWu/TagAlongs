@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class TagAlongIndex extends React.Component {
     constructor(props) {
@@ -31,12 +32,13 @@ class TagAlongIndex extends React.Component {
         } else {
             tagAlongs = filtered;
         }
-
+        console.log(tagAlongs)
         return (
             <ul className="tagalong-index-list">
                 { tagAlongs.map((tagalong, i) => (
                     <li key={`tagalong-${i}`}
                         className="tagalong-index-item">
+                            <Link to={`/map/${tagalong._id}`}>Go to Map</Link>
                             <h1>{tagalong.title}</h1>
                             <h3>{tagalong.category}</h3>
                             <h3>{tagalong.startLocation}</h3>

@@ -66,7 +66,9 @@ passport.authenticate("jwt", { session: false }),
           body: req.body.body,
           user: req.body.user,
           startLocation: req.body.startLocation,
+          startLatLng: req.body.startLatLng,
           endLocation: req.body.endLocation,
+          endLatLng: req.body.endLatLng,
           category: req.body.category
         }).then(() => res.json({updated: "tagalong was updated"}))
         .catch(err=> res.status(404).json({noTagAlongFound: "No TagAlong was found with that ID"}))
