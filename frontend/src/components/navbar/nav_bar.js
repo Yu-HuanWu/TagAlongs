@@ -57,7 +57,7 @@ class Nav extends React.Component{
                         <div className="user-auth">
                             <Link className="nav-button-clicked" to="/signup">Sign Up</Link>
                             <span className="nav-divider" />
-                            <Link onClick={this.toggleButton} className="nav-button" to="/login">Log In</Link>
+                            <Link onClick={this.toggleButton} className="nav-button" id="login" to="/login">Log In</Link>
                         </div>
                     </div>
                 </div>
@@ -72,7 +72,7 @@ class Nav extends React.Component{
                                 <span className="nav-divider" />
                                 <Link onClick={this.toggleButton} className="nav-button" to="/signup">Sign Up</Link>
                                 <span className="nav-divider" />
-                                <Link className="nav-button-clicked" to="/login">Log In</Link>
+                                <Link className="nav-button-clicked" id="login" to="/login">Log In</Link>
                                 <span className="nav-divider" />
                             </div>
                         </div>
@@ -88,7 +88,7 @@ class Nav extends React.Component{
                                 <span className="nav-divider" />
                                 <Link onClick={this.toggleButton} className="nav-button" to="/signup">Sign Up</Link>
                                 <span className="nav-divider" />
-                                <Link onClick={this.toggleButton} className="nav-button" to="/login">Log In</Link>
+                                <Link onClick={this.toggleButton} className="nav-button" id="login" to="/login">Log In</Link>
                             </div>
                         </div>
                     </div>
