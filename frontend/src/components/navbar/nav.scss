@@ -28,9 +28,13 @@
 	display: flex;
 	// justify-content: center;
 }
-// .navbar-logo {
-
-// }
+.navbar-logo {
+	margin-left: 20px;
+	transition: all 0.5s ease-in-out;
+	&:hover {
+		transform: scale(0.95);
+	}
+}
 
 .nav-button {
 	// text-decoration: none;
@@ -162,4 +166,9 @@
 	font-weight: bold;
 	margin-right: 17px;
 	text-shadow: 1px 1px 4px #EAEAEA;
+}
+
+#login {
+	padding-right: 22px;
+	// padding-right: 10px;
 }
