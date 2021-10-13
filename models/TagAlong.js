@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-
 const TagAlongSchema = new Schema({
   title:{
     type: String,
@@ -48,7 +47,7 @@ const TagAlongSchema = new Schema({
     required: true
   }
 },{
-  timestamps:true
+    timestamps:true
 })
 
-module.exports = TagAlong = mongoose.model("TagAlong",TagAlongSchema);
+module.exports = TagAlong = mongoose.model("TagAlong", TagAlongSchema);

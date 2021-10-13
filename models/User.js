@@ -15,17 +15,33 @@ const UserSchema = new Schema({
         required: true
     },
     birthdate:{
-      type: Date,
-      required: true
+        type: Date,
+        required: true
     },
     firstName: {
-      type: String,
-      required: true
+        type: String,
+        required: true
     },
-    lastName:{
-      type: String,
-      required: true
-    }
+    lastName: {
+        type: String,
+        required: true
+    },
+    avatar: {
+        type: String,
+        default: 'default'
+    },
+    tagAlongsCompleted: {
+        type: Number,
+        default: 0
+    },
+    rating: {
+        type: Number,
+        default: 0
+    },
+    tagAlongs: {
+        type: [Schema.Types.ObjectId],
+        ref: 'tagAlong'
+  },
 }, {
     timestamps: true
 })
