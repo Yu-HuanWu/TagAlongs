@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper ,InfoWindow,Marker} from 'google-maps-react';
+import "./map.css"
 
 const mapStyles = {
   width: '100%',
@@ -10,14 +11,11 @@ export class MapComponent extends Component {
   constructor(props){
     super(props)
     this.state = {
-      showingInfoWindow: false,  // Hides or shows the InfoWindow
-      activeMarker: {},          // Shows the active marker upon click
+      showingInfoWindow: false,
+      activeMarker: {},          
       selectedPlace: {},
-      items: {}        // Shows the InfoWindow to the selected place upon a marker
+      items: {}        
     };
-    // this.props.fetchTag(this.props.TagID).then((data)=>this.setState({items:data}))
-    // // .then((data)=>console.log(data))
-    // console.log(this.props.totalState)
   }
 
   onMarkerClick = (props, marker, e) =>
@@ -57,12 +55,20 @@ export class MapComponent extends Component {
       let items = this.state.items;
       return (
         <div>
-          {/* <div>
-            {items.title}
-            {items.body}
-            {items.startLocation}
-            {items.endLocation}
-          </div> */}
+          <div>
+            <div>
+              {items.title}
+            </div>
+            <div>
+              {items.body}
+            </div>
+            <div>
+              Starting Location: {items.startLocation}
+            </div>
+            <div>
+              Ending Locaiton: {items.endLocation}
+            </div>
+          </div>
 
         <div style={style}>
         <Map
@@ -76,7 +82,7 @@ export class MapComponent extends Component {
             }
           }
           >
-          <Marker
+          <Marker id="map-marker-css"
             onClick={this.onMarkerClick}
             name={items.startLocation}
             position={{
