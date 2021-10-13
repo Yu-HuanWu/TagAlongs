@@ -37,7 +37,11 @@ const UserSchema = new Schema({
     rating: {
         type: Number,
         default: 0
-    }
+    },
+    tagAlongs: {
+        type: [Schema.Types.ObjectId],
+        ref: 'tagAlong'
+  },
 }, {
     timestamps: true
 })
