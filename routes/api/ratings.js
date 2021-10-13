@@ -17,7 +17,6 @@ router.post("/createRating",(req,res)=>{
   if(!isValid){
     return res.status(400).json(errors);
   }
-
   const newRating = new Rating({
     rating: req.body.rating,
     reviewer: req.body.reviewer,
