@@ -73,12 +73,12 @@ export class MapComponent extends Component {
         <div style={style}>
         <Map
           google={this.props.google}
-          zoom={12}
+          zoom={12.5}
           style={mapStyles}
           initialCenter={
             {
-              lat: 37.7749,
-              lng: -122.419138,
+              lat: 37.762301,
+              lng: -122.437640,
             }
           }
           >
