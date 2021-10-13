@@ -57,7 +57,7 @@ class TagAlongForm extends React.Component {
                 startLatLng:[startingLatLng.lat,startingLatLng.lng],
                 endLatLng:[endingLatLng.lat,endingLatLng.lng]
             }
-            this.props.createTagAlong(tagalong);
+            this.props.createTagAlong(tagalong).then((data)=>console.log(data));
           })
 
 
