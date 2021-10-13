@@ -55,33 +55,36 @@ class LoginForm extends React.Component {
 
     render() {
         return (
-        <div className="login-form-container">
-            <form onSubmit={this.handleSubmit}>
-                <div className="login-form">
-                    <h1>LOGIN</h1>
-                    <div className="input-container">
-                        <input type="text"
-                            value={this.state.handle}
-                            onChange={this.update('handle')}
-                            required
-                        />
-                        <label>Username</label>
-                    </div>
+        <div className="splash">
+        {/* <div className="main"></div> */}
+            <div className="login-form-container">
+                <form onSubmit={this.handleSubmit}>
+                    <div className="login-form">
+                        <h1>Login</h1>
+                        <div className="input-container">
+                            <input type="text"
+                                value={this.state.handle}
+                                onChange={this.update('handle')}
+                                required
+                            />
+                            <label>Username</label>
+                        </div>
 
-                    <div className="input-container">
-                        <input type="password"
-                            value={this.state.password}
-                            onChange={this.update('password')}
-                            required
-                        />
-                        <label>Password</label>
-                    </div>
+                        <div className="input-container">
+                            <input type="password"
+                                value={this.state.password}
+                                onChange={this.update('password')}
+                                required
+                            />
+                            <label>Password</label>
+                        </div>
 
-                    <input className="form-button" type="submit" value="Log In" />
-                    
-                    {this.renderErrors()}
-                </div>
-            </form>
+                        <input className="form-button" type="submit" value="Log In" />
+                        
+                        {this.renderErrors()}
+                    </div>
+                </form>
+            </div>
         </div>
         );
     }

@@ -7,14 +7,13 @@ const mapStyles = {
   height: '100%'
 };
 
-export class MapComponent extends Component {
+export class MapIndex extends Component {
   constructor(props){
     super(props)
     this.state = {
       showingInfoWindow: false,
       activeMarker: {},          
-      selectedPlace: {},
-      items: {}        
+      selectedPlace: {},      
     };
   }
 
@@ -34,41 +33,28 @@ export class MapComponent extends Component {
     }
   };
 
-  componentDidMount(){
-    this.props.fetchTag(this.props.TagID).then((data)=>this.setState({items:data.tagAlong.data}))
-  }
-
 
   render() {
+    let all = Object.values(this.props.tagAlongs);
+    let filtered = all.filter(tagalong => {
+            return tagalong.category === this.props.filter
+    })
+
+    let tagAlongs;
+        if (this.props.filter === 'all') {
+            tagAlongs = all;
+        } else {
+            tagAlongs = filtered;
+        }
+
     const style={
       width: "500px",
       height: "500px",
       position:"relative"
     }
-    if(!this.state.items.title){
-      return(
-        <div>
-          Nothing Found
-        </div>
-      )
-    }else{
-      let items = this.state.items;
+
       return (
         <div>
-          <div>
-            <div>
-              {items.title}
-            </div>
-            <div>
-              {items.body}
-            </div>
-            <div>
-              Starting Location: {items.startLocation}
-            </div>
-            <div>
-              Ending Locaiton: {items.endLocation}
-            </div>
-          </div>
 
         <div style={style}>
         <Map
@@ -82,22 +68,18 @@ export class MapComponent extends Component {
             }
           }
           >
-          <Marker id="map-marker-css"
+
+          {tagAlongs.map((tag,idx)=>(
+            <Marker key={idx} id="map-marker-css"
             onClick={this.onMarkerClick}
-            name={items.startLocation}
+            name={tag.startLocation}
             position={{
-              lat: items.startLatLng[0],
-              lng: items.startLatLng[1]
+              lat: tag.startLatLng[0],
+              lng: tag.startLatLng[1]
             }}
             />
-          <Marker
-            onClick={this.onMarkerClick}
-            name={items.endLocation}
-            position={{
-              lat: items.endLatLng[0],
-              lng: items.endLatLng[1]
-            }}
-            />
+          ))}  
+
           <InfoWindow
             marker={this.state.activeMarker}
             visible={this.state.showingInfoWindow}
@@ -113,8 +95,7 @@ export class MapComponent extends Component {
       );
     }
   }
-}
 
 export default GoogleApiWrapper({
   apiKey: process.env.REACT_APP_GOOGLE_API_KEY
-})(MapComponent);
+})(MapIndex);

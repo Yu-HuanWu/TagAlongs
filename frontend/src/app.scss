@@ -1,5 +1,5 @@
 html {
-    background-color: #EAEAEA;
+    // background-color: #EAEAEA;
     color: #C0D6DF;
 }
 
@@ -8,10 +8,12 @@ html {
 }
 
 .body {
-    display: flex;
-    flex-direction: column;
-    // justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+  background-color: rgba(255,255,255,0.6);
+  min-height: 100vh;
 }
 
 
@@ -29,20 +31,22 @@ html {
     box-shadow: 5px 5px 5px #4F6D7A;
 }
 
-.background {
-    position: absolute;
-    background-image: url("https://blog-www.pods.com/wp-content/uploads/2021/03/resized_FI_Getty_San-Francisco-CA-1.jpg");
-    opacity: 0.2;
-    background-size: cover;
-    background-color: #EAEAEA;
-    top: 0%;
-    height: 100vh;
-    width: 100%;
-    z-index: -1;
-    animation-name: backgroundAnime;
-    animation-duration: 8s;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
+html {
+  // position: absolute;
+  background-image: url("https://blog-www.pods.com/wp-content/uploads/2021/03/resized_FI_Getty_San-Francisco-CA-1.jpg");
+  // opacity: 0.2;
+  background-size: cover;
+  background-color: #EAEAEA;
+  bottom: 0%;
+  height: 100vh;
+  width: 100%;
+  // z-index: -1;
+  background-attachment: fixed;
+
+  // animation-name: backgroundAnime;
+  // animation-duration: 8s;
+  // animation-direction: alternate;
+  // animation-iteration-count: infinite;
 }
 
 // .background-img {
@@ -66,18 +70,59 @@ html {
 }
 
 @media screen and (max-width: 800px) {
-  // html {
-  //   font-family: Arial, Helvetica, sans-serif;
-  //   background-color: #022B3A;
-  //   color: #E1E5F2;
-  //   margin: 0 auto;
-  // }
+  html {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #022B3A;
+    color: #E1E5F2;
+    margin: 0 auto;
+  }
 
-  // .body {
-  //   // width: 100%;
-  //   display: flex;
-  //   flex-direction: column;
-  //   justify-content: center;
-  //   align-items: center;
-  // }
+  .body {
+    // width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.carousel-container{
+  width: 100%;
+  height: 700px;
+  z-index: -1;
+}
+
+.carousel { 
+  height: 100%;
+  width: 100%;
+  // z-index: -1;
+  padding-bottom: 20px;
+  align-items: center;
+  overflow: hidden;
+}
+
+.home-mid {
+  width: 100%;
+  height: 700px;
+  font-size: 50px;
+  text-align: center;
+  z-index: -1;
+  background-color: transparent;
+  // position: absolute; 
+}
+
+
+.buffer{
+  width: 100%;
+  height: 25px;
+  background-color: #DD6E42;
+}
+
+.footer {
+  width: 100%;
+  height: 200px;
+  background-color: #DD6E42;
+  // // margin-bottom: -50px;
+  // margin-top: auto;
+  z-index: 3;
 }

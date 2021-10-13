@@ -28,3 +28,8 @@ export const fetchTagAlongs = () => dispatch => (
         dispatch(receiveTagAlongs(tagAlongs))
     )
 )
+
+export const fetchTag = (id) => dispatch =>(
+  APIUtil.getTag(id).then(tagAlong =>
+    dispatch(receiveTagAlong(tagAlong)))
+)

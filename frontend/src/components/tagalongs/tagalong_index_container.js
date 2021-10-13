@@ -4,7 +4,7 @@ import TagAlongIndex from './tagalong_index';
 
 const mapStateToProps = (state) => {
     return {
-        tagAlongs: state.entities.tagAlongs.all,
+        tagAlongs: state.entities.tagAlongs,
     };
 };
 
