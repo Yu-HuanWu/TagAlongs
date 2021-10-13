@@ -1,5 +1,7 @@
+import axios from 'axios';
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { getLatLng } from '../../util/tagalong_api_util';
 
 class TagAlongForm extends React.Component {
     constructor(props) {
@@ -9,6 +11,7 @@ class TagAlongForm extends React.Component {
             title: '',
             body: '',
             startLocation: '',
+            startCity:'',
             endLocation: '',
             category: 'Chat',
             user: this.props.currentUser.id,
@@ -27,16 +30,39 @@ class TagAlongForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        
+        // getLatLng(this.state.startLocation,process.env.REACT_APP_GOOGLE_API_KEY).then((data)=>console.log(data))
+        var config = {
+          headers: {'Access-Control-Allow-Origin': '*'}
+        };
+        // axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=Fisherman%27s%20Wharf&key=${process.env.REACT_APP_GOOGLE_API_KEY}`,config)
+        fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${this.state.startLocation}&key=${process.env.REACT_APP_GOOGLE_API_KEY}`)
+        .then(response=>response.json())
+        .then(startData=> {
+          console.log(startData.results[0])
+          let startingLatLng = startData.results[0].geometry.location
+          fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${this.state.endLocation}&key=${process.env.REACT_APP_GOOGLE_API_KEY}`)
+          .then(response=>response.json())
+          .then(endData=> {
+            let endingLatLng = endData.results[0].geometry.location
+            console.log([startingLatLng.lat,startingLatLng.lng])
+            console.log([endingLatLng.lat,endingLatLng.lng])
+            let tagalong = {
+                title: this.state.title,
+                body: this.state.body,
+                startLocation: this.state.startLocation,
+                endLocation: this.state.endLocation,
+                category: this.state.category,
+                user: this.props.currentUser.id,
+                startLatLng:[startingLatLng.lat,startingLatLng.lng],
+                endLatLng:[endingLatLng.lat,endingLatLng.lng]
+            }
+            this.props.createTagAlong(tagalong);
+          })
 
-        let tagalong = {
-            title: this.state.title,
-            body: this.state.body,
-            startLocation: this.state.startLocation,
-            endLocation: this.state.endLocation,
-            category: this.state.category,
-            user: this.props.currentUser.id
-        }
-        this.props.createTagAlong(tagalong);
+
+        })
+        
     }
 
     renderErrors() {
