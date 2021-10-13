@@ -42,8 +42,9 @@ export class MapIndex extends Component {
   render() {
     let all = Object.values(this.props.tagAlongs);
     let filtered = all.filter(tagalong => {
-            return tagalong.category === this.state.filter
+            return tagalong.category === this.props.filter
     })
+    
     let tagAlongs;
         if (this.props.filter === 'all') {
             tagAlongs = all;
@@ -56,15 +57,7 @@ export class MapIndex extends Component {
       height: "500px",
       position:"relative"
     }
-    console.log(this.props)
-    console.log(tagAlongs)
-    if(tagAlongs.length === 0){
-      return(
-        <div>
-          Nothing Found
-        </div>
-      )
-    }else{
+
       return (
         <div>
 
@@ -91,7 +84,7 @@ export class MapIndex extends Component {
             }}
             />
           ))}  
-          
+
           <InfoWindow
             marker={this.state.activeMarker}
             visible={this.state.showingInfoWindow}
@@ -107,7 +100,6 @@ export class MapIndex extends Component {
       );
     }
   }
-}
 
 export default GoogleApiWrapper({
   apiKey: process.env.REACT_APP_GOOGLE_API_KEY
