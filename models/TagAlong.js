@@ -22,12 +22,12 @@ const TagAlongSchema = new Schema({
         type: String,
         required: true
     },
-    category:{
-      type: String,
-      required:true
+    category: {
+        type: String,
+        required:true
     }
 },{
     timestamps:true
 })
 
-module.exports = TagAlong = mongoose.model("TagAlong",TagAlongSchema);
+module.exports = TagAlong = mongoose.model("TagAlong", TagAlongSchema);

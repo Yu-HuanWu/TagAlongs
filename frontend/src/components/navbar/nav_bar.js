@@ -34,12 +34,12 @@ class Nav extends React.Component{
                     <div className="nav-user-info">
                         <p className="users-name">Hello, {user.handle}</p>
                         <span className="nav-divider"/>
-                        <button className="nav-buttons">Profile</button>
+                        <button className="nav-buttons">Resources</button>
                         <span className="nav-divider"/>
                         <button className="nav-buttons">What's a TagAlong</button>
                         <span className="nav-divider"/>
                         <button className="nav-buttons">About us</button>
-                        
+                        <span className="nav-divider"/>
                         <button className="logout-button" onClick={logout}>Sign Out</button>
                     </div>
                 </div>

@@ -20,14 +20,12 @@
 	height: 100%;
 	display: flex;
 	// justify-content: center;
-
-
 }
 // .navbar-logo {
 
 // }
 
-.nav-button{
+.nav-button {
 	text-decoration: none;
 	color: rgb(44, 44, 44);
 	border-radius: 10px;
@@ -36,6 +34,7 @@
 	padding: 5px;
 	margin: 10px;
 	background-color: #E8DAB2;
+
 	&:hover {
 		background-color: rgb(192, 228, 228);
 	}
@@ -67,53 +66,57 @@
 .nav-buttons {
 	background-color: transparent;
   	border: none;
-	color:rgb(44, 44, 44);
+	color: #4F6D7A;
 	font-weight: bold;
-	height: 100%;
+	height: 80px;
 	padding: 17px;
 
 	&:hover {
-		background-color: #f18c64;
+		background-color: #DD6E42;
+		color: #E8DAB2;
 	}
+
 	&:active {
-		background-color: #cf7957;
+		background-color: #4F6D7A;
+		color: #E8DAB2;
 	}
 }
 
 .nav-divider {
-	background-color: rgb(44, 44, 44);
+	background-color: #4F6D7A;
 	width: 1px;
-	height: 38px;
+	height: 80px;
 }
 
 .logout-button {
-  background-color: #C0D6DF;
-  border: none;
-  border-radius: 10px;
-  color: #4F6D7A;
-  font-weight: bold;
-  padding: 10px 20px;
-  margin-left: 5px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 12px;  
-  cursor: pointer;
-  transition: all 0.25s ease-in-out;
+	background-color: #C0D6DF;
+	border: none;
+	border-radius: 10px;
+	color: #4F6D7A;
+	font-weight: bold;
+	padding: 10px 20px;
+	margin-left: 5px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 12px;  
+	cursor: pointer;
+	transition: all 0.25s ease-in-out;
 
-	&:hover{
+	&:hover {
 		background-color: #4F6D7A;
 		color: #C0D6DF;
 	}
-	&:active{
+
+	&:active {
 		background-color: #3a535e;
 		margin-top:5px;
 	}
 }
 
 .nav-user-info > p {
-	color: #EAEAEA;
+	color: #3a535e;
 	font-weight: bold;
-	margin-right: 10px;
-	text-shadow: 1px 1px 4px rgb(44, 44, 44);
+	margin-right: 17px;
+	text-shadow: 1px 1px 4px #EAEAEA;
 }
