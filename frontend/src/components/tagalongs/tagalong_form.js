@@ -14,6 +14,9 @@ class TagAlongForm extends React.Component {
             startCity:'',
             endLocation: '',
             category: 'chat',
+            date:"",
+            startingTime:"",
+            duration:"",
             user: this.props.currentUser.id,
             errors: {}
         }
@@ -44,6 +47,9 @@ class TagAlongForm extends React.Component {
                 startLocation: this.state.startLocation,
                 endLocation: this.state.endLocation,
                 category: this.state.category,
+                date: this.state.date,
+                startingTime: this.state.startingTime,
+                duration: this.state.duration,
                 user: this.props.currentUser.id,
                 startLatLng:[startingLatLng.lat,startingLatLng.lng],
                 endLatLng:[endingLatLng.lat,endingLatLng.lng]
@@ -51,7 +57,6 @@ class TagAlongForm extends React.Component {
             this.props.createTagAlong(tagalong).then((data)=>this.props.history.push(`/map/${data.tagAlong.data._id}`))
           })
         })
-        
     }
 
     renderErrors() {
@@ -94,6 +99,24 @@ class TagAlongForm extends React.Component {
                             value={this.state.endLocation}
                             onChange={this.update('endLocation')}
                             placeholder="Enter Ending Locaton" 
+                        />
+                        <label className="tagalong-form-label">Date</label>
+                        <input type="date"
+                            value={this.state.date}
+                            onChange={this.update('date')}
+                        />
+
+                        <label className="tagalong-form-label">Starting Time</label>
+                        <input type="text"
+                            value={this.state.startingTime}
+                            onChange={this.update('startingTime')}
+                            placeholder="Enter starting time" 
+                        />
+                        <label className="tagalong-form-label">duration</label>
+                        <input type="text"
+                            value={this.state.duration}
+                            onChange={this.update('duration')}
+                            placeholder="Enter duration" 
                         />
                         <label className="tagalong-form-label">Type of TagAlong:</label>
                         <select id="tagalong-category" name="tagalong-category"
