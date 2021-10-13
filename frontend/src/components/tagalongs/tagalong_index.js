@@ -39,12 +39,13 @@ class TagAlongIndex extends React.Component {
                 { tagAlongs.map((tagalong, i) => (
                     <li key={`tagalong-${i}`}
                         className="tagalong-index-item">
-                            <Link to={`/map/${tagalong._id}`}>Go to Map</Link>
+                            <Link to={`/map/${tagalong._id}`}>
                             <h1>{tagalong.title}</h1>
                             <h3>{tagalong.category}</h3>
                             <h3>{tagalong.startLocation}</h3>
                             <h3>{tagalong.endLocation}</h3>
                             <h2>{tagalong.body}</h2>
+                            </Link>
                     </li>
                 ))}
             </ul>

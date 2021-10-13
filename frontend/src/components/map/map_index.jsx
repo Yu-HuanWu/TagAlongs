@@ -33,18 +33,13 @@ export class MapIndex extends Component {
     }
   };
 
-  // componentDidMount(){
-  //   this.props.fetchTagAlongs().then((data)=>this.setState({items:data}))
-  //   console.log(this.state)
-  // }
-
 
   render() {
     let all = Object.values(this.props.tagAlongs);
     let filtered = all.filter(tagalong => {
             return tagalong.category === this.props.filter
     })
-    
+
     let tagAlongs;
         if (this.props.filter === 'all') {
             tagAlongs = all;
