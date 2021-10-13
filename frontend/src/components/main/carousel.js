@@ -3,12 +3,14 @@ import { Carousel } from 'react-bootstrap'
 import img1 from "./img/home1.jpeg"
 import img2 from "./img/home5.jpeg"
 import img3 from "./img/home3.jpeg"
+// import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const CarouselContainer = () => {
     return ( 
       <div className="carousel-container">
-        <Carousel controls={false} fade={true}>
-        <Carousel.Item interval={5000}>
+        <Carousel controls={false} wrap={true}>
+        <Carousel.Item interval={6000}>
           <img
             className="d-block w-100"
             src={img1}
@@ -19,7 +21,7 @@ const CarouselContainer = () => {
             <p></p>
           </Carousel.Caption>
         </Carousel.Item>
-        <Carousel.Item interval={5000}>
+        <Carousel.Item interval={6000}>
           <img
             className="d-block w-100"
             src={img2}
@@ -30,7 +32,7 @@ const CarouselContainer = () => {
             <p></p>
           </Carousel.Caption>
         </Carousel.Item>
-        <Carousel.Item interval={5000}>
+        <Carousel.Item interval={6000}>
           <img
             className="d-block w-100"
             src={img3}
@@ -47,3 +49,4 @@ const CarouselContainer = () => {
 }
 
 export default CarouselContainer; 
+
