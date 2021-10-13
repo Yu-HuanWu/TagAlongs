@@ -17,7 +17,7 @@
 	box-shadow: 5px 5px 5px #4F6D7A;
 }
 
-.user-auth a{
+.nav-button{
 	text-decoration: none;
 	color: rgb(44, 44, 44);
 	border-radius: 10px;
@@ -32,6 +32,17 @@
 		position: relative;
 		top: 2px;
 	}
+}
+
+.nav-button-clicked {
+	text-decoration: none;
+	color: rgb(44, 44, 44);
+	border-radius: 10px;
+	padding: 5px;
+	margin: 10px;
+	background-color: rgb(158, 197, 197);
+	position: relative;
+	top: 1.2px;
 }
 
 .nav-user-info {
