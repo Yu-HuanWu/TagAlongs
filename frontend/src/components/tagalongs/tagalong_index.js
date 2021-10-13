@@ -1,13 +1,15 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import MapIndexContainer from '../map/map_index_container';
 
 class TagAlongIndex extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            filter: 'all'
+            filter: 'all',
+            chosenTagAlongs:[]
         }
     }
 
@@ -32,7 +34,6 @@ class TagAlongIndex extends React.Component {
         } else {
             tagAlongs = filtered;
         }
-        console.log(tagAlongs)
         return (
             <ul className="tagalong-index-list">
                 { tagAlongs.map((tagalong, i) => (
@@ -88,6 +89,7 @@ class TagAlongIndex extends React.Component {
                 <div className="tagalongs-index">
                     { this.renderTagAlongs() }
                 </div>
+                <MapIndexContainer filter={this.state.filter}/>
             </div>
         )
     }

@@ -9,7 +9,7 @@ const tagAlongsReducer = (initialState = {}, action) => {
 
     switch(action.type) {
         case RECEIVE_TAGALONG:
-            let newState = Object.assign({},action.tagAlong.data)
+            let newState = Object.assign({},{0:action.tagAlong.data})
             return newState;
         case RECEIVE_TAGALONGS:
             let totalState = Object.assign({},action.tagAlongs.data)
