@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import './nav.scss'
+import tagalongslogo from './tagalongs_logo.svg'
 
 class Nav extends React.Component{
     constructor(props) {
@@ -28,7 +29,7 @@ class Nav extends React.Component{
             return (
                 <div className="main-nav">
                     <Link to="/">
-                        TagAlongs
+                        <img src={tagalongslogo} alt="TagAlongs" className="navbar-logo" />
                     </Link>
                     <div className="nav-user-info">
                         <p className="users-name">Hello, {user.handle}</p>
@@ -48,7 +49,7 @@ class Nav extends React.Component{
             return (
                 <div className="main-nav">
                     <Link to="/">
-                        TagAlongs
+                        <img src={tagalongslogo} alt="TagAlongs" className="navbar-logo"/>
                     </Link>
                     <div className="user-auth">
                         <Link className="nav-button-clicked" to="/signup">Sign Up</Link>
@@ -59,7 +60,7 @@ class Nav extends React.Component{
                 return (
                     <div className="main-nav">
                     <Link to="/">
-                        TagAlongs
+                        <img src={tagalongslogo} alt="TagAlongs" className="navbar-logo" />
                     </Link>
                     <div className="user-auth">
                         <Link onClick={this.toggleButton} className="nav-button" to="/signup">Sign Up</Link>
@@ -70,7 +71,7 @@ class Nav extends React.Component{
                 return (
                     <div className="main-nav">
                         <Link to="/">
-                            TagAlongs
+                            <img src={tagalongslogo} alt="TagAlongs" className="navbar-logo" />
                         </Link>
                         <div className="user-auth">
                             <Link onClick={this.toggleButton} className="nav-button" to="/signup">Sign Up</Link>
