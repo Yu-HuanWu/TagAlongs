@@ -106,5 +106,23 @@ router.post('/login', (req, res) => {
         });
 });
 
+
+
+router.post('/update', (req, res) => {
+    const { errors, isValid } = validateRegisterInput(req.body);
+    if (!isValid) {
+        return res.status(400).json(errors);
+    }
+
+    User.update({_id: req.params.id},{
+      rating: req.body.rating,
+      tagAlongs: req.body.tagAlongs,
+      avatar: req.body.avatar,
+      tagAlongsCompleted: req.body.tagAlongsCompleted
+    }).then(()=>res.json({updated:"user was updated"}))
+    .catch(err=>res.status(404).json({noUserFound:"No User was found with that ID"}))
+});
+
+
 module.exports = router;
 
