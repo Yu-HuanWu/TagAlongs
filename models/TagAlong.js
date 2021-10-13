@@ -19,9 +19,17 @@ const TagAlongSchema = new Schema({
     type: String,
     required: true
   },
+  startLatLng:{
+    type: [Number],
+    required:true
+  },
   endLocation: {
     type: String,
     required: true
+  },
+  endLatLng:{
+    type: [Number],
+    required:true
   },
   category:{
     type: String,
