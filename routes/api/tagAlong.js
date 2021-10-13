@@ -43,7 +43,15 @@ router.post("/createTagAlong",
           startingTime: req.body.startingTime,
           duration: req.body.duration
         });
-        newTagAlong.save().then(tagAlong => res.json(tagAlong))
+        newTagAlong.save().then(tagAlong => {
+          User.findOne({id:req.body.user})
+            .then((user)=>{
+              let usersTags = user.tagAlongs;
+              usersTags.push(tagAlong.id);
+              User.update({_id:req.body.user},{tagAlongs:usersTags})
+            })
+          res.json(tagAlong)
+        })
       }
     })
 })
