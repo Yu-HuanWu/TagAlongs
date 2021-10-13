@@ -1,14 +1,18 @@
 import { connect } from 'react-redux';
 import UserProfile from './user_profile';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
     return {
-        user: state.session.user
+        currentUser: state.session.user
     }
 };
 
-const mapDispatchToProps = (dispatch) => ({
-    
-})
+// need to create updateUser action
 
-export default connect(mapStateToProps, mapDispatchToProps)(Nav);
+// const mapDispatchToProps = dispatch => {
+//     return {
+//         updateUser: userId => dispatch(updateUser)
+//     }
+// }
+
+export default connect(mapStateToProps, null)(UserProfile);
