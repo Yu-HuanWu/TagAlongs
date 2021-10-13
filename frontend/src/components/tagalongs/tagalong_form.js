@@ -1,5 +1,7 @@
+
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+
 
 class TagAlongForm extends React.Component {
     constructor(props) {
@@ -9,8 +11,9 @@ class TagAlongForm extends React.Component {
             title: '',
             body: '',
             startLocation: '',
+            startCity:'',
             endLocation: '',
-            category: 'Chat',
+            category: 'chat',
             user: this.props.currentUser.id,
             errors: {}
         }
@@ -27,16 +30,28 @@ class TagAlongForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-
-        let tagalong = {
-            title: this.state.title,
-            body: this.state.body,
-            startLocation: this.state.startLocation,
-            endLocation: this.state.endLocation,
-            category: this.state.category,
-            user: this.props.currentUser.id
-        }
-        this.props.createTagAlong(tagalong);
+        fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${this.state.startLocation}&key=${process.env.REACT_APP_GOOGLE_API_KEY}`)
+        .then(response=>response.json())
+        .then(startData=> {
+          let startingLatLng = startData.results[0].geometry.location
+          fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${this.state.endLocation}&key=${process.env.REACT_APP_GOOGLE_API_KEY}`)
+          .then(response=>response.json())
+          .then(endData=> {
+            let endingLatLng = endData.results[0].geometry.location
+            let tagalong = {
+                title: this.state.title,
+                body: this.state.body,
+                startLocation: this.state.startLocation,
+                endLocation: this.state.endLocation,
+                category: this.state.category,
+                user: this.props.currentUser.id,
+                startLatLng:[startingLatLng.lat,startingLatLng.lng],
+                endLatLng:[endingLatLng.lat,endingLatLng.lng]
+            }
+            this.props.createTagAlong(tagalong).then((data)=>this.props.history.push(`/map/${data.tagAlong.data._id}`))
+          })
+        })
+        
     }
 
     renderErrors() {
