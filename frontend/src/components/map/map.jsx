@@ -66,7 +66,7 @@ export class MapComponent extends Component {
               Starting Location: {items.startLocation}
             </div>
             <div>
-              Ending Locaiton: {items.endLocation}
+              Ending Location: {items.endLocation}
             </div>
           </div>
 
