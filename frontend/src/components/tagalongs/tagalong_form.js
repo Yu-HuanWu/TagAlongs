@@ -13,7 +13,7 @@ class TagAlongForm extends React.Component {
             startLocation: '',
             startCity:'',
             endLocation: '',
-            category: 'Chat',
+            category: 'chat',
             user: this.props.currentUser.id,
             errors: {}
         }
