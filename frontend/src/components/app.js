@@ -16,6 +16,8 @@ const App = () => (
         <div className="header">
             <NavBar /> 
         </div>
+
+
         <div className="splash">
             <div className="main">
                 <Switch>
@@ -28,6 +30,7 @@ const App = () => (
                 </Switch>
             </div>
         </div>
+        <div className="background"></div>
     </div>
 
 );
