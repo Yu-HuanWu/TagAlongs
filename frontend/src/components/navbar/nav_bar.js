@@ -35,7 +35,7 @@ class Nav extends React.Component{
                     </Link>
                     <div>
                         <p className="users-name">Hello, {user.handle}</p>
-                    <button className="logout-button" onClick={logout}>Sign Out</button>
+                        <button className="logout-button" onClick={logout}>Sign Out</button>
                     </div>
                 </div>
             )
@@ -58,7 +58,7 @@ class Nav extends React.Component{
                         TagAlongs
                     </Link>
                     <div className="user-auth">
-                        <Link className="nav-button-clicked" to="/signup">Sign Up()</Link>
+                        <Link className="nav-button-clicked" to="/signup">Sign Up</Link>
                         <Link onClick={this.toggleButton} className="nav-button" to="/login">Log In</Link>
                     </div>
                 </div>
@@ -70,7 +70,7 @@ class Nav extends React.Component{
                 </Link>
                 <div className="user-auth">
                     <Link onClick={this.toggleButton} className="nav-button" to="/signup">Sign Up</Link>
-                    <Link className="nav-button-clicked" to="/login">Log In()</Link>
+                    <Link className="nav-button-clicked" to="/login">Log In</Link>
                 </div>
             </div>
             )}
