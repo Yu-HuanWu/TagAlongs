@@ -56,11 +56,11 @@ class LoginForm extends React.Component {
     render() {
         return (
         <div className="splash">
-        <div className="main"></div>
+        {/* <div className="main"></div> */}
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit}>
                     <div className="login-form">
-
+                        
                         <div className="input-container">
                             <input type="text"
                                 value={this.state.handle}

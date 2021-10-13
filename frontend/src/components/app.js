@@ -20,18 +20,14 @@ const App = () => (
             <NavBar /> 
         </div>
         <div className="body">
-            {/* <div className="splash"> */}
-                {/* <div className="main"> */}
-                    <Switch>
-                        <AuthRoute exact path="/login" component={LoginFormContainer} />
-                        <AuthRoute exact path="/signup" component={SignupFormContainer} />
-                        <ProtectedRoute exact path="/newtagalong" component={TagAlongFormContainer} />
-                        <ProtectedRoute exact path="/tagalongs" component={TagAlongIndexContainer} />
-                        <Route path="/map" component={MapContainer}/>
-                        <Route path="/" component={HomeContainer}/>
-                    </Switch>
-                {/* </div> */}
-            {/* </div> */}
+                <Switch>
+                    <AuthRoute exact path="/login" component={LoginFormContainer} />
+                    <AuthRoute exact path="/signup" component={SignupFormContainer} />
+                    <ProtectedRoute exact path="/newtagalong" component={TagAlongFormContainer} />
+                    <ProtectedRoute exact path="/tagalongs" component={TagAlongIndexContainer} />
+                    <Route path="/map" component={MapContainer}/>
+                    <Route path="/" component={HomeContainer}/>
+                </Switch>
         </div>   
         <footer>
             <FooterContainer/>
