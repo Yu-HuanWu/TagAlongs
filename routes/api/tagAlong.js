@@ -38,9 +38,20 @@ router.post("/createTagAlong",
           startLatLng: req.body.startLatLng,
           endLocation: req.body.endLocation,
           endLatLng: req.body.endLatLng,
-          category: req.body.category
+          category: req.body.category,
+          date: req.body.date,
+          startingTime: req.body.startingTime,
+          duration: req.body.duration
         });
-        newTagAlong.save().then(tagAlong => res.json(tagAlong))
+        newTagAlong.save().then(tagAlong => {
+          User.findOne({id:req.body.user})
+            .then((user)=>{
+              let usersTags = user.tagAlongs;
+              usersTags.push(tagAlong.id);
+              User.update({_id:req.body.user},{tagAlongs:usersTags})
+            })
+          res.json(tagAlong)
+        })
       }
     })
 })
@@ -69,7 +80,10 @@ passport.authenticate("jwt", { session: false }),
           startLatLng: req.body.startLatLng,
           endLocation: req.body.endLocation,
           endLatLng: req.body.endLatLng,
-          category: req.body.category
+          category: req.body.category,
+          date: req.body.date,
+          startingTime: req.body.startingTime,
+          duration: req.body.duration
         }).then(() => res.json({updated: "tagalong was updated"}))
         .catch(err=> res.status(404).json({noTagAlongFound: "No TagAlong was found with that ID"}))
 })

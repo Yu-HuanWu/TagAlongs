@@ -12,7 +12,7 @@ html {
   flex-direction: column;
   // justify-content: center;
   align-items: center;
-  background-color: #4f6d7a8e;
+  background-color: #4f6d7aad;
   min-height: 100vh;
 }
 
@@ -22,19 +22,22 @@ html {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #E8DAB2;
+    background-color: #EAEAEA;
     // padding: 10px;
     margin: 0 auto;
     margin-top: 7%;
     width: 300px;
     border-radius: 10px;
-    box-shadow: 5px 5px 5px #4F6D7A;
+    box-shadow: 5px 5px 5px #DD6E42;
+    transition: all 0.8s ease-in-out;
+    &:hover {
+      box-shadow: 13px 13px 5px #DD6E42;
+    }
 }
 
+
 html {
-  // position: absolute;
   background-image: url("https://blog-www.pods.com/wp-content/uploads/2021/03/resized_FI_Getty_San-Francisco-CA-1.jpg");
-  // opacity: 0.2;
   background-size: cover;
   background-color: #EAEAEA;
   bottom: 0%;
@@ -42,26 +45,7 @@ html {
   width: 100%;
   // z-index: -1;
   background-attachment: fixed;
-
-  // animation-name: backgroundAnime;
-  // animation-duration: 8s;
-  // animation-direction: alternate;
-  // animation-iteration-count: infinite;
 }
-
-// .background-img {
-//   position: absolute;
-//   opacity: 0.2;
-//   top: 0%;
-//   height: 100%;
-//   width:100%;
-//   z-index: -1;
-//   overflow-x: hidden;
-//   animation-name: backgroundAnime;
-//   animation-duration: 10s;
-//   animation-direction: alternate;
-//   animation-iteration-count: infinite;
-// }
 
 @keyframes backgroundAnime {
     0% {height: 100%; top:0%; opacity: 0.2;}
@@ -86,43 +70,3 @@ html {
   }
 }
 
-.carousel-container{
-  width: 100%;
-  height: 700px;
-  z-index: -1;
-}
-
-.carousel { 
-  height: 100%;
-  width: 100%;
-  // z-index: -1;
-  padding-bottom: 20px;
-  align-items: center;
-  overflow: hidden;
-}
-
-.home-mid {
-  width: 100%;
-  height: 700px;
-  font-size: 50px;
-  text-align: center;
-  z-index: -1;
-  background-color: transparent;
-  // position: absolute; 
-}
-
-
-.buffer{
-  width: 100%;
-  height: 25px;
-  background-color: #DD6E42;
-}
-
-.footer {
-  width: 100%;
-  height: 200px;
-  background-color: #DD6E42;
-  // // margin-bottom: -50px;
-  // margin-top: auto;
-  z-index: 3;
-}

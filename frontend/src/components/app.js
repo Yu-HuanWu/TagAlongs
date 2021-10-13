@@ -14,7 +14,6 @@ import { Route } from 'react-router';
 import '../app.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
 const App = () => (
     <div>
         <div className="body">
