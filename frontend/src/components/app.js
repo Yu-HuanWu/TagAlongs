@@ -11,7 +11,7 @@ import HomeContainer from './main/home'
 import FooterContainer from "./main/footer"
 import { Route } from 'react-router';
 import '../app.scss'
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const App = () => (
