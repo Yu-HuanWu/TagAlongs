@@ -48,7 +48,9 @@ router.post("/createTagAlong",
             .then((user)=>{
               let usersTags = user.tagAlongs;
               usersTags.push(tagAlong.id);
-              User.update({_id:req.body.user},{tagAlongs:usersTags})
+              user.tagAlongs = usersTags
+              user.markModified("tagAlongs");
+              user.save();
             })
           res.json(tagAlong)
         })

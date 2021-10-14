@@ -23,8 +23,6 @@ class Nav extends React.Component{
     
     render() {
         const {user, logout} = this.props; 
-        console.log(this.state.toggle); 
-
         if (user && user.handle) {
             return (
                 <div className="main-nav-container">
