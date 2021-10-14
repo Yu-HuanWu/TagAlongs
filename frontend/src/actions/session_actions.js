@@ -50,3 +50,11 @@ export const logout = () => dispatch => {
     APIUtil.setAuthToken(false)
     dispatch(logoutUser())
 };
+
+export const updateUser = userId => dispatch => (
+    APIUtil.updateUser(userId).then(user => (
+        dispatch(receiveCurrentUser(user))
+    ), err => (
+        dispatch(receiveErrors(err.response.data))
+    ))
+)
