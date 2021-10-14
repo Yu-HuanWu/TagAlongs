@@ -132,25 +132,25 @@ router.post('/update', (req, res) => {
 });
 
 
-router.post('/addTagAlongs/:id', (req, res) => {
-    // const { errors, isValid } = validateRegisterInput(req.body);
-    // if (!isValid) {
-    //     return res.status(400).json(errors);
-    // }
+// router.post('/addTagAlongs/:id', (req, res) => {
+//     // const { errors, isValid } = validateRegisterInput(req.body);
+//     // if (!isValid) {
+//     //     return res.status(400).json(errors);
+//     // }
 
-    // User.update({_id: req.params.UserID},{
-    //   tagAlongs: req.body.tagAlongs,
-    // }).then(()=>res.json({updated:"user was updated"}))
-    // .catch(err=>res.status(404).json({noUserFound:"No User was found with that ID"}))
+//     // User.update({_id: req.params.UserID},{
+//     //   tagAlongs: req.body.tagAlongs,
+//     // }).then(()=>res.json({updated:"user was updated"}))
+//     // .catch(err=>res.status(404).json({noUserFound:"No User was found with that ID"}))
 
 
-  User.findOne({id:req.params.id})
-    .then((user)=>{
+//   User.findOne({id:req.params.id})
+//     .then((user)=>{
       
-    })
+//     })
 
 
-});
+// });
 
 
 // axios.post(`/api/users/addTagAlongs/${currentUser.id}`)

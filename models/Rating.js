@@ -9,13 +9,9 @@ const RatingSchema = new Schema({
     min:-1,
     max:+1
   },
-  reviewer:{
-    type: Schema.Types.ObjectId,
-    ref:'users'
-  },
-  reviewee:{
-    type: Schema.Types.ObjectId,
-    ref:'users'
+  reviewPair:{
+    type:[Schema.Types.ObjectId],
+    required:true
   }
 })
 
