@@ -139,4 +139,4 @@ class TagAlongForm extends React.Component {
     }
 }
 
-export default withRouter(TagAlongForm);
+export default withRouter(TagAlongForm);  
