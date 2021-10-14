@@ -1,0 +1,111 @@
+.user-profile {
+    display: flex;
+    margin-top: 30px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-bottom: 30px;
+    border: 2px solid #EAEAEA;
+
+    .user-profile-left {
+        display: flex;
+        color: #E8DAB2;
+        flex-direction: column;
+        align-items: center;
+        background-color: #4F6D7A;
+        width: 40vh;
+        padding: 20px;
+
+        h1 {
+            padding: 10px;
+            font-size: 24px;
+            font-weight: bolder;
+        }
+
+        p {
+            padding: 2px;
+            margin-top: -5px;
+            margin-bottom: 5px;
+        }
+
+        b {
+            text-decoration: underline;
+        }
+
+        .user-profile-avatar {
+            border: 2px solid #C0D6DF;
+            background-color: #C0D6DF;
+            border-radius: 50%;
+            width: 35vh;
+
+            &:hover {
+                opacity: 0.5;
+            }
+
+            &:active {
+                opacity: 0.7;
+            }
+        }
+
+        .user-profile-nav-button {
+            outline: none;
+            border: none;
+            border-top: 1px solid #C0D6DF;
+            border-bottom: 1px solid #C0D6DF;
+            width: 40vh;
+            padding: 10px;
+            margin-top: 5px;
+            background-color: #46606b;
+            color: #E8DAB2;
+            width: 40vh;
+
+            &:hover {
+                background-color: #E8DAB2;
+                color: #4F6D7A;
+            }
+
+            &:active {
+                background-color: #f7e7c0;
+            }
+        }
+    }
+
+    .user-profile-right {
+        color: #4F6D7A;
+        background: #C0D6DF;
+        width: 80vh;
+        padding: 20px;
+
+        
+        .avatar-selection-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            
+            .avatar-selection-button-selected {
+                border: 2px solid #C0D6DF;
+                border-radius: 50%;
+                padding: 10px;
+                max-width: 150px;
+    
+                &:hover {
+                    opacity: 0.5;
+                }
+    
+                &:active {
+                    opacity: 0.7;
+                }
+            }
+
+            .avatar-selection-button-not-selected {
+                border: 2px solid #C0D6DF;
+                border-radius: 50%;
+                opacity: 0.5;
+                padding: 10px;
+                max-width: 150px;
+    
+                &:hover {
+                    opacity: 1.0;            
+                }
+            }
+        }
+    }
+}

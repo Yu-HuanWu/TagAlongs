@@ -33,6 +33,22 @@ const TagAlongSchema = new Schema({
   category:{
     type: String,
     required:true
+  },
+  date:{
+      type: Date,
+      required: true
+    },
+  startingTime:{
+    type:String,
+    required:true
+  },
+  duration:{
+    type: String,
+    required: true
+  },
+  completed:{
+    type: Boolean,
+    default: false
   }
 },{
     timestamps:true
