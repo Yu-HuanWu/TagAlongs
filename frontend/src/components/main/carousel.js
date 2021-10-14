@@ -4,12 +4,11 @@ import './carousel.scss'
 import img1 from "./img/home1.jpeg"
 import img2 from "./img/home5.jpeg"
 import img3 from "./img/home3.jpeg"
-// import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const CarouselContainer = () => {
     return ( 
-      <div className="carousel-container">
+      // <div className="carousel-container">
         <Carousel controls={false} wrap={true}>
         <Carousel.Item interval={6000}>
           <img
@@ -18,8 +17,7 @@ const CarouselContainer = () => {
             alt="First slide"
           />
           <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p></p>
+            <h3 className="top-left">First slide label</h3>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item interval={6000}>
@@ -45,7 +43,7 @@ const CarouselContainer = () => {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-    </div>
+    // </div>
     )
 }
 
