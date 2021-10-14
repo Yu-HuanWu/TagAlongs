@@ -10,7 +10,16 @@ class UserProfile extends React.Component {
         
         this.state = {
             avatar: this.props.currentUser.avatar,
+            rightRender: 'default'
         }
+    }
+
+    componentDidMount() {
+        this.props.fetchTagAlongs();
+    }
+
+    changeRightContainer(type) {
+
     }
 
     renderAvatar() {
@@ -37,13 +46,36 @@ class UserProfile extends React.Component {
                     <p>Tagged Along <b>{ user.tagAlongsCompleted }</b> Times</p>
                     <div className="user-profile-nav">
                         <ul className="user-profile-nav-list">
-
+                            <li className="user-profile-nav-item">
+                                <button onClick={() => this.changeRightContainer("completed")}
+                                    className="user-profile-nav-button">
+                                        My Completed TagAlongs
+                                </button>
+                            </li>
+                            <li className="user-profile-nav-item">
+                                <button onClick={() => this.changeRightContainer("ongoing")}
+                                    className="user-profile-nav-button">
+                                        My Ongoing TagAlongs
+                                </button>
+                            </li>
+                            <li className="user-profile-nav-item">
+                                <button onClick={() => this.changeRightContainer("achievements")}
+                                    className="user-profile-nav-button">
+                                        My Achievements
+                                </button>
+                            </li>
+                            <li className="user-profile-nav-item">
+                                <button onClick={() => this.changeRightContainer("all")}
+                                    className="user-profile-nav-button">
+                                        My Badges
+                                </button>
+                            </li>
                         </ul>
                     </div>
                 </div>
                 <div className="user-profile-right">
                     <div className="user-tagalongs">
-                        {/* { this.renderRightProfile() } */}
+                        { this.changeRightContainer("all") }
                         Temp
                     </div>
                 </div>
