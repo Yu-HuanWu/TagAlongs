@@ -37,8 +37,8 @@ router.post('/register', (req, res) => {
                     password: req.body.password,
                     birthdate: req.body.birthdate,
                     firstName: req.body.firstName,
-                    lastName: req.body.lastName
-                    
+                    lastName: req.body.lastName,
+                    tagAlongs: []
                 });
 
                 bcrypt.genSalt(10, (err, salt) => {
@@ -48,7 +48,7 @@ router.post('/register', (req, res) => {
                         newUser
                             .save()
                             .then(user => {
-                                const payload = { id: user.id, handle: user.handle };
+                                const payload = { _id: user.id, handle: user.handle };
 
                                 jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
                                     res.json({
@@ -57,7 +57,7 @@ router.post('/register', (req, res) => {
                                     });
                                 });
                             })
-                            .catch(err => console.log(err));
+                        .catch(err => console.log(err));
                     });
                 });
             }
@@ -85,7 +85,7 @@ router.post('/login', (req, res) => {
                 .then(isMatch => {
                     if (isMatch) {
                         const payload = {
-                            id: user.id,
+                            _id: user.id,
                             handle: user.handle,
                             email: user.email,
                             birthdate: user.birthdate,
@@ -134,14 +134,12 @@ router.post('/update', (req, res) => {
 
 
 router.post('/updateAvatar', (req, res) => {
-    User.findOne({id:req.body.UserID})
+    User.findOne({_id:req.body.UserID})
       .then((user)=>{
         if(user){
-          console.log(user)
           user.avatar = req.body.avatar;
           user.markModified("avatar");
           user.save();
-          console.log(user)
           return res.json(user)
         }
       })

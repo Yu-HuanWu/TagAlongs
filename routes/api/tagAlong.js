@@ -74,20 +74,41 @@ passport.authenticate("jwt", { session: false }),
   if(!isValid){
     return res.status(400).json(errors);
   }
-  TagAlong.update({_id: req.params.id},{
-          title: req.body.title,
-          body: req.body.body,
-          user: req.body.user,
-          startLocation: req.body.startLocation,
-          startLatLng: req.body.startLatLng,
-          endLocation: req.body.endLocation,
-          endLatLng: req.body.endLatLng,
-          category: req.body.category,
-          date: req.body.date,
-          startingTime: req.body.startingTime,
-          duration: req.body.duration
-        }).then(() => res.json({updated: "tagalong was updated"}))
-        .catch(err=> res.status(404).json({noTagAlongFound: "No TagAlong was found with that ID"}))
+
+  TagAlong.findOne({id:req.params.id})
+    .then((tagAlong)=>{
+      if(!tagAlong){
+        errors.id = "There is no TagALong with that ID";
+        return res.status(400).json({ errors: "There is no TagALong with that ID" })
+      }else{
+          tagAlong.title = req.body.title,
+          tagAlong.body = req.body.body,
+          tagAlong.user = req.body.user,
+          tagAlong.startLocation = req.body.startLocation,
+          tagAlong.startLatLng = req.body.startLatLng,
+          tagAlong.endLocation = req.body.endLocation,
+          tagAlong.endLatLng = req.body.endLatLng,
+          tagAlong.category = req.body.category,
+          tagAlong.date = req.body.date,
+          tagAlong.startingTime = req.body.startingTime,
+          tagAlong.duration = req.body.duration
+
+          tagAlong.markModified("title");
+          tagAlong.markModified("body");
+          tagAlong.markModified("user");
+          tagAlong.markModified("startLocation");
+          tagAlong.markModified("startLatLng");
+          tagAlong.markModified("endLocation");
+          tagAlong.markModified("endLatLng");
+          tagAlong.markModified("category");
+          tagAlong.markModified("date");
+          tagAlong.markModified("startingTime");
+          tagAlong.markModified("duration");
+          tagAlong.save();
+          return res.json(tagAlong)
+      }
+    })
+
 })
 
 router.post("/delete/:id",(req,res)=>{
@@ -98,13 +119,14 @@ router.post("/delete/:id",(req,res)=>{
 
 
 router.post("/acceptBy/:tagalongID",(req,res)=>{
-  TagAlong.findOne({id: req.params.UserID})
+  TagAlong.findOne({id: req.params.tagalongID})
   .then((tagAlong)=>{
     tagAlong.accepted = true;
-    tagAlong.acceptedBy = req.params.UserID;
+    tagAlong.acceptedBy = req.body.UserID;
     tagAlong.markModified("accepted");
     tagAlong.markModified("acceptedBy");
     tagAlong.save();
+    return res.json(tagAlong)
   })
   .catch(err => res.status(404).json({noTagAlongFound: "No TagAlong was found with that ID"}))
 })
@@ -121,6 +143,7 @@ router.post("/completeTagAlong/:tagalongID",(req,res)=>{
         user.markModified("tagAlongsCompleted");
         user.save();
       })
+    return res.json(tagAlong)
   })
   .catch(err => res.status(404).json({noTagAlongFound: "No TagAlong was found with that ID"}))
 })
