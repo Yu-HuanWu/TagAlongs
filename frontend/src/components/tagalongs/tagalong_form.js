@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import './tagalong.scss'
 
 
 class TagAlongForm extends React.Component {
@@ -75,6 +76,7 @@ class TagAlongForm extends React.Component {
         return (
             <div className="tagalong-form-container">
                 <form onSubmit={this.handleSubmit}>
+                    <h1 className="tagalong-form-title">Request A TagAlong</h1>
                     <div className="tagalong-form">
                         <label className="tagalong-form-label">Name</label>
                         <input type="text"
