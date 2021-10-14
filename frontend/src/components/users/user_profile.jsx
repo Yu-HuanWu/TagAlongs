@@ -150,6 +150,9 @@ class UserProfile extends React.Component {
 
     render() {
         const user = this.props.currentUser;
+        if (!user) {
+            return null;    
+        }
         return (
             <div className="user-profile">
                 <div className="user-profile-left">
