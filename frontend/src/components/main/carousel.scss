@@ -30,7 +30,7 @@
   padding-bottom: 10%;
   width: 100%;
   height: 100%;
-  font-size: 50px;
+  font-size: 2.3em;
   text-align: center;
   z-index: -1;
   background-color: transparent;
@@ -42,12 +42,18 @@
 .bottom-textbox{
   width: 90%;
   height: 100%;
-  color: #4f6d7aad; 
-  background-color: #E8DAB2;
+  color: #4F6D7A; 
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #eaeaeacb;
   border-radius: 22px;
   overflow: hidden;
   text-overflow: ellipsis;
   word-wrap: break-word;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.705);
+  transition: all 0.4s ease-in-out;
+  &:hover {
+    box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.705);
+  }
 }
 
 .footer {
@@ -111,10 +117,23 @@
 
 .info-title{
   text-decoration: underline;
+  color: #4F6D7A;
+  font-size: 1.3em;
+  text-shadow: 1px 1px 2px black;
 }
+
 
 .hero-text{
   z-index: 21;
 
 }
 
+@media screen and (max-width: 800px) {
+  .home-bottom {
+    font-size: 100%;
+  }
+
+  .body {
+
+  }
+}
