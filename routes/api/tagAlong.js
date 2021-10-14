@@ -127,8 +127,8 @@ router.post("/acceptBy/:tagalongID",(req,res)=>{
     tagAlong.markModified("accepted");
     tagAlong.markModified("acceptedBy");
     tagAlong.save();
-    return res.json(tagAlong)
     console.log(tagAlong)
+    return res.json(tagAlong)
   })
   .catch(err => res.status(404).json({noTagAlongFound: "No TagAlong was found with that ID"}))
 })
