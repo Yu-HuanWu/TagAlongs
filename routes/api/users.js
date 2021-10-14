@@ -122,7 +122,7 @@ router.post('/update', (req, res) => {
         return res.status(400).json(errors);
     }
 
-    User.update({_id: req.params.id},{
+    User.update({_id: req.body.UserID},{
       rating: req.body.rating,
       tagAlongs: req.body.tagAlongs,
       avatar: req.body.avatar,
