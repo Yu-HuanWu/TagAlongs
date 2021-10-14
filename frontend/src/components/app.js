@@ -26,7 +26,7 @@ const App = () => (
                     <ProtectedRoute exact path="/newtagalong" component={TagAlongFormContainer} />
                     <ProtectedRoute exact path="/tagalongs" component={TagAlongIndexContainer} />
                     <Route path="/map/:TagID" component={MapContainer}/>
-                    <Route path="/" component={HomeContainer}/>
+                    <AuthRoute path="/" component={HomeContainer}/>
                 </Switch>
             <div className="background"></div>  
         </div> 

@@ -1,6 +1,7 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Redirect } from 'react-router-dom';
 import './form.scss'
+
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -18,7 +19,7 @@ class LoginForm extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.currentUser === true) {
-            this.props.history.push('/');
+            this.props.history.push('/tagalongs');
         }
 
         this.setState({errors: nextProps.errors})
@@ -38,7 +39,7 @@ class LoginForm extends React.Component {
             password: this.state.password
         };
 
-        this.props.login(user); 
+        this.props.login(user)
     }
 
     renderErrors() {
@@ -54,6 +55,7 @@ class LoginForm extends React.Component {
     }
 
     render() {
+        console.log(this.props.history)
         return (
         <div className="splash">
         {/* <div className="main"></div> */}
