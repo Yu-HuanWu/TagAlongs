@@ -5,9 +5,6 @@ const Home = () => {
     return (
         <div className="home">
             <div className="carousel-top">
-                {/* <div>
-                    Hero-Cover Test
-                </div> */}
                 <Carousel />
             </div>
             <div className="buffer"/>
