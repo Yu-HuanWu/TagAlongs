@@ -45,6 +45,10 @@ const TagAlongSchema = new Schema({
   duration:{
     type: String,
     required: true
+  },
+  completed:{
+    type: Boolean,
+    default: false
   }
 },{
     timestamps:true
