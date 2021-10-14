@@ -20,7 +20,6 @@ export const updateUser = (userData) => {
     return axios.post('/api/users/update', userData)
 }
 
-
 export const updateAvatar = (userData)=>{
   return axios.post('/api/users/updateAvatar',userData)
 }

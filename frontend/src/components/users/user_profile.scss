@@ -85,7 +85,7 @@
                 border: 2px solid #C0D6DF;
                 border-radius: 50%;
                 padding: 10px;
-                max-width: 150px;
+                max-width: 200px;
     
                 &:hover {
                     opacity: 0.5;
@@ -101,12 +101,24 @@
                 border-radius: 50%;
                 opacity: 0.5;
                 padding: 10px;
-                max-width: 150px;
+                max-width: 200px;
     
                 &:hover {
                     opacity: 1.0;            
                 }
             }
         }
+    }
+}
+
+.avatar-selection-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+        font-size: 32px;
+        font-weight: bolder;
+        text-shadow: 1px 1px ghostwhite;
     }
 }

@@ -2,10 +2,12 @@ import React from 'react';
 import UserAchievements from './user_achievements';
 import { withRouter } from 'react-router-dom';
 import './user_profile.scss';
-import defaultAvatar from './avatars/default.png';
+import defaultAvatar from './avatars/default.svg';
 import blushAvatar from './avatars/blush.svg';
 import happyAvatar from './avatars/happy.svg';
 import tongueAvatar from './avatars/tongue.svg';
+import teethAvatar from './avatars/teeth.svg';
+import grinAvatar from './avatars/grin.svg';
 
 class UserProfile extends React.Component {
 
@@ -70,8 +72,8 @@ class UserProfile extends React.Component {
             case 'avatar':
 
                  return (
-                    <div>
-                        <h1>Select a new avatar.</h1>
+                    <div className="avatar-selection-container">
+                        <h1>Select a new avatar:</h1>
                         <ul className="avatar-selection-list">
                             <li>
                                 <img src={ defaultAvatar }
@@ -97,7 +99,25 @@ class UserProfile extends React.Component {
                                     alt="tongue-avatar" 
                                     className={this.avatarClassName("tongue")}/>
                             </li>
+                            <li>
+                                <img src={ teethAvatar }
+                                    onClick={() => this.changeAvatar("teeth")} 
+                                    alt="teeth-avatar" 
+                                    className={this.avatarClassName("teeth")}/>
+                            </li>
+                            <li>
+                                <img src={ grinAvatar }
+                                    onClick={() => this.changeAvatar("grin")} 
+                                    alt="grin-avatar" 
+                                    className={this.avatarClassName("grin")}/>
+                            </li>
                         </ul>
+                    </div>
+                )
+            default:
+                return (
+                    <div>
+                        Welcome to your user profile.
                     </div>
                 )
         }
@@ -144,6 +164,16 @@ class UserProfile extends React.Component {
                             onClick={() => this.changeRightContainer("avatar")}
                             alt="tongue-avatar" 
                             className="user-profile-avatar" />
+            case 'teeth':
+                return <img src={ teethAvatar } 
+                            onClick={() => this.changeRightContainer("avatar")}
+                            alt="teeth-avatar" 
+                            className="user-profile-avatar" />
+            case 'grin':
+                return <img src={ grinAvatar } 
+                            onClick={() => this.changeRightContainer("avatar")}
+                            alt="grin-avatar" 
+                            className="user-profile-avatar" />
             default:
                 return <img src={ defaultAvatar }
                             onClick={() => this.changeRightContainer("avatar")} 
@@ -157,7 +187,6 @@ class UserProfile extends React.Component {
       console.log(this.props.totalState)
       console.log(this.state)
         const user = this.props.currentUser;
-
         return (
             <div className="user-profile">
                 <div className="user-profile-left">
