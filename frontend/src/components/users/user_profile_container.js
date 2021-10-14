@@ -12,7 +12,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        updateUser: userId => dispatch(updateUser(userId)),
+        updateUser: userData => dispatch(updateUser(userData)),
         fetchTagAlongs: () => dispatch(fetchTagAlongs()),
     }
 }
