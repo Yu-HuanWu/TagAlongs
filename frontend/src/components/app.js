@@ -7,12 +7,12 @@ import TagAlongIndexContainer from './tagalongs/tagalong_index_container';
 import { Switch } from 'react-router-dom';
 import NavBar from "./navbar/nav_bar_container"
 import MapContainer from './map/map_container';
-import HomeContainer from './main/home'
-import FooterContainer from "./main/footer"
+import HomeContainer from './main/home';
+import FooterContainer from "./main/footer";
+import UserProfileContainer from './users/user_profile_container';
 import { Route } from 'react-router';
-import '../app.scss'
+import '../app.scss';
 // import 'bootstrap/dist/css/bootstrap.min.css';
-
 
 const App = () => (
     <div>
@@ -25,6 +25,7 @@ const App = () => (
                     <AuthRoute exact path="/signup" component={SignupFormContainer} />
                     <ProtectedRoute exact path="/newtagalong" component={TagAlongFormContainer} />
                     <ProtectedRoute exact path="/tagalongs" component={TagAlongIndexContainer} />
+                    <ProtectedRoute exact path="/profile" component={UserProfileContainer} />
                     <Route path="/map/:TagID" component={MapContainer}/>
                     <AuthRoute path="/" component={HomeContainer}/>
                 </Switch>

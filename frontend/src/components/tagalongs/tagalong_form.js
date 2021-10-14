@@ -15,6 +15,9 @@ class TagAlongForm extends React.Component {
             startCity:'',
             endLocation: '',
             category: 'chat',
+            date:"",
+            startingTime:"",
+            duration:"",
             user: this.props.currentUser.id,
             errors: {}
         }
@@ -45,6 +48,9 @@ class TagAlongForm extends React.Component {
                 startLocation: this.state.startLocation,
                 endLocation: this.state.endLocation,
                 category: this.state.category,
+                date: this.state.date,
+                startingTime: this.state.startingTime,
+                duration: this.state.duration,
                 user: this.props.currentUser.id,
                 startLatLng:[startingLatLng.lat,startingLatLng.lng],
                 endLatLng:[endingLatLng.lat,endingLatLng.lng]
@@ -52,7 +58,6 @@ class TagAlongForm extends React.Component {
             this.props.createTagAlong(tagalong).then((data)=>this.props.history.push(`/map/${data.tagAlong.data._id}`))
           })
         })
-        
     }
 
     renderErrors() {

@@ -33,7 +33,6 @@ export class MapIndex extends Component {
     }
   };
 
-
   render() {
     let all = Object.values(this.props.tagAlongs);
     let filtered = all.filter(tagalong => {
