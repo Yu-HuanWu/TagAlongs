@@ -12,7 +12,7 @@ import FooterContainer from "./main/footer";
 import UserProfileContainer from './users/user_profile_container';
 import { Route } from 'react-router';
 import '../app.scss';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => (
     <div>
