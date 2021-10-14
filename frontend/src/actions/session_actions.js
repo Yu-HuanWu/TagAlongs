@@ -66,3 +66,11 @@ export const updateAvatar = userData => dispatch => (
         dispatch(receiveErrors(err.response.data))
     ))
 )
+
+export const grabUser = UserID =>dispatch=>(
+  APIUtil.fetchUser(UserID).then(user=>(
+    dispatch(receiveCurrentUser(user.data))
+    ), err => (
+        dispatch(receiveErrors(err.response.data))
+    ))
+)
