@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import './nav.scss';
 import tagalongslogo from './tagalongs_logo.svg';
 import defaultAvatar from '../users/avatars/default.png';
-import blushAvatar from '../users/avatars/blush.png';
+import blushAvatar from '../users/avatars/blush.svg';
 import happyAvatar from '../users/avatars/happy.svg';
+import tongueAvatar from '../users/avatars/tongue.svg';
 
 class Nav extends React.Component{
     constructor(props) {
@@ -37,6 +38,10 @@ class Nav extends React.Component{
         case 'happy':
             return <img src={ happyAvatar } 
                         alt="happy-avatar" 
+                        className="user-nav-avatar" />
+        case 'tongue':
+            return <img src={ tongueAvatar } 
+                        alt="tongue-avatar" 
                         className="user-nav-avatar" />
         default:
             return <img src={ defaultAvatar } 

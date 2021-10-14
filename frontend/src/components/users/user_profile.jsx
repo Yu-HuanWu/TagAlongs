@@ -3,8 +3,9 @@ import UserAchievements from './user_achievements';
 import { withRouter } from 'react-router-dom';
 import './user_profile.scss';
 import defaultAvatar from './avatars/default.png';
-import blushAvatar from './avatars/blush.png';
+import blushAvatar from './avatars/blush.svg';
 import happyAvatar from './avatars/happy.svg';
+import tongueAvatar from './avatars/tongue.svg';
 
 class UserProfile extends React.Component {
 
@@ -86,6 +87,12 @@ class UserProfile extends React.Component {
                                     alt="happy-avatar" 
                                     className={this.avatarClassName("happy")}/>
                             </li>
+                            <li>
+                                <img src={ tongueAvatar }
+                                    onClick={() => this.changeAvatar("tongue")} 
+                                    alt="tongue-avatar" 
+                                    className={this.avatarClassName("tongue")}/>
+                            </li>
                         </ul>
                     </div>
                 )
@@ -127,6 +134,11 @@ class UserProfile extends React.Component {
                 return <img src={ happyAvatar } 
                             onClick={() => this.changeRightContainer("avatar")}
                             alt="happy-avatar" 
+                            className="user-profile-avatar" />
+            case 'tongue':
+                return <img src={ tongueAvatar } 
+                            onClick={() => this.changeRightContainer("avatar")}
+                            alt="tongue-avatar" 
                             className="user-profile-avatar" />
             default:
                 return <img src={ defaultAvatar }
