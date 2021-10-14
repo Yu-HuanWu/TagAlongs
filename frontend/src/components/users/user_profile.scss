@@ -5,12 +5,11 @@
 
     .user-profile-left {
         display: flex;
+        color: white;
         flex-direction: column;
-        background-color: gainsboro;
-        margin-right: 50px;
+        background-color: #4F6D7A;
         width: 30vh;
         padding: 20px;
-	    box-shadow: 0px 5px 5px #4F6D7A;
 
         h1 {
             font-size: 24px;
@@ -23,9 +22,10 @@
     }
 
     .user-profile-right {
-        background: gainsboro;
+        color: #4F6D7A;
+        background: #C0D6DF;
         width: 60vh;
         padding: 20px;
-        box-shadow: 0px 5px 5px #4F6D7A;
+	    // box-shadow: inset 0px 0px 10px black;
     }
 }
