@@ -132,6 +132,15 @@ router.post('/update', (req, res) => {
 });
 
 
+
+router.post('/updateAvatar', (req, res) => {
+    User.update({_id: req.body.UserID},{
+      avatar: req.body.avatar
+    }).then(()=>res.json({updated:"user was updated"}))
+    .catch(err=>res.status(404).json({noUserFound:"No User was found with that ID"}))
+});
+
+
 // router.post('/addTagAlongs/:id', (req, res) => {
 //     // const { errors, isValid } = validateRegisterInput(req.body);
 //     // if (!isValid) {
