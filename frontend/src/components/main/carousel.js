@@ -19,7 +19,7 @@ const CarouselContainer = () => {
           />
           <Carousel.Caption>
           <div class="carousel-content_1">
-            <p>TEST</p>
+            {/* <p>TEST</p> */}
           </div>
           </Carousel.Caption>
         </Carousel.Item>
@@ -31,7 +31,7 @@ const CarouselContainer = () => {
           />
           <Carousel.Caption>
           <div class="carousel-content_2">
-            <p>TEST</p>
+            {/* <p>TEST</p> */}
           </div>
           </Carousel.Caption>
         </Carousel.Item>
@@ -43,7 +43,7 @@ const CarouselContainer = () => {
           />
           <Carousel.Caption>
           <div class="carousel-content_3">
-            <p>TEST</p>
+            {/* <p>TEST</p> */}
            </div>
           </Carousel.Caption>
         </Carousel.Item>
