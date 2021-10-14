@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import './nav.scss'
-import tagalongslogo from './tagalongs_logo.svg'
+import './nav.scss';
+import tagalongslogo from './tagalongs_logo.svg';
+import defaultAvatar from '../users/avatars/default.png';
+import blushAvatar from '../users/avatars/blush.png';
 
 class Nav extends React.Component{
     constructor(props) {
@@ -19,7 +21,25 @@ class Nav extends React.Component{
         } else {
             this.setState({toggle: 'login'})
         }
-    }; 
+    };
+
+    renderAvatar() {
+        switch(this.state.avatar) {
+        case 'default':
+            return <img src={ defaultAvatar }
+                        alt="default-avatar" 
+                        className="user-nav-avatar" />
+                        case 'default':
+        case 'blush':
+            return <img src={ blushAvatar } 
+                        alt="blush-avatar" 
+                        className="user-nav-avatar" />
+        default:
+            return <img src={ defaultAvatar } 
+                        alt="default-avatar" 
+                        className="user-nav-avatar" />
+        }
+    }
     
     render() {
         const {user, logout} = this.props; 
@@ -41,7 +61,34 @@ class Nav extends React.Component{
                             <span className="nav-divider"/>
                             <button className="nav-buttons">About Us</button>
                             <span className="nav-divider"/>
-                            <button className="logout-button" onClick={logout}>Sign Out</button>
+                            <div className="dropdown">
+                                <Link to="/profile" id="dropdown">
+                                    <div className="avatar-container">
+                                        { this.renderAvatar() }
+                                    </div>
+                                </Link>
+                                <ul className="dropdown-content">
+                                    <li className="dropdown-content-item">
+                                        <Link to="/profile"
+                                            className="dropdown-content-item">
+                                                My Profile</Link>
+                                    </li>
+                                    <li className="dropdown-content-item">
+                                        <Link to="/tagalongs"
+                                            className="dropdown-content-item">
+                                                Find a TagAlong</Link>
+                                    </li>
+                                    <li className="dropdown-content-item">
+                                        <Link to="/newtagalong"
+                                            className="dropdown-content-item">
+                                                Create TagAlong</Link>
+                                    </li>
+                                    <li className="dropdown-content-item">
+                                        <button className="dropdown-content-item" 
+                                            onClick={logout}>Sign Out</button>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
