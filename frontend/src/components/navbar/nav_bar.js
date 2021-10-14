@@ -4,6 +4,7 @@ import './nav.scss';
 import tagalongslogo from './tagalongs_logo.svg';
 import defaultAvatar from '../users/avatars/default.png';
 import blushAvatar from '../users/avatars/blush.png';
+import happyAvatar from '../users/avatars/happy.svg';
 
 class Nav extends React.Component{
     constructor(props) {
@@ -29,10 +30,13 @@ class Nav extends React.Component{
             return <img src={ defaultAvatar }
                         alt="default-avatar" 
                         className="user-nav-avatar" />
-                        case 'default':
         case 'blush':
             return <img src={ blushAvatar } 
                         alt="blush-avatar" 
+                        className="user-nav-avatar" />
+        case 'happy':
+            return <img src={ happyAvatar } 
+                        alt="happy-avatar" 
                         className="user-nav-avatar" />
         default:
             return <img src={ defaultAvatar } 

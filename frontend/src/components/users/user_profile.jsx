@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import './user_profile.scss';
 import defaultAvatar from './avatars/default.png';
 import blushAvatar from './avatars/blush.png';
+import happyAvatar from './avatars/happy.svg';
 
 class UserProfile extends React.Component {
 
@@ -76,8 +77,14 @@ class UserProfile extends React.Component {
                             <li>
                                 <img src={ blushAvatar }
                                     onClick={() => this.changeAvatar("blush")} 
-                                    alt="default-avatar" 
+                                    alt="blush-avatar" 
                                     className={this.avatarClassName("blush")}/>
+                            </li>
+                            <li>
+                                <img src={ happyAvatar }
+                                    onClick={() => this.changeAvatar("happy")} 
+                                    alt="happy-avatar" 
+                                    className={this.avatarClassName("happy")}/>
                             </li>
                         </ul>
                     </div>
@@ -111,11 +118,15 @@ class UserProfile extends React.Component {
                             onClick={() => this.changeRightContainer("avatar")} 
                             alt="default-avatar" 
                             className="user-profile-avatar" />
-                            case 'default':
             case 'blush':
                 return <img src={ blushAvatar }
                             onClick={() => this.changeRightContainer("avatar")} 
                             alt="blush-avatar" 
+                            className="user-profile-avatar" />
+            case 'happy':
+                return <img src={ happyAvatar } 
+                            onClick={() => this.changeRightContainer("avatar")}
+                            alt="happy-avatar" 
                             className="user-profile-avatar" />
             default:
                 return <img src={ defaultAvatar }
