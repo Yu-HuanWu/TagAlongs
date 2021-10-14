@@ -97,4 +97,32 @@ router.post("/delete/:id",(req,res)=>{
 })
 
 
+router.post("/acceptBy/:tagalongID",(req,res)=>{
+  TagAlong.findOne({id: req.params.UserID})
+  .then((tagAlong)=>{
+    tagAlong.accepted = true;
+    tagAlong.acceptedBy = req.params.UserID;
+    tagAlong.markModified("accepted");
+    tagAlong.markModified("acceptedBy");
+    tagAlong.save();
+  })
+  .catch(err => res.status(404).json({noTagAlongFound: "No TagAlong was found with that ID"}))
+})
+
+router.post("/completeTagAlong/:tagalongID",(req,res)=>{
+  TagAlong.findOne({id: req.params.UserID})
+  .then((tagAlong)=>{
+    tagAlong.completed = true;
+    tagAlong.markModified("completedBy");
+    tagAlong.save();
+    User.findOne({id: tagAlong.acceptedBy})
+      .then((user)=>{
+        user.tagAlongsCompleted++;
+        user.markModified("tagAlongsCompleted");
+        user.save();
+      })
+  })
+  .catch(err => res.status(404).json({noTagAlongFound: "No TagAlong was found with that ID"}))
+})
+
 module.exports = router

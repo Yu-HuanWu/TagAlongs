@@ -22,8 +22,15 @@ router.post("/createRating",(req,res)=>{
     reviewer: req.body.reviewer,
     reviewee: req.body.reviewee
   });
+  User.findOne({id:newRating.reviewee})
+    .then((user)=>{
+      user.rating = user.rating + newRating.rating
+      user.markModified("rating");
+      user.save();
+    })
   newRating.save().then(rating => res.json(rating))
 })
 
 
 module.exports = router
+
