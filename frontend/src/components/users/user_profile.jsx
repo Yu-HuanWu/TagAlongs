@@ -100,7 +100,6 @@ class UserProfile extends React.Component {
     }
 
     changeAvatar(newAvatar) {
-      console.log(this.props.currentUser)
         this.props.updateAvatar(
             { UserID: this.props.currentUser._id, 
                 avatar: newAvatar }
@@ -151,7 +150,7 @@ class UserProfile extends React.Component {
 
     render() {
         const user = this.props.currentUser;
-        // console.log(user)
+
         return (
             <div className="user-profile">
                 <div className="user-profile-left">

@@ -119,7 +119,6 @@ router.post("/delete/:id",(req,res)=>{
 
 
 router.post("/acceptBy/:tagalongID",(req,res)=>{
-  console.log("hit")
   TagAlong.findOne({id: req.params.tagalongID})
   .then((tagAlong)=>{
     tagAlong.accepted = true;
@@ -127,7 +126,6 @@ router.post("/acceptBy/:tagalongID",(req,res)=>{
     tagAlong.markModified("accepted");
     tagAlong.markModified("acceptedBy");
     tagAlong.save();
-    console.log(tagAlong)
     return res.json(tagAlong)
   })
   .catch(err => res.status(404).json({noTagAlongFound: "No TagAlong was found with that ID"}))
