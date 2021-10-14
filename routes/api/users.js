@@ -117,12 +117,12 @@ router.post('/login', (req, res) => {
 
 
 router.post('/update', (req, res) => {
-    const { errors, isValid } = validateRegisterInput(req.body);
-    if (!isValid) {
-        return res.status(400).json(errors);
-    }
+    // const { errors, isValid } = validateRegisterInput(req.body);
+    // if (!isValid) {
+    //     return res.status(400).json(errors);
+    // }
 
-    User.update({_id: req.params.id},{
+    User.update({_id: req.body.UserID},{
       rating: req.body.rating,
       tagAlongs: req.body.tagAlongs,
       avatar: req.body.avatar,
@@ -130,6 +130,42 @@ router.post('/update', (req, res) => {
     }).then(()=>res.json({updated:"user was updated"}))
     .catch(err=>res.status(404).json({noUserFound:"No User was found with that ID"}))
 });
+
+
+
+router.post('/updateAvatar', (req, res) => {
+    User.update({_id: req.body.UserID},{
+      avatar: req.body.avatar
+    }).then(()=>res.json({updated:"user was updated"}))
+    .catch(err=>res.status(404).json({noUserFound:"No User was found with that ID"}))
+});
+
+
+// router.post('/addTagAlongs/:id', (req, res) => {
+//     // const { errors, isValid } = validateRegisterInput(req.body);
+//     // if (!isValid) {
+//     //     return res.status(400).json(errors);
+//     // }
+
+//     // User.update({_id: req.params.UserID},{
+//     //   tagAlongs: req.body.tagAlongs,
+//     // }).then(()=>res.json({updated:"user was updated"}))
+//     // .catch(err=>res.status(404).json({noUserFound:"No User was found with that ID"}))
+
+
+//   User.findOne({id:req.params.id})
+//     .then((user)=>{
+      
+//     })
+
+
+// });
+
+
+// axios.post(`/api/users/addTagAlongs/${currentUser.id}`)
+
+
+
 
 
 module.exports = router;

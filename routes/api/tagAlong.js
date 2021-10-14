@@ -48,7 +48,9 @@ router.post("/createTagAlong",
             .then((user)=>{
               let usersTags = user.tagAlongs;
               usersTags.push(tagAlong.id);
-              User.update({_id:req.body.user},{tagAlongs:usersTags})
+              user.tagAlongs = usersTags
+              user.markModified("tagAlongs");
+              user.save();
             })
           res.json(tagAlong)
         })
@@ -94,5 +96,33 @@ router.post("/delete/:id",(req,res)=>{
     .catch(err=> res.status(404).json({noTagAlongFound: "No TagAlong was found with that ID"}))
 })
 
+
+router.post("/acceptBy/:tagalongID",(req,res)=>{
+  TagAlong.findOne({id: req.params.UserID})
+  .then((tagAlong)=>{
+    tagAlong.accepted = true;
+    tagAlong.acceptedBy = req.params.UserID;
+    tagAlong.markModified("accepted");
+    tagAlong.markModified("acceptedBy");
+    tagAlong.save();
+  })
+  .catch(err => res.status(404).json({noTagAlongFound: "No TagAlong was found with that ID"}))
+})
+
+router.post("/completeTagAlong/:tagalongID",(req,res)=>{
+  TagAlong.findOne({id: req.params.UserID})
+  .then((tagAlong)=>{
+    tagAlong.completed = true;
+    tagAlong.markModified("completedBy");
+    tagAlong.save();
+    User.findOne({id: tagAlong.acceptedBy})
+      .then((user)=>{
+        user.tagAlongsCompleted++;
+        user.markModified("tagAlongsCompleted");
+        user.save();
+      })
+  })
+  .catch(err => res.status(404).json({noTagAlongFound: "No TagAlong was found with that ID"}))
+})
 
 module.exports = router
