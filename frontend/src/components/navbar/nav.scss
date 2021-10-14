@@ -57,6 +57,7 @@
 	text-decoration: none;
 	background-color: transparent;
   	border: none;
+	outline: none;
 	color: #4F6D7A;
 	font-weight: bold;
 	height: 80px;
@@ -111,6 +112,7 @@
 .nav-buttons {
 	background-color: transparent;
   	border: none;
+	outline: none;
 	color: #4F6D7A;
 	font-weight: bold;
 	height: 80px;
@@ -124,6 +126,7 @@
 	&:active {
 		background-color: #436472;
 		color: #E8DAB2;
+		outline: none;
 	}
 }
 
