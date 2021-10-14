@@ -11,23 +11,7 @@ const validateRating = require('../validation/createRating')
 router.get("/test", (req, res) => res.json({ msg: "This is the ratings route" }));
 
 
-router.post("/createRating"
-// ,
-//   body('reviewPair').custom(value=>{
-//     console.log("hitting middleware")
-//     return Rating.findOne({reviewPair:value}).then(rating=>{
-//       console.log(rating)
-//       if(rating){
-//         console.log("inside")
-//         return Promise.reject('rating already made')
-//         // return false;
-//       }
-//       console.log("hit outside")
-//       return true;
-//     })
-//   })
-,(req,res)=>{
-  // console.log(req)
+router.post("/createRating",(req,res)=>{
   const {errors, isValid} = validateRating(req.body)
 
   if(!isValid){
