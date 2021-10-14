@@ -2,8 +2,10 @@ import Carousel from "./carousel"
 
 const Home = () => {
     return (
-        <div className="carousel">
-            <Carousel />
+        <div className="home">
+            <div className="carousel">
+                <Carousel />
+            </div>
             <div className="buffer"/>
             <div className="home-mid">
                 <p>Description/quote</p>

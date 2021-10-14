@@ -1,10 +1,17 @@
-.carousel-container{
-  width: 100%;
-  height: 700px;
-  z-index: -1;
+// .home {
+//   wid
+// }
+
+.carousel{
+  background-size: cover;
+  // position: relative;
+  overflow: hidden;
+  width: 100vh;
+  z-index: 0;
+  height: 500px;
 }
 
-.carousel { 
+.carousel slide{ 
   height: 100%;
   width: 100%;
   // z-index: -1;
@@ -15,19 +22,19 @@
 
 .home-mid {
   width: 100%;
-//   height: 700px;
+  height: 700px;
   font-size: 50px;
   text-align: center;
   z-index: -1;
-  background-color: transparent;
+  background-color: white;
   // position: absolute; 
 }
 
 
 .buffer{
   width: 100%;
-  height: 25px;
-  background-color: #DD6E42;
+  height: 5px;
+  background-color: #aca8a7;
 }
 
 .footer {
@@ -37,4 +44,10 @@
   // // margin-bottom: -50px;
   // margin-top: auto;
   z-index: 3;
+}
+
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
 }
