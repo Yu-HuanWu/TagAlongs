@@ -126,6 +126,11 @@
 	&:active {
 		background-color: #436472;
 		color: #E8DAB2;
+	}
+}
+
+.nav-user-info {
+	.nav-buttons {
 		outline: none;
 	}
 }
@@ -174,4 +179,65 @@
 #login {
 	padding-right: 22px;
 	// padding-right: 10px;
+}
+
+.dropdown {
+	height: 80px;
+	width: 160px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	&:hover {
+		background-color: #4F6D7A;
+
+		.dropdown-content {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+	}
+
+	#dropdown {
+
+		.avatar-container {
+			.user-nav-avatar {
+				border-radius: 50%;
+				max-width: 50px;
+			}
+		}
+	}
+
+	.dropdown-content {
+		display: none;
+		position: absolute;
+		min-width: 161px;
+		right: 0px;
+		top: 80px;
+
+		.dropdown-content-item {
+			padding: 15px;
+			background-color: #E8DAB2;
+			font-size: 24px;
+			color: #4F6D7A;
+			text-decoration: none;
+			border: 1px solid #4F6D7A;
+			border-top: none;
+
+			&:hover {
+				background-color: #4F6D7A;
+
+				.dropdown-content-item {
+					background-color: #4F6D7A;
+					color: #E8DAB2;
+					font-weight: bolder;
+				}
+			}
+			
+			.dropdown-content-item {
+				padding: 0;
+				border: none;
+			}
+		}
+	}
 }
