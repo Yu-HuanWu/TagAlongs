@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import './tagalong.scss'
 
 
 class TagAlongForm extends React.Component {
@@ -70,42 +71,59 @@ class TagAlongForm extends React.Component {
         return (
             <div className="tagalong-form-container">
                 <form onSubmit={this.handleSubmit}>
+                    <h1 className="tagalong-form-title">Request A TagAlong</h1>
                     <div className="tagalong-form">
-                        <label className="tagalong-form-label">Name</label>
-                        <input type="text"
-                            value={this.state.title}
-                            onChange={this.update('title')}
-                            placeholder="Enter TagAlong Name" 
-                        />
-                        <label className="tagalong-form-label">Description</label>
-                        <textarea
-                            value={this.state.body}
-                            onChange={this.update('body')}
-                            placeholder="Enter TagAlong Description" 
-                        />
-                        <label className="tagalong-form-label">Start Location</label>
-                        <input type="text"
-                            value={this.state.startLocation}
-                            onChange={this.update('startLocation')}
-                            placeholder="Enter Starting Location" 
-                        />
-                        <label className="tagalong-form-label">End Location</label>
-                        <input type="text"
-                            value={this.state.endLocation}
-                            onChange={this.update('endLocation')}
-                            placeholder="Enter Ending Locaton" 
-                        />
-                        <label className="tagalong-form-label">Type of TagAlong:</label>
-                        <select id="tagalong-category" name="tagalong-category"
-                            onChange={this.update('category')}>
-                            <option value="chat">Chat</option>
-                            <option value="stroll">Stroll</option>
-                            <option value="jog">Jog</option>
-                            <option value="groceries">Groceries Trip</option>
-                            <option value="chores">Other Trip</option>
-                            <option value="misc">Miscellaneous</option>
-                        </select>
-                        <input type="submit" value="Create New TagAlong" />
+
+                        <div className="input-container">
+                            <input type="text"
+                                value={this.state.title}
+                                onChange={this.update('title')}
+                                required 
+                            />
+                            <label className="tagalong-form-label">Title</label>
+                        </div>
+
+                        <div className="input-container">
+                            <textarea
+                                value={this.state.body}
+                                onChange={this.update('body')}
+                                required
+                            />
+                            <label className="tagalong-form-label">Description</label>
+                        </div>
+
+                        <div className="input-container">
+                            <input type="text"
+                                value={this.state.startLocation}
+                                onChange={this.update('startLocation')}
+                                required 
+                            />
+                            <label className="tagalong-form-label">Start Location</label>
+                        </div>
+
+                        <div className="input-container">
+                            <input type="text"
+                                value={this.state.endLocation}
+                                onChange={this.update('endLocation')}
+                                required
+                            />
+                            <label className="tagalong-form-label">End Location</label>
+                        </div>
+
+                        <div className="input-container-select">
+                            <select id="tagalong-category" name="tagalong-category"
+                                onChange={this.update('category')}>
+                                <option value="chat">Chat</option>
+                                <option value="stroll">Stroll</option>
+                                <option value="jog">Jog</option>
+                                <option value="groceries">Groceries Trip</option>
+                                <option value="chores">Other Trip</option>
+                                <option value="misc">Miscellaneous</option>
+                            </select>
+                            <label className="tagalong-form-label">Type of TagAlong:</label>
+                        </div>
+
+                        <input type="submit" value="Create TagAlong" className="form-button"/>
                         {this.renderErrors()}
                     </div>
                 </form>
