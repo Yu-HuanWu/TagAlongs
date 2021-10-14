@@ -1,4 +1,5 @@
 import Carousel from "./carousel"
+import {Link } from "react-router-dom"
 
 const Home = () => {
     return (
@@ -6,10 +7,23 @@ const Home = () => {
             <div className="carousel-top">
                 <Carousel />
             </div>
-            {/* <div className="buffer"/> */}
+            <div className="buffer"/>
             <div className="home-bottom">
                 <div className="bottom-textbox">
-                    sample
+                    <div className="info-box">
+                        <h1 className="info-title">Who?</h1>
+                        <p>Our volunteer program is a welcoming open community that shares a passion for helping others. 
+                            Volunteers and users come from all walks of life and deeply care about their neighbors and their safty.</p>
+                    </div>
+                    <div className="info-box">
+                        <h1 className="info-title">What?</h1>
+                        <p>TagAlongs is a Volunteer based Buddy system application that allows users to request companionship for their daily routes or activities. 
+                            Volunteers contribute by accepting TagAlongs in their area, meeting with the user, and providing a safe enviroment for the user to travel in.</p>
+                    </div>
+                    <div className="info-box">
+                        <h1 className="info-title">How?</h1>
+                        <p>Please sign up and<Link> read more </Link> about how to use out service for youself or a loved one. Or sign up to be a volunteers!</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -17,20 +31,3 @@ const Home = () => {
 }
 
 export default Home; 
-
-
-// const Home = () => {
-//     return (
-//         <div className="homepage">
-//             <div className="carousel">
-//                 <Carousel />
-//             </div>
-//                 <div className="buffer"/>
-//                 <div className="home-mid">
-//                     <p>Description/quote</p>
-//                 </div>
-//          </div>
-//     )
-// }
-
-// export default Home; 
