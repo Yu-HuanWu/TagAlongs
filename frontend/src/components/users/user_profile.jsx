@@ -86,7 +86,10 @@ class UserProfile extends React.Component {
     }
 
     changeAvatar(newAvatar) {
-        this.props.updateUser({avatar: newAvatar});
+        this.props.updateUser(
+            { id: this.props.currentUser.id, 
+                avatar: newAvatar }
+        );
         this.setState({
             avatar: `${newAvatar}`,
             rightRender: 'default'
