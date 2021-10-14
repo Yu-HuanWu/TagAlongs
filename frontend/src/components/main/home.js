@@ -3,12 +3,14 @@ import Carousel from "./carousel"
 const Home = () => {
     return (
         <div className="home">
-            <div className="carousel">
+            <div className="carousel-top">
                 <Carousel />
             </div>
-            <div className="buffer"/>
-            <div className="home-mid">
-                <p>Description/quote</p>
+            {/* <div className="buffer"/> */}
+            <div className="home-bottom">
+                <div className="bottom-textbox">
+                    sample
+                </div>
             </div>
         </div>
     )
