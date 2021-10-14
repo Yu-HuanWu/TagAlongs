@@ -58,3 +58,11 @@ export const updateUser = userData => dispatch => (
         dispatch(receiveErrors(err.response.data))
     ))
 )
+
+export const updateAvatar = userData => dispatch => (
+    APIUtil.updateAvatar(userData).then(user => (
+        dispatch(receiveCurrentUser(user.data))
+    ), err => (
+        dispatch(receiveErrors(err.response.data))
+    ))
+)
