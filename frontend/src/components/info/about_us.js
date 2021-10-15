@@ -5,6 +5,7 @@ import tony from "./img/tony.jpeg"
 import Yu from "./img/Yu.jpeg"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faGithub, faLinkedin} from "@fortawesome/free-brands-svg-icons";
+import './info.scss'
 
 
 

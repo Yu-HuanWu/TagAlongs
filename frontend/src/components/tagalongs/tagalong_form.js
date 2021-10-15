@@ -129,25 +129,31 @@ class TagAlongForm extends React.Component {
                             <label className="tagalong-form-label">Type of TagAlong:</label>
                         </div>
 
+                        <div className="input-container-date">
+                            <input type="date"
+                                value={this.state.date}
+                                onChange={this.update('date')}
+                            />
+                            <label className="tagalong-form-label">Date</label>
+                        </div>
 
-                        <label className="tagalong-form-label">Date</label>
-                        <input type="date"
-                            value={this.state.date}
-                            onChange={this.update('date')}
-                        />
+                        <div className="input-container">
+                            <input type="text"
+                                value={this.state.startingTime}
+                                onChange={this.update('startingTime')}
+                                required
+                            />
+                            <label className="tagalong-form-label">Starting Time</label>
+                        </div>
 
-                        <label className="tagalong-form-label">Starting Time</label>
-                        <input type="text"
-                            value={this.state.startingTime}
-                            onChange={this.update('startingTime')}
-                            placeholder="Enter starting time" 
-                        />
-                        <label className="tagalong-form-label">Duration</label>
-                        <input type="text"
-                            value={this.state.duration}
-                            onChange={this.update('duration')}
-                            placeholder="Enter duration" 
-                        />
+                        <div className="input-container">
+                            <input type="text"
+                                value={this.state.duration}
+                                onChange={this.update('duration')}
+                                required 
+                            />
+                            <label className="tagalong-form-label">Duration</label>
+                        </div>
 
 
 
