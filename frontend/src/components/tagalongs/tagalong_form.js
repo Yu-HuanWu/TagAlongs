@@ -73,7 +73,6 @@ class TagAlongForm extends React.Component {
     }
 
     render() {
-      console.log(this.props.currentUser)
         return (
             <div className="tagalong-form-container">
                 <form onSubmit={this.handleSubmit}>
