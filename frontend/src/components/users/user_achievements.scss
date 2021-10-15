@@ -11,6 +11,7 @@
         padding: 10px;
         margin-bottom: 5px;
         border: 1px solid #4F6D7A;
+        background: #EAEAEA;
 
         &:hover {
             background-color: #4F6D7A;
@@ -23,7 +24,7 @@
 
         .not-earned {
             max-width: 50px;
-            opacity: 0.5;
+            opacity: 0.3;
         }
     }
 }

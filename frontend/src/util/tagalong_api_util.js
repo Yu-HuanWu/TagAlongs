@@ -21,5 +21,5 @@ export const acceptedTags = userId => {
 }
 
 export const myTags = userId => {
-    return axios.get(`/api/tagAlong/myPostedTag/${userId}`)
+    return axios.get(`/api/tagAlong/myPostedTags/${userId}`)
 }
