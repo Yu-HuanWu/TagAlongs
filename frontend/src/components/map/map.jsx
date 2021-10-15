@@ -44,8 +44,8 @@ export class MapComponent extends Component {
     console.log(this.props.currentUser._id)
     console.log(this.state.items._id)
     // console.log("hello")
-    acceptTag(this.state.items._id,this.props.currentUser._id)
-
+    acceptTag(this.state.items._id,{userID:this.props.currentUser._id})
+    this.props.history.push("/")
   }
 
 
