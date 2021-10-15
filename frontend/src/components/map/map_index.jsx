@@ -58,7 +58,7 @@ export class MapIndex extends Component {
         <div style={style}>
         <Map
           google={this.props.google}
-          zoom={12.5}
+          zoom={12}
           style={mapStyles}
           initialCenter={
             {

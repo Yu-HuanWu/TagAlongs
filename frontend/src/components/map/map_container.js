@@ -3,6 +3,7 @@ import MapComponent from "./map";
 import { fetchTag } from "../../actions/tagalong_actions";
 
 const mapStateToProps = (state,ownProps) => ({
+  currentUser: state.session.user,
   TagAlong: state.entities.tagAlongs,
   TagID: ownProps.match.params.TagID,
   totalState: state

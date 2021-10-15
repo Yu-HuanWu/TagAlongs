@@ -11,3 +11,7 @@ export const createTagAlong = tagAlong => {
 export const getTag = (id) => {
   return axios.get(`/api/tagAlong/show/${id}`)
 }
+
+export const acceptTag = (id,userID)=>{
+  return axios.post(`/api/tagAlong/acceptBy/${id}`,userID)
+}
