@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper ,InfoWindow,Marker} from 'google-maps-react';
+import { acceptTag } from '../../util/tagalong_api_util';
 import "./map.css"
 
 const mapStyles = {
@@ -16,6 +17,7 @@ export class MapComponent extends Component {
       selectedPlace: {},
       items: {}        
     };
+    this.handleAccept = this.handleAccept.bind(this);
   }
 
   onMarkerClick = (props, marker, e) =>
@@ -36,6 +38,14 @@ export class MapComponent extends Component {
 
   componentDidMount(){
     this.props.fetchTag(this.props.TagID).then((data)=>this.setState({items:data.tagAlong.data}))
+  }
+
+  handleAccept(){
+    console.log(this.props.currentUser._id)
+    console.log(this.state.items._id)
+    // console.log("hello")
+    acceptTag(this.state.items._id,this.props.currentUser._id)
+
   }
 
 
@@ -69,12 +79,15 @@ export class MapComponent extends Component {
             <div>
               Ending Location: {items.endLocation}
             </div>
+            <div>
+              <button onClick={()=>this.handleAccept()}>Accept this TagAlong</button>
+            </div>
           </div>
 
         <div style={style}>
         <Map
           google={this.props.google}
-          zoom={12.5}
+          zoom={12}
           style={mapStyles}
           initialCenter={
             {
