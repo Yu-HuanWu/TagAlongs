@@ -1,9 +1,10 @@
 import React from "react"
+import './whats_a_tagalong.scss'
 
 const Whatsatagalong = () => {
     return (
-        <div className="main-textbox">
-            <div className="textbox">
+        <div className="what_main">
+            <div className="what-textbox">
                 <h1 className="question-title">What is a TagAlong?</h1>
                     <p className="info-para" >The creators of TagAlongs believe people should be able to go about their daily routines with peace of mind. For this reason, they created a way 
                         to request companionship from trusted volunteers to acompany them on their route. A user simply signs into their account and adds some basic information about their route. Once 
