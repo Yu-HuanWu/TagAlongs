@@ -10,7 +10,7 @@ import img3 from "./img/home_3.jpeg"
 const CarouselContainer = () => {
     return ( 
   
-        <Carousel controls={false} wrap={true} fade={true}>
+        <Carousel controls={false} wrap={true}>
             <Carousel.Item interval={5000}>
                 <img
                   className="d-block w-100"
@@ -18,8 +18,8 @@ const CarouselContainer = () => {
                   alt="First slide"
                 />
                  <Carousel.Caption>
-                    <div class="carousel-content_1">
-                      <p>TEST</p>
+                    <div className="carousel-content_1">
+                      <p>VOLUNTEER</p>
                     </div>
                 </Carousel.Caption>
             </Carousel.Item>
@@ -30,11 +30,11 @@ const CarouselContainer = () => {
                   src={img2}
                   alt="Second slide"
                 />
-                 {/* <Carousel.Caption>
+                 <Carousel.Caption>
                     <div class="carousel-content_2">
-                      <p>TEST</p>
+                      <p>COMPANIONSHIP</p>
                     </div>
-                </Carousel.Caption> */}
+                </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item interval={5000}>
                 <img
@@ -42,11 +42,11 @@ const CarouselContainer = () => {
                   src={img3}
                   alt="Third slide"
                 />
-                 {/* <Carousel.Caption>
+                 <Carousel.Caption>
                   <div class="carousel-content_3">
-                    <p>TEST</p>
+                    <p>COMMUNITY</p>
                   </div>
-                </Carousel.Caption> */}
+                </Carousel.Caption>
             </Carousel.Item>
       </Carousel>
 

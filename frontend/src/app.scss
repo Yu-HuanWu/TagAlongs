@@ -28,10 +28,10 @@ html {
     margin-top: 7%;
     width: 300px;
     border-radius: 10px;
-    box-shadow: 5px 5px 5px #DD6E42;
+    box-shadow: 5px 5px 0px #DD6E42;
     transition: all 0.8s ease-in-out;
     &:hover {
-      box-shadow: 13px 13px 5px #DD6E42;
+      box-shadow: 13px 13px 0px #DD6E42;
     }
 }
 
