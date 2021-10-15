@@ -45,7 +45,6 @@ class TagAlongIndex extends React.Component {
                                 <p>Category: &nbsp; <h3>{tagalong.category}</h3></p>
                                 <p>Starting Point: &nbsp; <h3>{tagalong.startLocation}</h3></p>
                                 <p>End Point: &nbsp; <h3>{tagalong.endLocation}</h3></p>
-                                <p>Description: &nbsp; <h2>{tagalong.body}</h2></p>
                             </Link>
                     </li>
                 ))}
