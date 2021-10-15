@@ -39,7 +39,7 @@ class UserProfile extends React.Component {
             case 'default':
                 return (
                     <div>
-                        Welcome to your user profile!
+                        <h1>Your TagAlongs:</h1>
                     </div>
                 )
             case 'completed':
@@ -197,7 +197,7 @@ class UserProfile extends React.Component {
                             <li className="user-profile-nav-item">
                                 <button onClick={() => this.changeRightContainer("default")}
                                     className="user-profile-nav-button">
-                                        My Profile Page
+                                        My TagAlongs
                                 </button>
                             </li>
                             <li className="user-profile-nav-item">
