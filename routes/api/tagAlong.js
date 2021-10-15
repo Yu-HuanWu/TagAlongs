@@ -166,7 +166,7 @@ router.post("/completeTagAlong/:tagalongID",(req,res)=>{
   TagAlong.findOne({id: req.params.UserID})
   .then((tagAlong)=>{
     tagAlong.completed = true;
-    tagAlong.markModified("completedBy");
+    tagAlong.markModified("completed");
     tagAlong.save();
     User.findOne({id: tagAlong.acceptedBy})
       .then((user)=>{
@@ -178,5 +178,20 @@ router.post("/completeTagAlong/:tagalongID",(req,res)=>{
   })
   .catch(err => res.status(404).json({noTagAlongFound: "No TagAlong was found with that ID"}))
 })
+
+
+
+router.get("/myCompletedTags/:userID",(req,res)=>{
+  TagAlong.find().then((data)=>{
+    let filtered = data.filter(tags=>{
+      if(tags.completed === true && tags.acceptedBy.includes(req.params.userID)){
+        return tags
+      }
+    })
+    return res.json(filtered)
+  })
+})
+
+
 
 module.exports = router
