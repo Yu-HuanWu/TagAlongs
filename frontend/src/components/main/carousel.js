@@ -17,11 +17,11 @@ const CarouselContainer = () => {
                   src={img1}
                   alt="First slide"
                 />
-                 {/* <Carousel.Caption>
+                 <Carousel.Caption>
                     <div class="carousel-content_1">
                       <p>TEST</p>
                     </div>
-                </Carousel.Caption> */}
+                </Carousel.Caption>
             </Carousel.Item>
               
             <Carousel.Item interval={5000}>
