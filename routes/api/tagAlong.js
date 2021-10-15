@@ -163,17 +163,22 @@ router.get("/myPostedTags/:userID",(req,res)=>{
 
 
 router.post("/completeTagAlong/:tagalongID",(req,res)=>{
-  TagAlong.findOne({id: req.params.UserID})
-  .then((tagAlong)=>{
-    tagAlong.completed = true;
-    tagAlong.markModified("completed");
-    tagAlong.save();
-    User.findOne({id: tagAlong.acceptedBy})
-      .then((user)=>{
-        user.tagAlongsCompleted++;
-        user.markModified("tagAlongsCompleted");
-        user.save();
+  console.log("WWAAAAP")
+  console.log(req.params.tagalongID)
+  TagAlong.findOne({_id: req.params.tagalongID})
+  .then((tag)=>{
+    tag.completed = true;
+    tag.markModified("completed");
+    tag.save();
+    User.findOne({id: tag.acceptedBy})
+    .then((user)=>{
+      user.tagAlongsCompleted++;
+      user.markModified("tagAlongsCompleted");
+      user.save();
+      console.log(user)
       })
+    
+    // console.log(tagAlong);
     return res.json(tagAlong)
   })
   .catch(err => res.status(404).json({noTagAlongFound: "No TagAlong was found with that ID"}))
