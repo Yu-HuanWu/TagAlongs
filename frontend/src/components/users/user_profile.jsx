@@ -1,6 +1,6 @@
 import React from 'react';
 import UserAchievementsContainer from './user_achievements_container';
-import AcceptedTagAlongsContainer from './accepted_tagalong_container';
+import AcceptedTagAlongsContainer from './accepted_tagalongs_container';
 import { withRouter } from 'react-router-dom';
 import './user_profile.scss';
 import defaultAvatar from './avatars/default.svg';
