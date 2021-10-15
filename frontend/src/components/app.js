@@ -10,6 +10,9 @@ import MapContainer from './map/map_container';
 import HomeContainer from './main/home';
 import FooterContainer from "./main/footer";
 import UserProfileContainer from './users/user_profile_container';
+import ResourcesContainer from './info/resources'
+import WhatsATagAlongContainer from './info/whats_a_tagalong'
+import AboutUsContainer from './info/about_us'
 import { Route } from 'react-router';
 import '../app.scss';
 // import 'bootstrap/dist/css/bootstrap.min.css';
@@ -26,6 +29,9 @@ const App = () => (
                     <ProtectedRoute exact path="/newtagalong" component={TagAlongFormContainer} />
                     <ProtectedRoute exact path="/tagalongs" component={TagAlongIndexContainer} />
                     <ProtectedRoute exact path="/profile" component={UserProfileContainer} />
+                    <ProtectedRoute exact path="/resources" component={ResourcesContainer} />
+                    <ProtectedRoute exact path="/whatsatagalong" component={WhatsATagAlongContainer} />
+                    <ProtectedRoute exact path="/aboutus" component={AboutUsContainer} />
                     <Route path="/map/:TagID" component={MapContainer}/>
                     <AuthRoute path="/" component={HomeContainer}/>
                 </Switch>

@@ -8,6 +8,7 @@ import happyAvatar from '../users/avatars/happy.svg';
 import tongueAvatar from '../users/avatars/tongue.svg';
 import teethAvatar from '../users/avatars/teeth.svg';
 import grinAvatar from '../users/avatars/grin.svg';
+import Resources from "../info/resources"
 
 class Nav extends React.Component{
     constructor(props) {
@@ -72,11 +73,11 @@ class Nav extends React.Component{
                         <div className="nav-user-info">
                             <p className="users-name">Hello, {user.handle}</p>
                             <span className="nav-divider"/>
-                            <button className="nav-buttons">Resources</button>
+                            <Link to ="./resources" className="nav-buttons">Resources</Link>
                             <span className="nav-divider"/>
-                            <button className="nav-buttons">What's a TagAlong</button>
+                            <Link to ="./whatsatagalong" className="nav-buttons">What's a TagAlong?</Link>
                             <span className="nav-divider"/>
-                            <button className="nav-buttons">About Us</button>
+                            <Link to ="./aboutus" className="nav-buttons">About Us</Link>
                             <span className="nav-divider"/>
                             <div className="dropdown">
                                 <Link to="/profile" id="dropdown">

@@ -109,6 +109,10 @@
 	align-items: center;
 }
 
+a.nav-buttons{
+	text-decoration: none;
+}
+
 .nav-buttons {
 	background-color: transparent;
   	border: none;
@@ -117,6 +121,8 @@
 	font-weight: bold;
 	height: 80px;
 	padding: 17px;
+	padding-top: 30px; 
+
 
 	&:hover {
 		background-color: #4F6D7A;
