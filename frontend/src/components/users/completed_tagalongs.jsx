@@ -1,19 +1,29 @@
 import React from 'react';
 
-class AcceptedTagAlongs extends React.Component {
+class CompletedTagAlongs
+ extends React.Component {
     constructor(props) {
         super(props);
-    }
+        this.state={
+          tagAlongs:[]
+        }
+        
+        this.props.fetchCompleted(this.props.currentUser._id).then((data)=>
+        this.setState({tagAlongs:data.acceptedTagAlongs.data})
+        )
+        
+      }
+
 
     componentDidMount() {
-        this.props.fetchAccepted(this.props.currentUser._id);
+        this.props.fetchCompleted(this.props.currentUser._id);
     }
 
     render() {
         return (
             <div className="accepted-tagalongs-list">
                 <ul className="accepted-tagalongs user-achievement-list">
-                    {this.props.acceptedTagAlongs.map((tagalong, i) => (
+                    {this.state.tagAlongs.map((tagalong, i) => (
                         <li key={`tagalong-${i}`}
                             className="accepted-tagalong-item user-achievement-badge">
                                 <h1>{tagalong.title}</h1>
@@ -28,4 +38,5 @@ class AcceptedTagAlongs extends React.Component {
     }
 }
 
-export default AcceptedTagAlongs;
+export default CompletedTagAlongs
+;
