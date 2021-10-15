@@ -1,0 +1,29 @@
+.user-achievement-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    h1 {
+        padding: 5px;
+    }
+
+    .user-achievement-badge {
+        padding: 10px;
+        margin-bottom: 5px;
+        border: 1px solid #4F6D7A;
+
+        &:hover {
+            background-color: #4F6D7A;
+            color: white;
+        }
+
+        .selected-badge {
+            max-width: 50px;
+        }
+
+        .not-earned {
+            max-width: 50px;
+            opacity: 0.5;
+        }
+    }
+}

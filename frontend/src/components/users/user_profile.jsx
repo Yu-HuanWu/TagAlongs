@@ -60,7 +60,6 @@ class UserProfile extends React.Component {
             case 'achievements':
                  return (
                     <div>
-                        <h1>You've Unlocked the Following Achievements!</h1>
                         <UserAchievementsContainer 
                             points={this.props.currentUser.tagAlongsCompleted}
                             />
