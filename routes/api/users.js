@@ -37,8 +37,8 @@ router.post('/register', (req, res) => {
                     password: req.body.password,
                     birthdate: req.body.birthdate,
                     firstName: req.body.firstName,
-                    lastName: req.body.lastName
-                    
+                    lastName: req.body.lastName,
+                    tagAlongs: []
                 });
 
                 bcrypt.genSalt(10, (err, salt) => {
@@ -48,7 +48,7 @@ router.post('/register', (req, res) => {
                         newUser
                             .save()
                             .then(user => {
-                                const payload = { id: user.id, handle: user.handle };
+                                const payload = { _id: user.id, handle: user.handle };
 
                                 jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
                                     res.json({
@@ -57,7 +57,7 @@ router.post('/register', (req, res) => {
                                     });
                                 });
                             })
-                            .catch(err => console.log(err));
+                        .catch(err => console.log(err));
                     });
                 });
             }
@@ -85,7 +85,7 @@ router.post('/login', (req, res) => {
                 .then(isMatch => {
                     if (isMatch) {
                         const payload = {
-                            id: user.id,
+                            _id: user.id,
                             handle: user.handle,
                             email: user.email,
                             birthdate: user.birthdate,
@@ -117,12 +117,12 @@ router.post('/login', (req, res) => {
 
 
 router.post('/update', (req, res) => {
-    const { errors, isValid } = validateRegisterInput(req.body);
-    if (!isValid) {
-        return res.status(400).json(errors);
-    }
+    // const { errors, isValid } = validateRegisterInput(req.body);
+    // if (!isValid) {
+    //     return res.status(400).json(errors);
+    // }
 
-    User.update({_id: req.params.id},{
+    User.update({_id: req.body.UserID},{
       rating: req.body.rating,
       tagAlongs: req.body.tagAlongs,
       avatar: req.body.avatar,
@@ -130,6 +130,48 @@ router.post('/update', (req, res) => {
     }).then(()=>res.json({updated:"user was updated"}))
     .catch(err=>res.status(404).json({noUserFound:"No User was found with that ID"}))
 });
+
+
+
+router.post('/updateAvatar', (req, res) => {
+    User.findOne({_id:req.body.UserID})
+      .then((user)=>{
+        if(user){
+          user.avatar = req.body.avatar;
+          user.markModified("avatar");
+          user.save();
+          return res.json(user)
+        }
+      })
+
+});
+
+
+// router.post('/addTagAlongs/:id', (req, res) => {
+//     // const { errors, isValid } = validateRegisterInput(req.body);
+//     // if (!isValid) {
+//     //     return res.status(400).json(errors);
+//     // }
+
+//     // User.update({_id: req.params.UserID},{
+//     //   tagAlongs: req.body.tagAlongs,
+//     // }).then(()=>res.json({updated:"user was updated"}))
+//     // .catch(err=>res.status(404).json({noUserFound:"No User was found with that ID"}))
+
+
+//   User.findOne({id:req.params.id})
+//     .then((user)=>{
+      
+//     })
+
+
+// });
+
+
+// axios.post(`/api/users/addTagAlongs/${currentUser.id}`)
+
+
+
 
 
 module.exports = router;

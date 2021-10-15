@@ -55,7 +55,6 @@ class LoginForm extends React.Component {
     }
 
     render() {
-        console.log(this.props.history)
         return (
         <div className="splash">
         {/* <div className="main"></div> */}

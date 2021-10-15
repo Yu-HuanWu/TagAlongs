@@ -17,13 +17,30 @@ router.post("/createRating",(req,res)=>{
   if(!isValid){
     return res.status(400).json(errors);
   }
-  const newRating = new Rating({
-    rating: req.body.rating,
-    reviewer: req.body.reviewer,
-    reviewee: req.body.reviewee
-  });
-  newRating.save().then(rating => res.json(rating))
+
+  Rating.findOne({ reviewPair: req.body.reviewPair })
+    .then((rating)=>{
+      if(rating){
+        errors.reviewPair = "review already exist"
+        return res.status(400).json({reviewPair: "this Review Pair already exist"})
+      }else{
+        const newRating = new Rating({
+          rating: req.body.rating,
+          reviewPair: req.body.reviewPair,
+        });
+        newRating.save().then(rating => {
+          User.findOne({id:newRating.reviewee})
+          .then((user)=>{
+            user.rating = user.rating + newRating.rating
+            user.markModified("rating");
+            user.save();
+          })
+          return res.json(rating)
+        }).catch(err=>res.status(404).json({duplicateFound:"You cant Rate the same person twice"}))
+      }
+    })
 })
 
 
 module.exports = router
+

@@ -1,5 +1,7 @@
 const Validator = require('validator');
 const validText = require('./valid-text');
+const Rating = require("../../models/Rating")
+
 
 module.exports = function validateRating(data) {
     let errors = {};
@@ -8,23 +10,12 @@ module.exports = function validateRating(data) {
     data.reviewer = validText(data.reviewer) ? data.reviewer : '';
     data.reviewee = validText(data.reviewee) ? data.reviewee : '';
 
-    // if (!Validator.isEmail(data.handle)) {
-    //     errors.email = 'Email is invalid';
-    // }
-
     if (Validator.isEmpty(data.rating)) {
         errors.rating = 'rating field is required';
     }
 
-    if (Validator.isEmpty(data.reviewer)) {
-        errors.reviewer = 'reviewer field is required';
-    }
-    if (Validator.isEmpty(data.reviewee)) {
-        errors.reviewee = 'reviewee field is required';
-    }
-
-    return {
+      return {
         errors,
         isValid: Object.keys(errors).length === 0
-    };
+      };
 };

@@ -49,6 +49,14 @@ const TagAlongSchema = new Schema({
   completed:{
     type: Boolean,
     default: false
+  },
+  accepted:{
+    type: Boolean,
+    default:false
+  },
+  acceptedBy:{
+    type: Schema.Types.ObjectId,
+    ref: 'users'
   }
 },{
     timestamps:true
