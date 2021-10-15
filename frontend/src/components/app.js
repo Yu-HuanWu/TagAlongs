@@ -15,6 +15,7 @@ import WhatsATagAlongContainer from './info/whats_a_tagalong'
 import AboutUsContainer from './info/about_us'
 import { Route } from 'react-router';
 import '../app.scss';
+require('dotenv').config()
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => (
