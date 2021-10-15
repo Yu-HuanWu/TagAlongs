@@ -1,6 +1,7 @@
 import React from 'react';
 import UserAchievementsContainer from './user_achievements_container';
 import AcceptedTagAlongsContainer from './accepted_tagalongs_container';
+import CompletedTagAlongsContainer from './completed_tagalongs_contaner';
 import MyTagAlongsContainer from './my_tagalongs_container';
 import { withRouter } from 'react-router-dom';
 import './user_profile.scss';
@@ -48,6 +49,7 @@ class UserProfile extends React.Component {
                 return (
                     <div>
                         <h1>Your Completed TagAlongs:</h1>
+                        <CompletedTagAlongsContainer/>
                     </div>
                 )
             case 'accepted':

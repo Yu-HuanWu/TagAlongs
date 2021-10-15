@@ -148,14 +148,12 @@ router.post('/update', (req, res) => {
 
 
 router.post('/updateAvatar', (req, res) => {
-  console.log(req.body.UserID)
     User.findOne({_id:req.body.UserID})
       .then((user)=>{
         if(user){
           user.avatar = req.body.avatar;
           user.markModified("avatar");
           user.save();
-          console.log(user)
           return res.json(user)
         }
       })

@@ -1,0 +1,24 @@
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px -9px 20px 1px #4f6d7a;
+}
+.footer-container-center{
+  display: flex;
+  // justify-content: space-around;
+  // align-items: center;
+  font-size: 25px;
+}
+.footer-github-repo-link{
+  color: #4F6D7A;
+}
+
+.footer-about-us{
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.footer-text-design{
+  color: #4F6D7A;
+}

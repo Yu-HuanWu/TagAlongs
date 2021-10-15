@@ -24,9 +24,6 @@ router.post("/createTagAlong",
  (req,res) => {
   const {errors,isValid} = validateTagAlongs(req.body)
   
-  console.log(req.body)
-  console.log(errors)
-  console.log(isValid)
   if(!isValid){
     return res.status(400).json(errors);
   }
@@ -129,7 +126,9 @@ router.post("/delete/:id",(req,res)=>{
 router.get("/myAccepted/:userID",(req,res)=>{
   TagAlong.find().then((data)=>{
     let filtered = data.filter(tags=>{
-      return tags.acceptedBy.includes(req.params.userID)
+      if(tags.completed === false){
+        return tags.acceptedBy.includes(req.params.userID)
+      }
     })
     return res.json(filtered)
   })
@@ -138,13 +137,11 @@ router.get("/myAccepted/:userID",(req,res)=>{
 router.post("/acceptBy/:tagalongID",(req,res)=>{
   TagAlong.findOne({_id: req.params.tagalongID})
   .then((tagAlong)=>{
-    console.log(req.params.tagalongID)
     tagAlong.accepted = true;
     tagAlong.acceptedBy = [req.body.userID];
     tagAlong.markModified("accepted");
     tagAlong.markModified("acceptedBy");
     tagAlong.save();
-    console.log(tagAlong)
     return res.json(tagAlong)
   })
   .catch(err => res.status(404).json({noTagAlongFound: "No TagAlong was found with that ID"}))
@@ -163,20 +160,35 @@ router.get("/myPostedTags/:userID",(req,res)=>{
 
 
 router.post("/completeTagAlong/:tagalongID",(req,res)=>{
-  TagAlong.findOne({id: req.params.UserID})
-  .then((tagAlong)=>{
-    tagAlong.completed = true;
-    tagAlong.markModified("completedBy");
-    tagAlong.save();
-    User.findOne({id: tagAlong.acceptedBy})
-      .then((user)=>{
-        user.tagAlongsCompleted++;
-        user.markModified("tagAlongsCompleted");
-        user.save();
+  TagAlong.findOne({_id: req.params.tagalongID})
+  .then((tag)=>{
+    tag.completed = true;
+    tag.markModified("completed");
+    tag.save();
+    User.findOne({id: tag.acceptedBy})
+    .then((user)=>{
+      user.tagAlongsCompleted++;
+      user.markModified("tagAlongsCompleted");
+      user.save();
       })
-    return res.json(tagAlong)
+    return res.status(200).json({good:"tag was updated"})
   })
   .catch(err => res.status(404).json({noTagAlongFound: "No TagAlong was found with that ID"}))
 })
+
+
+
+router.get("/myCompletedTags/:userID",(req,res)=>{
+  TagAlong.find().then((data)=>{
+    let filtered = data.filter(tags=>{
+      if(tags.completed === true && tags.acceptedBy.includes(req.params.userID)){
+        return tags
+      }
+    })
+    return res.json(filtered)
+  })
+})
+
+
 
 module.exports = router
