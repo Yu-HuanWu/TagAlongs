@@ -19,9 +19,7 @@ class MyTagAlongs extends React.Component {
     // }
 
     handleComplete(tagAlong){
-      console.log(tagAlong)
       completeTag(tagAlong)
-      // .then((data)=>console.log(data))
       .then(()=>window.location.reload(false))
     }
     
@@ -38,9 +36,6 @@ class MyTagAlongs extends React.Component {
     }
     
     render() {
-      console.log(this.props)
-      // console.log(this.props.myTagAlongs)
-      console.log(this.state)
         return (
             <div className="accepted-tagalongs-list">
                 <ul className="accepted-tagalongs user-achievement-list">

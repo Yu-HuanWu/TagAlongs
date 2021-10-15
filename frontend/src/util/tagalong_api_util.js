@@ -29,6 +29,5 @@ export const myTags = userId => {
 }
 
 export const completeTag = (tagAlongID) =>{
-  console.log(tagAlongID)
   return axios.post(`/api/tagAlong/completeTagAlong/${tagAlongID}`)
 }

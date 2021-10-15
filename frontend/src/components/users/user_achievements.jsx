@@ -9,7 +9,6 @@ class UserAchievements extends React.Component {
     }
 
     renderBadgeClass(cookieCount) {
-        console.log(this.props.points)
         let score = cookieCount - this.props.points;
         if (score <= 0) {
             return "selected-badge";

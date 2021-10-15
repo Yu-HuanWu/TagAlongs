@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import CompletedTagAlongs from './completed_tagalongs';
-import { fetchAcceptedTagAlongs  } from '../../actions/tagalong_actions';
+import { fetchCompletedTags  } from '../../actions/tagalong_actions';
 
 const mapStateToProps = state => {
     return {
@@ -11,7 +11,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchCompleted: userId => dispatch(fetchAcceptedTagAlongs(userId))
+        fetchCompleted: userId => dispatch(fetchCompletedTags(userId))
     }
 }
 

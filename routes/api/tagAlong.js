@@ -24,9 +24,6 @@ router.post("/createTagAlong",
  (req,res) => {
   const {errors,isValid} = validateTagAlongs(req.body)
   
-  console.log(req.body)
-  console.log(errors)
-  console.log(isValid)
   if(!isValid){
     return res.status(400).json(errors);
   }
@@ -140,13 +137,11 @@ router.get("/myAccepted/:userID",(req,res)=>{
 router.post("/acceptBy/:tagalongID",(req,res)=>{
   TagAlong.findOne({_id: req.params.tagalongID})
   .then((tagAlong)=>{
-    console.log(req.params.tagalongID)
     tagAlong.accepted = true;
     tagAlong.acceptedBy = [req.body.userID];
     tagAlong.markModified("accepted");
     tagAlong.markModified("acceptedBy");
     tagAlong.save();
-    console.log(tagAlong)
     return res.json(tagAlong)
   })
   .catch(err => res.status(404).json({noTagAlongFound: "No TagAlong was found with that ID"}))
@@ -176,8 +171,6 @@ router.post("/completeTagAlong/:tagalongID",(req,res)=>{
       user.markModified("tagAlongsCompleted");
       user.save();
       })
-  
-    // console.log(tagAlong);
     return res.status(200).json({good:"tag was updated"})
   })
   .catch(err => res.status(404).json({noTagAlongFound: "No TagAlong was found with that ID"}))

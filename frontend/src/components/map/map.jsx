@@ -41,9 +41,6 @@ export class MapComponent extends Component {
   }
 
   handleAccept(){
-    console.log(this.props.currentUser._id)
-    console.log(this.state.items._id)
-    // console.log("hello")
     acceptTag(this.state.items._id,{userID:this.props.currentUser._id})
     this.props.history.push("/")
   }
