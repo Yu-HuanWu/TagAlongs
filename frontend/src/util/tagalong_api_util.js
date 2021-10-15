@@ -15,3 +15,7 @@ export const getTag = (id) => {
 export const acceptTag = (id,userID)=>{
   return axios.post(`/api/tagAlong/acceptBy/${id}`,userID)
 }
+
+export const acceptedTags = userId => {
+  return axios.get(`/api/tagAlongs/myAccepted/${userId}`)
+}

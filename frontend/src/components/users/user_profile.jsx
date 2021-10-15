@@ -39,7 +39,7 @@ class UserProfile extends React.Component {
             case 'default':
                 return (
                     <div>
-                        Welcome to your use profile!
+                        Welcome to your user profile!
                     </div>
                 )
             case 'completed':
@@ -48,10 +48,10 @@ class UserProfile extends React.Component {
                         <h1>Your Completed TagAlongs:</h1>
                     </div>
                 )
-            case 'ongoing':
+            case 'accepted':
                  return (
                     <div>
-                        <h1>Your Ongoing TagAlongs:</h1>
+                        <h1>Your Accepted TagAlongs:</h1>
                     </div>
                 )
             case 'achievements':
@@ -202,7 +202,7 @@ class UserProfile extends React.Component {
                             <li className="user-profile-nav-item">
                                 <button onClick={() => this.changeRightContainer("ongoing")}
                                     className="user-profile-nav-button">
-                                        My Ongoing TagAlongs
+                                        My Accepted TagAlongs
                                 </button>
                             </li>
                             <li className="user-profile-nav-item">
