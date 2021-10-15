@@ -31,7 +31,7 @@ const App = () => (
                     <ProtectedRoute exact path="/profile" component={UserProfileContainer} />
                     <Route exact path="/resources" component={ResourcesContainer} />
                     <Route exact path="/whatsatagalong" component={WhatsATagAlongContainer} />
-                    <ProtectedRoute exact path="/aboutus" component={AboutUsContainer} />
+                    <Route exact path="/aboutus" component={AboutUsContainer} />
                     <Route path="/map/:TagID" component={MapContainer}/>
                     <AuthRoute path="/" component={HomeContainer}/>
                 </Switch>
