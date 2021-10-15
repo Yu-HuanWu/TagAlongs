@@ -150,6 +150,18 @@ router.post("/acceptBy/:tagalongID",(req,res)=>{
   .catch(err => res.status(404).json({noTagAlongFound: "No TagAlong was found with that ID"}))
 })
 
+
+router.get("/myPostedTags/:userID",(req,res)=>{
+  TagAlong.find().then((data)=>{
+    let filtered = data.filter(tags=>{
+      return tags.user.toString() === req.params.userID
+    })
+    return res.json(filtered)
+  })
+})
+
+
+
 router.post("/completeTagAlong/:tagalongID",(req,res)=>{
   TagAlong.findOne({id: req.params.UserID})
   .then((tagAlong)=>{
