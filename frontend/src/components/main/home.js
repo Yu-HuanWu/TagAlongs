@@ -25,7 +25,7 @@ const Home = () => {
                     <div className="info-box">
                         <h1 className="info-title">How?</h1>
                         <br/>
-                        <p>Please sign up and<Link> read more </Link> about how to use out service for youself or a loved one. Or sign up to be a volunteers!</p>
+                        <p>Please sign up and<Link to="/whatsatagalong"> read more </Link> about how to use our service for youself or a loved one. Or sign up to be a volunteers!</p>
                     </div>
                 </div>
             </div>

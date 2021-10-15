@@ -122,6 +122,16 @@
 .info-box{
   width: 100%;
   padding: 30px;
+  & a {
+    text-decoration: none;
+    transition: all 0.4s ease-in-out;
+
+    &:hover {
+      color: #19695c;
+      background-color: rgba(122, 122, 122, 0.205);
+      border-radius: 10px;
+    }
+  }
 }
 
 .info-title{
