@@ -134,17 +134,32 @@ router.post('/update', (req, res) => {
 
 
 router.post('/updateAvatar', (req, res) => {
+  console.log(req.body.UserID)
     User.findOne({_id:req.body.UserID})
       .then((user)=>{
         if(user){
           user.avatar = req.body.avatar;
           user.markModified("avatar");
           user.save();
+          console.log(user)
           return res.json(user)
         }
       })
 
 });
+
+
+router.get('/fetchUser/:id',(req,res)=>{
+  User.findOne({_id:req.params.id})
+    .then((user)=>{
+      if(user){
+        return res.json(user)
+      }else{
+        return res.status(400).json({ user: "User not found" });
+      }
+    })
+    
+})
 
 
 // router.post('/addTagAlongs/:id', (req, res) => {

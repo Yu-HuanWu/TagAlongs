@@ -13,17 +13,21 @@ class UserProfile extends React.Component {
 
     constructor(props) {
         super(props);
-        
+        console.log(this.props.currentUser)
         this.state = {
-            avatar: this.props.currentUser.avatar,
+            avatar: "default",
             rightRender: 'default'
         }
-    }
 
-    componentDidMount() {
+        this.props.grabUser(this.props.currentUser._id)
+        .then((user)=>{
+          this.setState({avatar: user.currentUser.avatar})
+        })
+      }
+      componentDidMount() {
         this.props.fetchTagAlongs();
     }
-
+    
     changeRightContainer(type) {
         this.setState({
             rightRender: `${type}`
@@ -179,6 +183,9 @@ class UserProfile extends React.Component {
     }
 
     render() {
+      // console.log(this.props.currentUser)
+      console.log(this.props.totalState)
+      console.log(this.state)
         const user = this.props.currentUser;
         return (
             <div className="user-profile">

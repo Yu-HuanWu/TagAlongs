@@ -1,0 +1,61 @@
+
+.about-us-header{
+    text-align: center;
+    color: white;
+    font-size: 50px;
+}
+
+.main-textbox { 
+    margin: 50px;
+    padding: 40px; 
+    width: 70%;
+    height: 100%;
+    color: #4f6d7aad;
+    background-color: transparent;
+    border-radius: 22px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+}
+
+
+.textbox {
+    margin: 50px;
+    padding: 40px; 
+    width: 100vh;
+    height: 100%;
+    color: #4f6d7aad;
+    background-color: #E8DAB2;
+    border-radius: 22px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+}
+
+.photo-name {
+    font-size: 25px;
+    text-decoration: bold;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+.headshots {
+    border-radius: 22px;
+}
+
+.personal-info {
+    display: flex;
+    
+    p {
+        font-size: 18px;
+        margin: 30px;
+    }
+}
+
+.headshots {
+    flex: 1; 
+}
+
+.bio {
+    flex: 3;
+}
