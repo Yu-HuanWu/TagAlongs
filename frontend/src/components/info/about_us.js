@@ -13,7 +13,7 @@ const AboutUs = () => {
             <div className="textbox">
             <div className="photo-name">Yu-Huan Wu</div>
                 <div className="personal-info">
-                    <img className="headshots" src={Yu}/>
+                    <img className="headshots" src={Yu} alt="Yu-Huan W profile pic"/>
                     <p className="bio">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
                         when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
@@ -23,7 +23,7 @@ const AboutUs = () => {
             <div className="textbox">
                 <div className="photo-name">Tony Zhang</div>
                 <div className="personal-info">
-                    <img className="headshots" src={tony}/>
+                    <img className="headshots" src={tony} alt="Tony Z profile pic"/>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
                         when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
@@ -33,7 +33,7 @@ const AboutUs = () => {
             <div className="textbox">
             <div className="photo-name">John Feng</div>
                 <div className="personal-info">
-                    <img className="headshots" src={john}/>
+                    <img className="headshots" src={john} alt="John F profile pic"/>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                     Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
                     when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
@@ -43,7 +43,7 @@ const AboutUs = () => {
             <div className="textbox">
             <div className="photo-name">Jim Nardi</div>
                 <div className="personal-info">
-                    <img className="headshots" src={jim}/>
+                    <img className="headshots" src={jim} alt="Jim N profile pic"/>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                     Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
                     when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
