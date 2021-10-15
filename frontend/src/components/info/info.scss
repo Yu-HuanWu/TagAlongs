@@ -223,3 +223,44 @@
         }
     }
 }
+//----What's a TagAlong-----//
+
+.question-title {
+    font-size: 35px;
+    text-decoration: underline;
+}
+
+.quote {
+    font-size: 26px;
+    margin-top: 2%;
+    font-style: italic;
+}
+
+.info-para {
+    font-size: 26px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+//----Resources-----//
+
+.resources-img {
+    max-width: 100%;
+    height: auto;
+}
+
+.resources-box {
+    display: flex;
+}
+
+.info-para-r {
+    padding-top: 2%;
+    font-size: 26px;
+    margin-left: 2%;
+}
+
+.resource-title {
+    font-size: 36px;
+    text-align: center;
+    padding-bottom: 5%;
+}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper ,InfoWindow,Marker} from 'google-maps-react';
 import { acceptTag } from '../../util/tagalong_api_util';
-import "./map.css"
+import "./map.scss"
 
 const mapStyles = {
   width: '100%',
@@ -44,8 +44,8 @@ export class MapComponent extends Component {
     console.log(this.props.currentUser._id)
     console.log(this.state.items._id)
     // console.log("hello")
-    acceptTag(this.state.items._id,this.props.currentUser._id)
-
+    acceptTag(this.state.items._id,{userID:this.props.currentUser._id})
+    this.props.history.push("/")
   }
 
 
@@ -65,64 +65,96 @@ export class MapComponent extends Component {
     }else{
       let items = this.state.items;
       return (
-        <div>
-          <div>
+        <div className="tagalongs-index-container">
+          <div className="tagalongs-index-section">
+
             <div>
-              {items.title}
+
+              <div className="tagalongs-show-banner">
+                Title:
+              </div>
+              <div>
+                {items.title}
+              </div>
+
             </div>
+
             <div>
-              {items.body}
+
+              <div className="tagalongs-show-banner">
+                Description:
+              </div>
+              <div>
+                {items.body}
+              </div>
+
             </div>
+
+
             <div>
-              Starting Location: {items.startLocation}
+              <div className="tagalongs-show-banner">
+                Starting Location: 
+              </div>
+              <div>
+                {items.startLocation}
+              </div>
             </div>
+
             <div>
-              Ending Location: {items.endLocation}
+              <div className="tagalongs-show-banner">
+                Ending Location: 
+              </div>
+              <div>
+              {items.endLocation}
+              </div>
             </div>
-            <div>
-              <button onClick={()=>this.handleAccept()}>Accept this TagAlong</button>
+
+            <div className="tagalongs-map-button-div">
+              <button className="tagalongs-map-button"onClick={()=>this.handleAccept()}>Accept this TagAlong</button>
             </div>
           </div>
 
-        <div style={style}>
-        <Map
-          google={this.props.google}
-          zoom={12}
-          style={mapStyles}
-          initialCenter={
-            {
-              lat: 37.762301,
-              lng: -122.437640,
-            }
-          }
-          >
-          <Marker id="map-marker-css"
-            onClick={this.onMarkerClick}
-            name={items.startLocation}
-            position={{
-              lat: items.startLatLng[0],
-              lng: items.startLatLng[1]
-            }}
-            />
-          <Marker
-            onClick={this.onMarkerClick}
-            name={items.endLocation}
-            position={{
-              lat: items.endLatLng[0],
-              lng: items.endLatLng[1]
-            }}
-            />
-          <InfoWindow
-            marker={this.state.activeMarker}
-            visible={this.state.showingInfoWindow}
-            onClose={this.onClose}
-            >
-            <div>
-              <h4>{this.state.selectedPlace.name}</h4>
+          <div className="mapshow">
+          <div style={style}>
+            <Map
+              google={this.props.google}
+              zoom={12}
+              style={mapStyles}
+              initialCenter={
+                {
+                  lat: 37.762301,
+                  lng: -122.437640,
+                }
+              }
+              >
+              <Marker id="map-marker-css"
+                onClick={this.onMarkerClick}
+                name={items.startLocation}
+                position={{
+                  lat: items.startLatLng[0],
+                  lng: items.startLatLng[1]
+                }}
+                />
+              <Marker
+                onClick={this.onMarkerClick}
+                name={items.endLocation}
+                position={{
+                  lat: items.endLatLng[0],
+                  lng: items.endLatLng[1]
+                }}
+                />
+              <InfoWindow
+                marker={this.state.activeMarker}
+                visible={this.state.showingInfoWindow}
+                onClose={this.onClose}
+                >
+                <div>
+                  <h4>{this.state.selectedPlace.name}</h4>
+                </div>
+              </InfoWindow>
+            </Map>
             </div>
-          </InfoWindow>
-          </Map>
-        </div>
+          </div>
         </div>
       );
     }
