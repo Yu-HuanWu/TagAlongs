@@ -1,5 +1,7 @@
 import React from 'react';
 import UserAchievementsContainer from './user_achievements_container';
+import AcceptedTagAlongsContainer from './accepted_tagalongs_container';
+import MyTagAlongsContainer from './my_tagalongs_container';
 import { withRouter } from 'react-router-dom';
 import './user_profile.scss';
 import defaultAvatar from './avatars/default.svg';
@@ -13,7 +15,6 @@ class UserProfile extends React.Component {
 
     constructor(props) {
         super(props);
-        console.log(this.props.currentUser)
         this.state = {
             avatar: "default",
             rightRender: 'default'
@@ -39,7 +40,8 @@ class UserProfile extends React.Component {
             case 'default':
                 return (
                     <div>
-                        Welcome to your user profile!
+                        <h1>Your TagAlongs:</h1>
+                        <MyTagAlongsContainer />
                     </div>
                 )
             case 'completed':
@@ -52,6 +54,7 @@ class UserProfile extends React.Component {
                  return (
                     <div>
                         <h1>Your Accepted TagAlongs:</h1>
+                        <AcceptedTagAlongsContainer />
                     </div>
                 )
             case 'achievements':
@@ -196,11 +199,11 @@ class UserProfile extends React.Component {
                             <li className="user-profile-nav-item">
                                 <button onClick={() => this.changeRightContainer("default")}
                                     className="user-profile-nav-button">
-                                        My Profile Page
+                                        My TagAlongs
                                 </button>
                             </li>
                             <li className="user-profile-nav-item">
-                                <button onClick={() => this.changeRightContainer("ongoing")}
+                                <button onClick={() => this.changeRightContainer("accepted")}
                                     className="user-profile-nav-button">
                                         My Accepted TagAlongs
                                 </button>

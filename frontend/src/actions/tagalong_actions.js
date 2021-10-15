@@ -46,3 +46,8 @@ export const fetchAcceptedTagAlongs = userId => dispatch => (
     APIUtil.acceptedTags(userId).then(acceptedTagAlongs =>
         dispatch(receiveAcceptedTagAlongs(acceptedTagAlongs)))
 )
+
+export const fetchMyTagAlongs = userId => dispatch => (
+    APIUtil.myTags(userId).then(myTags =>
+        dispatch(receiveTagAlongs(myTags)))
+)
