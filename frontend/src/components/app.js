@@ -29,7 +29,7 @@ const App = () => (
                     <ProtectedRoute exact path="/newtagalong" component={TagAlongFormContainer} />
                     <ProtectedRoute exact path="/tagalongs" component={TagAlongIndexContainer} />
                     <ProtectedRoute exact path="/profile" component={UserProfileContainer} />
-                    <ProtectedRoute exact path="/resources" component={ResourcesContainer} />
+                    <Route exact path="/resources" component={ResourcesContainer} />
                     <ProtectedRoute exact path="/whatsatagalong" component={WhatsATagAlongContainer} />
                     <ProtectedRoute exact path="/aboutus" component={AboutUsContainer} />
                     <Route path="/map/:TagID" component={MapContainer}/>
