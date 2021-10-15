@@ -1,15 +1,18 @@
 import React from 'react';
 
 class UserAchievements extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
     renderBadgeClass() {
 
     }
 
     render() {
-        console.log(this.ownProps);
         return (
             <div>
-                <h1>You have earned { this.props.points } cookies.</h1>
+                <h1>You have earned { this.props.cookies } cookies.</h1>
                 <ul className="user-achievement-list">
                     <li className="user-achievement-badge">
                         Achievement Badge Here

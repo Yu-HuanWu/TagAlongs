@@ -1,5 +1,5 @@
 import React from 'react';
-import UserAchievements from './user_achievements';
+import UserAchievementsContainer from './user_achievements_container';
 import { withRouter } from 'react-router-dom';
 import './user_profile.scss';
 import defaultAvatar from './avatars/default.svg';
@@ -39,7 +39,7 @@ class UserProfile extends React.Component {
             case 'default':
                 return (
                     <div>
-                        Welcome to your User Profile!
+                        Welcome to your user profile!
                     </div>
                 )
             case 'completed':
@@ -48,17 +48,17 @@ class UserProfile extends React.Component {
                         <h1>Your Completed TagAlongs:</h1>
                     </div>
                 )
-            case 'ongoing':
+            case 'accepted':
                  return (
                     <div>
-                        <h1>Your Ongoing TagAlongs:</h1>
+                        <h1>Your Accepted TagAlongs:</h1>
                     </div>
                 )
             case 'achievements':
                  return (
                     <div>
                         <h1>You've Unlocked the Following Achievements!</h1>
-                        <UserAchievements 
+                        <UserAchievementsContainer 
                             points={this.props.currentUser.tagAlongsCompleted}
                             />
                     </div>
@@ -196,19 +196,19 @@ class UserProfile extends React.Component {
                             <li className="user-profile-nav-item">
                                 <button onClick={() => this.changeRightContainer("default")}
                                     className="user-profile-nav-button">
-                                        All TagAlongs
+                                        My Profile Page
+                                </button>
+                            </li>
+                            <li className="user-profile-nav-item">
+                                <button onClick={() => this.changeRightContainer("ongoing")}
+                                    className="user-profile-nav-button">
+                                        My Accepted TagAlongs
                                 </button>
                             </li>
                             <li className="user-profile-nav-item">
                                 <button onClick={() => this.changeRightContainer("completed")}
                                     className="user-profile-nav-button">
                                         My Completed TagAlongs
-                                </button>
-                            </li>
-                            <li className="user-profile-nav-item">
-                                <button onClick={() => this.changeRightContainer("ongoing")}
-                                    className="user-profile-nav-button">
-                                        My Ongoing TagAlongs
                                 </button>
                             </li>
                             <li className="user-profile-nav-item">
