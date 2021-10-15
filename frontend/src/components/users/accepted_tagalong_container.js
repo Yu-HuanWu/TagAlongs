@@ -5,6 +5,7 @@ import { fetchAcceptedTagAlongs  } from '../../actions/tagalong_actions';
 const mapStateToProps = state => {
     return {
         currentUser: state.session.user,
+        acceptedTagAlongs: Object.values(state.entities.tagAlongs)
     }
 };
 
@@ -14,4 +15,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserAchievements);
+export default connect(mapStateToProps, mapDispatchToProps)(AcceptedTagAlongs);

@@ -1,5 +1,6 @@
 import React from 'react';
 import UserAchievementsContainer from './user_achievements_container';
+import AcceptedTagAlongsContainer from './accepted_tagalong_container';
 import { withRouter } from 'react-router-dom';
 import './user_profile.scss';
 import defaultAvatar from './avatars/default.svg';
@@ -13,7 +14,6 @@ class UserProfile extends React.Component {
 
     constructor(props) {
         super(props);
-        console.log(this.props.currentUser)
         this.state = {
             avatar: "default",
             rightRender: 'default'
@@ -52,6 +52,7 @@ class UserProfile extends React.Component {
                  return (
                     <div>
                         <h1>Your Accepted TagAlongs:</h1>
+                        <AcceptedTagAlongsContainer />
                     </div>
                 )
             case 'achievements':
@@ -200,7 +201,7 @@ class UserProfile extends React.Component {
                                 </button>
                             </li>
                             <li className="user-profile-nav-item">
-                                <button onClick={() => this.changeRightContainer("ongoing")}
+                                <button onClick={() => this.changeRightContainer("accepted")}
                                     className="user-profile-nav-button">
                                         My Accepted TagAlongs
                                 </button>

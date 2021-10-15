@@ -17,5 +17,5 @@ export const acceptTag = (id,userID)=>{
 }
 
 export const acceptedTags = userId => {
-  return axios.get(`/api/tagAlongs/myAccepted/${userId}`)
+  return axios.get(`/api/tagAlong/myAccepted/${userId}`)
 }
