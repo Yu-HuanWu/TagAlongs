@@ -73,11 +73,11 @@ class Nav extends React.Component{
                         <div className="nav-user-info">
                             <p className="users-name">Hello, {user.handle}</p>
                             <span className="nav-divider"/>
-                            <Link to ="./resources" className="nav-buttons">Resources</Link>
+                            <Link to ="/resources" className="nav-buttons">Resources</Link>
                             <span className="nav-divider"/>
-                            <Link to ="./whatsatagalong" className="nav-buttons">What's a TagAlong?</Link>
+                            <Link to ="/whatsatagalong" className="nav-buttons">What's a TagAlong?</Link>
                             <span className="nav-divider"/>
-                            <Link to ="./aboutus" className="nav-buttons">About Us</Link>
+                            <Link to ="/aboutus" className="nav-buttons">About Us</Link>
                             <span className="nav-divider"/>
                             <div className="dropdown">
                                 <Link to="/profile" id="dropdown">
