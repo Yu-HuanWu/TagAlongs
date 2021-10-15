@@ -54,6 +54,15 @@ class LoginForm extends React.Component {
         );
     }
 
+    loginDemo() {
+        let user = {
+            handle: "CookieMonster",
+            password: "password"
+        };
+
+        this.props.login(user);
+    }
+
     render() {
         return (
         <div className="splash">
@@ -81,7 +90,10 @@ class LoginForm extends React.Component {
                         </div>
 
                         <input className="form-button" type="submit" value="Log In" />
-                        
+                        <button className="form-button"
+                            id="demo-button" 
+                            onClick={() => this.loginDemo()}
+                            >Demo Login</button>
                         {this.renderErrors()}
                     </div>
                 </form>
