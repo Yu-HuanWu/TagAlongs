@@ -17,5 +17,13 @@ export const login = (userData) => {
 };
 
 export const updateUser = (userData) => {
-    return axios.patch('/api/users/update', userData)
+    return axios.post('/api/users/update', userData)
+}
+
+export const updateAvatar = (userData)=>{
+  return axios.post('/api/users/updateAvatar',userData)
+}
+
+export const fetchUser = (UserID)=>{
+  return axios.get(`/api/users/fetchUser/${UserID}`)
 }

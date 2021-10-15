@@ -2,8 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import './nav.scss';
 import tagalongslogo from './tagalongs_logo.svg';
-import defaultAvatar from '../users/avatars/default.png';
-import blushAvatar from '../users/avatars/blush.png';
+import defaultAvatar from '../users/avatars/default.svg';
+import blushAvatar from '../users/avatars/blush.svg';
+import happyAvatar from '../users/avatars/happy.svg';
+import tongueAvatar from '../users/avatars/tongue.svg';
+import teethAvatar from '../users/avatars/teeth.svg';
+import grinAvatar from '../users/avatars/grin.svg';
 import Resources from "../info/resources"
 
 class Nav extends React.Component{
@@ -25,15 +29,30 @@ class Nav extends React.Component{
     };
 
     renderAvatar() {
-        switch(this.state.avatar) {
+        switch(this.props.user.avatar) {
         case 'default':
             return <img src={ defaultAvatar }
                         alt="default-avatar" 
                         className="user-nav-avatar" />
-                        case 'default':
         case 'blush':
             return <img src={ blushAvatar } 
                         alt="blush-avatar" 
+                        className="user-nav-avatar" />
+        case 'happy':
+            return <img src={ happyAvatar } 
+                        alt="happy-avatar" 
+                        className="user-nav-avatar" />
+        case 'tongue':
+            return <img src={ tongueAvatar } 
+                        alt="tongue-avatar" 
+                        className="user-nav-avatar" />
+        case 'grin':
+            return <img src={ grinAvatar } 
+                        alt="grin-avatar" 
+                        className="user-nav-avatar" />
+        case 'teeth':
+            return <img src={ teethAvatar } 
+                        alt="teeth-avatar" 
                         className="user-nav-avatar" />
         default:
             return <img src={ defaultAvatar } 
@@ -44,8 +63,6 @@ class Nav extends React.Component{
     
     render() {
         const {user, logout} = this.props; 
-        console.log(this.state.toggle); 
-
         if (user && user.handle) {
             return (
                 <div className="main-nav-container">
