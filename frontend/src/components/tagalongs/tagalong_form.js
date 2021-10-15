@@ -115,13 +115,13 @@ class TagAlongForm extends React.Component {
                             onChange={this.update('startingTime')}
                             placeholder="Enter starting time" 
                         />
-                        <label className="tagalong-form-label">duration</label>
+                        <label className="tagalong-form-label">Duration</label>
                         <input type="text"
                             value={this.state.duration}
                             onChange={this.update('duration')}
                             placeholder="Enter duration" 
                         />
-                        <label className="tagalong-form-label">Type of TagAlong:</label>
+                        <label className="tagalong-form-label">Type of TagAlong</label>
                         <select id="tagalong-category" name="tagalong-category"
                             onChange={this.update('category')}>
                             <option value="chat">Chat</option>

@@ -126,6 +126,14 @@ router.post("/delete/:id",(req,res)=>{
     .catch(err=> res.status(404).json({noTagAlongFound: "No TagAlong was found with that ID"}))
 })
 
+router.get("/myAccepted/:userID",(req,res)=>{
+  TagAlong.find().then((data)=>{
+    let filtered = data.filter(tags=>{
+      return tags.acceptedBy.includes(req.params.userID)
+    })
+    return res.json(filtered)
+  })
+})
 
 router.post("/acceptBy/:tagalongID",(req,res)=>{
   TagAlong.findOne({_id: req.params.tagalongID})
