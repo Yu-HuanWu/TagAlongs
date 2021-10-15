@@ -183,9 +183,6 @@ class UserProfile extends React.Component {
     }
 
     render() {
-      // console.log(this.props.currentUser)
-      console.log(this.props.totalState)
-      console.log(this.state)
         const user = this.props.currentUser;
         return (
             <div className="user-profile">

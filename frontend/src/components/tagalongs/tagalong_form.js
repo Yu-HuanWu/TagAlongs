@@ -51,7 +51,7 @@ class TagAlongForm extends React.Component {
                 date: this.state.date,
                 startingTime: this.state.startingTime,
                 duration: this.state.duration,
-                user: this.props.currentUser.id,
+                user: this.props.currentUser._id,
                 startLatLng:[startingLatLng.lat,startingLatLng.lng],
                 endLatLng:[endingLatLng.lat,endingLatLng.lng]
             }
@@ -73,6 +73,7 @@ class TagAlongForm extends React.Component {
     }
 
     render() {
+      console.log(this.props.currentUser)
         return (
             <div className="tagalong-form-container">
                 <form onSubmit={this.handleSubmit}>
