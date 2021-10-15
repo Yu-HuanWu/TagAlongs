@@ -1,6 +1,7 @@
 import React from 'react';
 import UserAchievementsContainer from './user_achievements_container';
 import AcceptedTagAlongsContainer from './accepted_tagalongs_container';
+import MyTagAlongsContainer from './my_tagalongs_container';
 import { withRouter } from 'react-router-dom';
 import './user_profile.scss';
 import defaultAvatar from './avatars/default.svg';
@@ -40,6 +41,7 @@ class UserProfile extends React.Component {
                 return (
                     <div>
                         <h1>Your TagAlongs:</h1>
+                        <MyTagAlongsContainer />
                     </div>
                 )
             case 'completed':
