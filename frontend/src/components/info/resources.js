@@ -1,5 +1,5 @@
 import React from "react"
-import './info.scss'
+import './resources.scss'
 import SAH from "./img/SAH.jpeg"
 import TrevorProject from "./img/trevor_project.jpeg"
 import SPL from "./img/SPL_logo.jpeg"
