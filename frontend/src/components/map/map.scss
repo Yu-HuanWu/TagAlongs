@@ -1,0 +1,48 @@
+#map-marker-css{
+  /* color: grey;  */
+  opacity: .7;
+  filter: brightness(0) invert(1);
+}
+
+
+
+.mapshow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #EAEAEA;
+    padding: 20px;
+    margin: 30px;
+    margin-top: 7%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #DD6E42;
+    transition: all 0.8s ease-in-out;
+    &:hover {
+      box-shadow: 10px 10px 5px #DD6E42;
+    }
+}
+
+.tagalongs-show-banner{
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.5rem;
+  margin-top: 10px;
+}
+
+.tagalongs-map-button-div{
+  margin-top: 10px;
+}
+
+.tagalongs-map-button{
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #E8DAB2;
+  transition: .4s;
+}
+
+
+.tagalongs-map-button:hover{
+  background-color: #4F6D7A;
+  color: #EAEAEA;
+}

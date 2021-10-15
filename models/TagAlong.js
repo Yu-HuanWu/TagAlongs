@@ -55,9 +55,8 @@ const TagAlongSchema = new Schema({
     default:false
   },
   acceptedBy:{
-    type: Schema.Types.ObjectId,
-    ref: 'users',
-    default:""
+    type: [Schema.Types.ObjectId],
+    ref: 'users'
   }
 },{
     timestamps:true

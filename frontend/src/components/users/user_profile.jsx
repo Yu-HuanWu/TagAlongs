@@ -1,5 +1,7 @@
 import React from 'react';
-import UserAchievements from './user_achievements';
+import UserAchievementsContainer from './user_achievements_container';
+import AcceptedTagAlongsContainer from './accepted_tagalongs_container';
+import MyTagAlongsContainer from './my_tagalongs_container';
 import { withRouter } from 'react-router-dom';
 import './user_profile.scss';
 import defaultAvatar from './avatars/default.svg';
@@ -13,7 +15,6 @@ class UserProfile extends React.Component {
 
     constructor(props) {
         super(props);
-        console.log(this.props.currentUser)
         this.state = {
             avatar: "default",
             rightRender: 'default'
@@ -39,7 +40,8 @@ class UserProfile extends React.Component {
             case 'default':
                 return (
                     <div>
-                        Welcome to your User Profile!
+                        <h1>Your TagAlongs:</h1>
+                        <MyTagAlongsContainer />
                     </div>
                 )
             case 'completed':
@@ -48,17 +50,17 @@ class UserProfile extends React.Component {
                         <h1>Your Completed TagAlongs:</h1>
                     </div>
                 )
-            case 'ongoing':
+            case 'accepted':
                  return (
                     <div>
-                        <h1>Your Ongoing TagAlongs:</h1>
+                        <h1>Your Accepted TagAlongs:</h1>
+                        <AcceptedTagAlongsContainer />
                     </div>
                 )
             case 'achievements':
                  return (
                     <div>
-                        <h1>You've Unlocked the Following Achievements!</h1>
-                        <UserAchievements 
+                        <UserAchievementsContainer 
                             points={this.props.currentUser.tagAlongsCompleted}
                             />
                     </div>
@@ -183,9 +185,6 @@ class UserProfile extends React.Component {
     }
 
     render() {
-      // console.log(this.props.currentUser)
-      console.log(this.props.totalState)
-      console.log(this.state)
         const user = this.props.currentUser;
         return (
             <div className="user-profile">
@@ -199,19 +198,19 @@ class UserProfile extends React.Component {
                             <li className="user-profile-nav-item">
                                 <button onClick={() => this.changeRightContainer("default")}
                                     className="user-profile-nav-button">
-                                        All TagAlongs
+                                        My TagAlongs
+                                </button>
+                            </li>
+                            <li className="user-profile-nav-item">
+                                <button onClick={() => this.changeRightContainer("accepted")}
+                                    className="user-profile-nav-button">
+                                        My Accepted TagAlongs
                                 </button>
                             </li>
                             <li className="user-profile-nav-item">
                                 <button onClick={() => this.changeRightContainer("completed")}
                                     className="user-profile-nav-button">
                                         My Completed TagAlongs
-                                </button>
-                            </li>
-                            <li className="user-profile-nav-item">
-                                <button onClick={() => this.changeRightContainer("ongoing")}
-                                    className="user-profile-nav-button">
-                                        My Ongoing TagAlongs
                                 </button>
                             </li>
                             <li className="user-profile-nav-item">
