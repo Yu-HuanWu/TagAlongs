@@ -129,7 +129,9 @@ router.post("/delete/:id",(req,res)=>{
 router.get("/myAccepted/:userID",(req,res)=>{
   TagAlong.find().then((data)=>{
     let filtered = data.filter(tags=>{
-      return tags.acceptedBy.includes(req.params.userID)
+      if(tags.completed === false){
+        return tags.acceptedBy.includes(req.params.userID)
+      }
     })
     return res.json(filtered)
   })
@@ -163,8 +165,6 @@ router.get("/myPostedTags/:userID",(req,res)=>{
 
 
 router.post("/completeTagAlong/:tagalongID",(req,res)=>{
-  console.log("WWAAAAP")
-  console.log(req.params.tagalongID)
   TagAlong.findOne({_id: req.params.tagalongID})
   .then((tag)=>{
     tag.completed = true;
@@ -175,11 +175,10 @@ router.post("/completeTagAlong/:tagalongID",(req,res)=>{
       user.tagAlongsCompleted++;
       user.markModified("tagAlongsCompleted");
       user.save();
-      console.log(user)
       })
-    
+  
     // console.log(tagAlong);
-    return res.json(tagAlong)
+    return res.status(200).json({good:"tag was updated"})
   })
   .catch(err => res.status(404).json({noTagAlongFound: "No TagAlong was found with that ID"}))
 })

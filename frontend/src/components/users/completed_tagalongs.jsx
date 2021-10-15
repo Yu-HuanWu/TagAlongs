@@ -1,18 +1,19 @@
 import React from 'react';
 
-class AcceptedTagAlongs extends React.Component {
+class CompletedTagAlongs
+ extends React.Component {
     constructor(props) {
         super(props);
     }
 
     componentDidMount() {
-        this.props.fetchAccepted(this.props.currentUser._id);
+        // this.props.fetchAccepted(this.props.currentUser._id);
     }
 
     render() {
         return (
             <div className="accepted-tagalongs-list">
-                <ul className="accepted-tagalongs user-achievement-list">
+                {/* <ul className="accepted-tagalongs user-achievement-list">
                     {this.props.acceptedTagAlongs.map((tagalong, i) => (
                         <li key={`tagalong-${i}`}
                             className="accepted-tagalong-item user-achievement-badge">
@@ -22,10 +23,11 @@ class AcceptedTagAlongs extends React.Component {
                                 <p>End Point: &nbsp; <h3>{tagalong.endLocation}</h3></p>
                         </li>
                     ))}
-                </ul>
+                </ul> */}
             </div>
         )
     }
 }
 
-export default AcceptedTagAlongs;
+export default CompletedTagAlongs
+;
