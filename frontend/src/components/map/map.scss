@@ -51,5 +51,17 @@
   .tagalongs-index-container {
     display: flex;
     flex-direction: column;
+    width: 100vh;
   }
+
+  .map {
+    width: 100%;
+  }
+
+
+.element.style {
+  width: 300px;
+  height: 300px;
+  position: relative;
+}
 }
