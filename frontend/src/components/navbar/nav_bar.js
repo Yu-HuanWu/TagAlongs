@@ -17,7 +17,8 @@ class Nav extends React.Component{
             toggle: 'home' 
         }
 
-        this.toggleButton = this.toggleButton.bind(this)
+        this.toggleButton = this.toggleButton.bind(this);
+        this.myFunction = this.myFunction.bind(this);
     }
     
     toggleButton() {
@@ -60,6 +61,15 @@ class Nav extends React.Component{
                         className="user-nav-avatar" />
         }
     }
+
+    myFunction() {
+        let x = document.getElementById("topnav");
+        if (x.className === "nav-user-info") {
+            x.className += " responsive";
+        } else {
+            x.className = "nav-user-info";
+        }
+    }
     
     render() {
         const {user, logout} = this.props; 
@@ -70,7 +80,10 @@ class Nav extends React.Component{
                         <Link to="/">
                             <img src={tagalongslogo} alt="TagAlongs" className="navbar-logo" />
                         </Link>
-                        <div className="nav-user-info">
+                        <a href="javascript:void(0);" onClick={this.myFunction} className="hamburger"> &#9776;</a>
+
+                        <div className="nav-user-info" id="topnav">
+                            {/* <a href="javascript:void(0);" onClick={this.myFunction} className="hamburger"> &#9776;</a> */}
                             <p className="users-name">Hello, {user.handle}</p>
                             <span className="nav-divider"/>
                             <Link to ="/resources" className="nav-buttons">Resources</Link>
@@ -107,6 +120,7 @@ class Nav extends React.Component{
                                     </li>
                                 </ul>
                             </div>
+                            {/* <a href="javascript:void(0);" onClick={this.myFunction} className="hamburger"> &#9776;</a> */}
                         </div>
                     </div>
                 </div>
