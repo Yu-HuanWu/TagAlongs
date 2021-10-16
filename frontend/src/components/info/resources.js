@@ -24,13 +24,13 @@ const Resources = () => {
             <div className="resource-box">
                 <h1 className="resource-title">The Trevor Project</h1>
                 <div className="resources-info">
+                        <a href="https://www.thetrevorproject.org/explore/" target="_blank">
+                            <img className="resources-img"src={TrevorProject}/>
+                        </a>
                         <div className="info-para-r">The Trevor Project is an American nonprofit organization founded in 1998 focused on suicide prevention efforts among 
                         lesbian, gay, bisexual, transgender, queer, and questioning youth. Through a toll-free telephone number, it operates The Trevor Lifeline, a confidential 
                         service that offers trained counselors. More information is available <a href="https://www.thetrevorproject.org/explore/"  target="_blank">here</a>
                         </div>
-                        <a href="https://www.thetrevorproject.org/explore/" target="_blank">
-                            <img className="resources-img"src={TrevorProject}/>
-                        </a>
                     </div>
             </div>
             <div className="resource-box">

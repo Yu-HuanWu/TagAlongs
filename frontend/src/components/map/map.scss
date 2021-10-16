@@ -46,3 +46,10 @@
   background-color: #4F6D7A;
   color: #EAEAEA;
 }
+
+@media screen and (max-width: 800px) {
+  .tagalongs-index-container {
+    display: flex;
+    flex-direction: column;
+  }
+}

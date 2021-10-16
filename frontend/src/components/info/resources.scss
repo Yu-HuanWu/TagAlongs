@@ -62,3 +62,27 @@
         box-shadow: 5px 5px 2px black;
     }
 }
+
+@media screen and (max-width: 800px) {
+    .resources-info {
+        display: flex;
+        flex-direction: column;
+
+        a {
+            padding: 5%
+        }
+    }
+
+    .info-para-r {
+    padding: 5%
+    }
+
+    .resource-main {
+        padding: 5%;
+        margin: 5%;
+    }
+
+    .resource-box {
+        margin: 5%;
+    }
+}
