@@ -54,42 +54,44 @@ export class MapIndex extends Component {
 
       return (
         <div>
+          <div style={style}>
+              <div className="map">
+                  <Map
+                    google={this.props.google}
+                    zoom={12}
+                    style={mapStyles}
+                    initialCenter={
+                      {
+                        lat: 37.762301,
+                        lng: -122.437640,
+                      }
+                    }
+                    >
+              
 
-        <div style={style}>
-        <Map
-          google={this.props.google}
-          zoom={12}
-          style={mapStyles}
-          initialCenter={
-            {
-              lat: 37.762301,
-              lng: -122.437640,
-            }
-          }
-          >
+                  {tagAlongs.map((tag,idx)=>(
+                    <Marker key={idx} id="map-marker-css"
+                    onClick={this.onMarkerClick}
+                    name={tag.startLocation}
+                    position={{
+                      lat: tag.startLatLng[0],
+                      lng: tag.startLatLng[1]
+                    }}
+                    />
+                  ))}  
 
-          {tagAlongs.map((tag,idx)=>(
-            <Marker key={idx} id="map-marker-css"
-            onClick={this.onMarkerClick}
-            name={tag.startLocation}
-            position={{
-              lat: tag.startLatLng[0],
-              lng: tag.startLatLng[1]
-            }}
-            />
-          ))}  
-
-          <InfoWindow
-            marker={this.state.activeMarker}
-            visible={this.state.showingInfoWindow}
-            onClose={this.onClose}
-            >
-            <div>
-              <h4>{this.state.selectedPlace.name}</h4>
+                  <InfoWindow
+                    marker={this.state.activeMarker}
+                    visible={this.state.showingInfoWindow}
+                    onClose={this.onClose}
+                    >
+                    <div>
+                      <h4>{this.state.selectedPlace.name}</h4>
+                    </div>
+                  </InfoWindow>
+                  </Map>
+                </div>
             </div>
-          </InfoWindow>
-          </Map>
-        </div>
         </div>
       );
     }
