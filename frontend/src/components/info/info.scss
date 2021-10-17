@@ -44,9 +44,10 @@
     text-overflow: ellipsis;
     word-wrap: break-word;
     box-shadow: 5px 5px 0px #DD6E42;
-    transition: all 0.8s ease-in-out;
+    transition: all 0.7s ease-in-out;
     &:hover {
       box-shadow: 13px 13px 0px #DD6E42;
+      margin-top: 0%;
     }
 }
 
@@ -181,16 +182,16 @@
 
     .textbox {
         display: flex;
-        width: 100%;
-        margin: 0;
+        width: 98%;
         margin-top: 1%;
-        margin-bottom: 1%;
+        margin-bottom: 3%;
     }
 
     .headshot-container {
         position: relative;
         background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
         margin: 0;
+        margin-left: 3px;
         padding: 0;
         width: 80px;
         height: 80px;
@@ -198,6 +199,22 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        transition: all 0.2s ease-in-out;
+        &:active, 
+        &:hover, {
+            // position: absolute;
+            width: 150px;
+            height: 150px;
+            margin-bottom: 3px;
+            .headshots{
+                width: 150px;
+                height: 150px;
+            }
+            .headshot-title,
+            .headshot-title2 {
+                font-size: 2em;
+            }
+        }
     }
 
     .headshot-title,
@@ -212,11 +229,11 @@
         height: 80px;
         transition: all 0.2s ease-in-out;
 
-        &:active, &:hover {
-            // position: absolute;
-            width: 150px;
-            height: 150px;
-        }
+        // &:active, &:hover {
+        //     // position: absolute;
+        //     width: 150px;
+        //     height: 150px;
+        // }
     }
 
     .personal-info {
