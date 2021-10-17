@@ -1,24 +1,35 @@
 .footer{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 1px -9px 20px 1px #4f6d7a;
+  box-shadow: 1px -4px 9px #30434b;
 }
 .footer-container-center{
   display: flex;
-  // justify-content: space-around;
-  // align-items: center;
-  font-size: 25px;
-}
-.footer-github-repo-link{
-  color: #4F6D7A;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  font-size: 20px;
+    .footer-github-repo-link,
+    .footer-text-design {
+      color: #4F6D7A;
+      text-decoration: none;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        color:black;
+        transform: scale(1.1);
+        margin-top: -4px;
+      }
+    }
 }
 
-.footer-about-us{
-  margin-left: 50px;
-  margin-right: 50px;
-}
+@media screen and (max-width: 800px) {
+  .footer {
+    height: 50px;
+  }
 
-.footer-text-design{
-  color: #4F6D7A;
+  .footer-container-center{
+    font-size: 15px;
+  }
 }
