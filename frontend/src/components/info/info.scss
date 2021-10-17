@@ -185,6 +185,10 @@
         width: 98%;
         margin-top: 1%;
         margin-bottom: 3%;
+        box-shadow: 0px 5px 0px #DD6E42;
+        &:hover {
+            box-shadow: 13px 13px 0px #DD6E42;
+        }
     }
 
     .headshot-container {
@@ -228,12 +232,6 @@
         width: 80px;
         height: 80px;
         transition: all 0.2s ease-in-out;
-
-        // &:active, &:hover {
-        //     // position: absolute;
-        //     width: 150px;
-        //     height: 150px;
-        // }
     }
 
     .personal-info {
@@ -248,12 +246,13 @@
     .links {
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
+        align-items: center;
         margin: 2%;
         a {
             font-size: 25px;
             color: black;
-            margin: 0 auto; 
+            margin-top: 5px;
+            margin-bottom: 5px;
         }
     }
 }
