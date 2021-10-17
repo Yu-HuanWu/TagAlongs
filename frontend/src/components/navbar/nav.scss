@@ -265,14 +265,23 @@ a.nav-buttons{
 }
 
 @media screen and (max-width: 800px) {
+	.main-nav-container {
+		height: 60px;
+	}
+
+	.main-nav {
+		height: 60px;
+	}
+
 	.nav-user-info.responsive {
 		position: absolute;
-		top: 80px;
-		right:0;
+		top: 60px;
+		right: 2%;
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
 		background-color: #E8DAB2;
+		box-shadow: 3px 3px 3px #27353b;
 	}
 
 	.nav-user-info > .users-name,
@@ -284,11 +293,11 @@ a.nav-buttons{
 
 	.main-nav> .hamburger{
 		position: absolute;
-		right: 2%;
-		top: 2%;
+		right: 3%;
+		top: 15%;
     	display: block;
 		color: #4F6D7A;
-		font-size: 60px;
+		font-size: 40px;
 		text-decoration: none;
 		transition: all 0.4s ease-in-out;
 		&:active {
@@ -327,10 +336,15 @@ a.nav-buttons{
 	}
 
 	.nav-user-info.responsive .dropdown {
+		width: 100%;
+		// right: 1%;
 		.dropdown-content {
+			width: 101.4%;
+			right: -0.7%;
 			display: flex;
 			flex-direction: column;
-			justify-content: center;
+			justify-content: flex-start;
+			box-shadow: 2px 3px 2px #27353b;
 		}
 	}
 
