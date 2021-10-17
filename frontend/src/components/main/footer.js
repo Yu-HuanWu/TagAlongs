@@ -7,20 +7,20 @@ const Footer = () => {
     return (
         <div className="footer">
           <div className="footer-container-center">
-            <div>
+            {/* <div> */}
               <a href="https://github.com/Yu-HuanWu/TagAlongs" target="_blank" className="footer-github-repo-link">
                 Github Repo:
                 <FontAwesomeIcon icon={faGithub} />
               </a>
-            </div>
+            {/* </div> */}
 
-            <div className="footer-about-us">
+            {/* <div className="footer-about-us"> */}
               <Link to="/aboutus" className="footer-text-design">About Us</Link>
-            </div>
+            {/* </div> */}
 
-            <div>
+            {/* <div> */}
               <Link to="/resources" className="footer-text-design">Resources</Link>
-            </div>
+            {/* </div> */}
           </div>
         </div>
     )
