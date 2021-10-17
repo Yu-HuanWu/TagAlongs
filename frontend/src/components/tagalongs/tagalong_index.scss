@@ -1,7 +1,6 @@
 .tagalongs-index-container {
     display: flex;
     width: 100vw;
-    // height: 500px;
     max-width: 1200px;
     justify-content: center;
     align-items: flex-start;
@@ -18,17 +17,15 @@
     align-items: flex-start;
     flex-direction: column;
     background-color: #EAEAEA;
-    // background-color: #C0D6DF;
     padding: 20px;
     margin: 30px;
     margin-top: 7%;
-    // width: 80%;
     height: 540px;
     border-radius: 10px;
-    box-shadow: 5px 5px 5px #DD6E42;
+    box-shadow: 5px 5px 1px #DD6E42;
     transition: all 0.8s ease-in-out;
     &:hover {
-      box-shadow: 10px 10px 5px #DD6E42;
+      box-shadow: 10px 10px 1px #DD6E42;
     }
 }
 
@@ -42,10 +39,10 @@
     margin: 30px;
     margin-top: 7%;
     border-radius: 10px;
-    box-shadow: 5px 5px 5px #DD6E42;
+    box-shadow: 5px 5px 1px #DD6E42;
     transition: all 0.8s ease-in-out;
     &:hover {
-      box-shadow: 10px 10px 5px #DD6E42;
+      box-shadow: 10px 10px 1px #DD6E42;
     }
 }
 
@@ -108,5 +105,59 @@
     & h2 {
         font-weight: normal;
         font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 800px){
+    .mapindex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: #EAEAEA;
+        padding: 20px;
+        margin: 0 auto;
+        margin-top: 7%;
+        border-radius: 10px;
+        box-shadow: 5px 5px 1px #DD6E42;
+        transition: all 0.8s ease-in-out;
+        &:hover {
+            box-shadow: 10px 10px 1px #DD6E42;
+        }
+    }
+
+    .filtere-bar {
+        width: 320px;
+    }
+    .filter-bar-list{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .tagalongs-index-container{
+        align-items: center;
+    }
+    .tagalongs-index-section {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        background-color: #EAEAEA;
+        padding: 10px;
+        margin: 10px;
+        margin-top: 7%;
+        width: 90%;
+        height: 300px;
+        border-radius: 10px;
+        box-shadow: 5px 5px 1px #DD6E42;
+        transition: all 0.8s ease-in-out;
+        &:hover {
+            box-shadow: 10px 10px 1px #DD6E42;
+        }
+
+        .tagalongs-index {
+            height: 200px;
+            overflow-y: scroll;
+        }
     }
 }

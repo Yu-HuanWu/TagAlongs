@@ -16,10 +16,10 @@
     margin: 30px;
     margin-top: 7%;
     border-radius: 10px;
-    box-shadow: 5px 5px 5px #DD6E42;
+    box-shadow: 5px 5px 1px #DD6E42;
     transition: all 0.8s ease-in-out;
     &:hover {
-      box-shadow: 10px 10px 5px #DD6E42;
+      box-shadow: 10px 10px 1px #DD6E42;
     }
 }
 
@@ -51,17 +51,12 @@
   .tagalongs-index-container {
     display: flex;
     flex-direction: column;
-    width: 100vh;
+    width: 80vh;
   }
 
-  .map {
-    width: 100%;
+  .element.style {
+    width: 300px;
+    height: 300px;
+    position: relative;
   }
-
-
-.element.style {
-  width: 300px;
-  height: 300px;
-  position: relative;
-}
 }

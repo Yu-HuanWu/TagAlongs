@@ -7,6 +7,7 @@ const mapStyles = {
   height: '100%'
 };
 
+
 export class MapIndex extends Component {
   constructor(props){
     super(props)
@@ -46,10 +47,19 @@ export class MapIndex extends Component {
             tagAlongs = filtered;
         }
 
-    const style={
-      width: "500px",
-      height: "500px",
-      position:"relative"
+    let style;
+    if (window.innerWidth > 600) {
+      style={
+        width: "500px",
+        height: "500px",
+        position:"relative"
+      }
+    } else {
+      style = {
+        width: "300px",
+        height: "300px",
+        position: "relative"
+      }
     }
 
       return (
