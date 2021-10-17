@@ -48,10 +48,19 @@ export class MapComponent extends Component {
 
   render() {
 
-    const style={
-      width: "500px",
-      height: "500px",
-      position:"relative"
+    let style;
+    if (window.innerWidth > 600) {
+      style = {
+        width: "500px",
+        height: "500px",
+        position: "relative"
+      }
+    } else {
+      style = {
+        width: "300px",
+        height: "300px",
+        position: "relative"
+      }
     }
     if(!this.state.items.title){
       return(
