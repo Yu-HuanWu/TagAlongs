@@ -1,5 +1,5 @@
 import axios from 'axios';
 
-export const giveRating = rating => {
+export const giveCookie = rating => {
     return axios.post('/api/ratings/', rating);
 };
