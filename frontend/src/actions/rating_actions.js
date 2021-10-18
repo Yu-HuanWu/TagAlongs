@@ -1,4 +1,4 @@
-import * as APIUtil from '../rating_api_util';
+import * as APIUtil from '../util/rating_api_util';
 
 export const RECEIVE_RATING = "RECEIVE_RATING";
 export const RECEIVE_RATING_ERRORS = "RECEIVE_RATING_ERRORS";

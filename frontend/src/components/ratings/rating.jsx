@@ -6,13 +6,35 @@ import './review.scss';
 class RatingForm extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            errors: {}
+        }
+
+        this.renderErrors = this.renderErrors.bind(this);
     }
+
+    // componentWillReceiveProps(nextProps) {
+    //     this.setState( {errors: nextProps.errors} )
+    // }
 
     sendRating() {
         let rating = {
 
         };
         this.props.giveCookie(rating);
+    }
+
+    renderErrors() {
+        return (
+            <ul className="renderError">
+                {Object.keys(this.state.errors).map((error, i) => (
+                <li key={`error-${i}`}>
+                    {this.state.errors[error]}
+                </li>
+                ))}
+            </ul>
+        );
     }
 
     render() {
@@ -30,6 +52,7 @@ class RatingForm extends React.Component {
                             onClick={() => this.sendRating()}
                             alt="upCookie" />
                     </li>
+                    { this.renderErrors() }
                 </ul>
             </div>
         )

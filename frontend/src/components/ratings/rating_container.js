@@ -1,13 +1,14 @@
 import { connect } from 'react-redux';
 import RatingForm from './rating';
-import { giveCookie } from '../../util/rating_api_util';
+import { createRating } from '../../actions/rating_actions';
 
 const mapStateToProps = (state, ownProps) => ({
     tagAlong: ownProps.tagAlong,
+    errors: state.errors.ratings
 });
 
 const mapDispatchToProps = dispatch => ({
-    giveCookie: cookie => dispatch(giveCookie(cookie)),
+    giveCookie: cookie => dispatch(createRating(cookie)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(RatingForm);
