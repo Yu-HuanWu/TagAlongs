@@ -9,7 +9,10 @@ class RatingForm extends React.Component {
     }
 
     sendRating() {
+        let rating = {
 
+        };
+        this.props.giveCookie(rating);
     }
 
     render() {
@@ -17,10 +20,12 @@ class RatingForm extends React.Component {
             <div className="cookie-form-container">
                 <ul className="cookie-form">
                     <li><img src={DownCookie} 
-                            onClick={() => this.props.sendRating()} />
+                            onClick={() => this.sendRating()}
+                            alt="downCookie" />
                     </li>
                     <li><img src={UpCookie} 
-                            onClick={() => this.props.sendRating()} />
+                            onClick={() => this.sendRating()}
+                            alt="upCookie" />
                     </li>
                 </ul>
             </div>
