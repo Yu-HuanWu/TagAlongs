@@ -1,4 +1,4 @@
-import { connect } from 'react-router-dom';
+import { connect } from 'react-redux';
 import RatingForm from './rating';
 import { giveCookie } from '../../util/rating_api_util';
 
