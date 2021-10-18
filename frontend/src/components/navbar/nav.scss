@@ -266,7 +266,9 @@ a.nav-buttons{
 
 @media screen and (max-width: 800px) {
 	.main-nav-container {
-		height: 60px;
+		position:absolute;
+		left: 0;
+		height: 80px;
 	}
 
 	.main-nav {
@@ -299,11 +301,16 @@ a.nav-buttons{
 		color: #4F6D7A;
 		font-size: 40px;
 		text-decoration: none;
-		transition: all 0.4s ease-in-out;
+		transition: all 0.2s ease-in-out;
 		&:active {
 			transform: scale(1.2);
 			color: #e2e2e2;
 		}
+
+		&:hover {
+			color: #81a8b9;
+		}
+
 	}
 
 
