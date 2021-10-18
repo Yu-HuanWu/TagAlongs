@@ -18,12 +18,15 @@ class RatingForm extends React.Component {
     render() {
         return (
             <div className="cookie-form-container">
+                Rate your TagAlong:
                 <ul className="cookie-form">
-                    <li><img src={DownCookie} 
+                    <li>
+                        <img src={DownCookie} 
                             onClick={() => this.sendRating()}
                             alt="downCookie" />
                     </li>
-                    <li><img src={UpCookie} 
+                    <li>
+                        <img src={UpCookie} 
                             onClick={() => this.sendRating()}
                             alt="upCookie" />
                     </li>

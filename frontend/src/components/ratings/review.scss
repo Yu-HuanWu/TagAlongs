@@ -1,5 +1,7 @@
 .cookie-form-container {
     margin-top: 10px;
+    border-top: 1px solid #C0D6DF;
+    padding-top: 10px;
 
     .cookie-form {
         display: flex;
@@ -8,7 +10,6 @@
             img {
                 max-width: 50px;
                 padding: 5px;
-                border-radius: 50%;
                 
                 &:hover {
                     cursor: pointer;
