@@ -4,8 +4,8 @@
 }
 
 .main-nav {
-	// position: -webkit-sticky;
 	position: fixed;
+	position: -webkit-fixed;
 	top: 0;
 	left: 0;
 	display: flex;
@@ -24,12 +24,14 @@
 
 .main-nav > a {
 	height: 100%;
+	width: 15%;
 	display: flex;
 	justify-content: flex-start;
 }
 
 .navbar-logo {
 	margin-left: 20px;
+	width: 100%;
 	transition: all 0.5s ease-in-out;
 	&:hover {
 		transform: scale(0.95);
@@ -256,6 +258,18 @@ a.nav-buttons{
 
 	.main-nav {
 		height: 60px;
+	}
+
+	.main-nav > a {
+		height: 100%;
+		// width: 100%;
+		display: flex;
+		justify-content: flex-start;
+	}
+
+	.navbar-logo {
+		margin-left: 20px;
+		width: 200%;
 	}
 
 	.nav-divider {
