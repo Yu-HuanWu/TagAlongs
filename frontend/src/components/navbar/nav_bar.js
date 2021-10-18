@@ -83,7 +83,6 @@ class Nav extends React.Component{
                         <a href="javascript:void(0);" onClick={this.myFunction} className="hamburger"> &#9776;</a>
 
                         <div className="nav-user-info" id="topnav">
-                            {/* <a href="javascript:void(0);" onClick={this.myFunction} className="hamburger"> &#9776;</a> */}
                             <p className="users-name">Hello, {user.handle}</p>
                             <span className="nav-divider"/>
                             <Link to ="/resources" className="nav-buttons">Resources</Link>
