@@ -192,9 +192,11 @@ class UserProfile extends React.Component {
             <div className="user-profile">
                 <div className="user-profile-left">
                     { this.renderAvatar() }
-                    <h1>{ user.firstName.toUpperCase() } { user.lastName.toUpperCase() }</h1>
-                    <p>Earned <b>{ user.rating }</b> Cookies</p>
-                    <p>Tagged Along <b>{ user.tagAlongsCompleted }</b> Times</p>
+                    <div>
+                        <h1>{ user.firstName.toUpperCase() } { user.lastName.toUpperCase() }</h1>
+                        <p>Earned <b>{ user.rating }</b> Cookies</p>
+                        <p>Tagged Along <b>{ user.tagAlongsCompleted }</b> Times</p>
+                    </div>
                     <div className="user-profile-nav">
                         <ul className="user-profile-nav-list">
                             <li className="user-profile-nav-item">

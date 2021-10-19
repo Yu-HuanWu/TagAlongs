@@ -22,10 +22,9 @@ const AboutUs = () => {
                                 <h1 className="headshot-title">TEAM <br/> LEAD </h1>
                                 <img className="headshots" src={Yu}/>
                             </div>
-                        <p className="bio">Yu-Huan is a full stack developer located in the San Francisco Bay Area. 
-                        He is passionate about serving members of his community, which is his inspiration behind TagAlongs. 
-                        While developing this site, Yu-Huan enjoyed expanding accessibility by restructuring TagAlongs to be mobile-friendly. 
-                        He also enjoyed supporting his team by setting up the database using MongoDB, and implementing user authentication. 
+                        <p className="bio"> As the project lead, Yu-Huan enjoyed supporting his team of capable full stack developers, by setting up the database using MongoDB and implementing user authentication.
+                            He also had fun expanding accessibility by restructuring TagAlongs to be mobile-friendly.
+                            Yu-Huan is passionate about serving members of his community, which is his inspiration behind developing TagAlongs. 
                         <br/><br/> Yu-Huan's favorite cookie is fudge-covered oreos
                             </p>
                             <div className="links">
@@ -57,7 +56,7 @@ const AboutUs = () => {
                                 <a href="https://github.com/tozhang665" target="_blank">
                                         <FontAwesomeIcon icon={faGithub} />
                                 </a>
-                                <a href="#" target="_blank">
+                                <a href="https://angel.co/u/tony-zhang-33" target="_blank">
                                     <FontAwesomeIcon icon={faAngellist} />
                                 </a>
                                 <a href="https://www.linkedin.com/in/tonykzhang/" target="_blank">
@@ -108,7 +107,7 @@ const AboutUs = () => {
                                 <a href="https://github.com/jnardi1223" target="_blank">
                                         <FontAwesomeIcon icon={faGithub} />
                                 </a>
-                                <a href="#" target="_blank">
+                                <a href="https://angel.co/u/jim-nardi" target="_blank">
                                     <FontAwesomeIcon icon={faAngellist} />
                                 </a>
                                 <a href="https://www.linkedin.com/in/jim-nardi-3355a11a0/" target="_blank">
