@@ -24,7 +24,7 @@ class CompletedTagAlongs
         return (
             <div className="accepted-tagalongs-list">
                 <ul className="accepted-tagalongs user-achievement-list">
-                    {this.state.tagAlongs.map((tagalong, i) => (
+                    {this.state.tagAlongs.slice(0).reverse().map((tagalong, i) => (
                         <li key={`tagalong-${i}`}
                             className="accepted-tagalong-item user-achievement-badge">
                                 <h1>{tagalong.title}</h1>
