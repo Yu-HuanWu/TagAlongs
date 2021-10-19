@@ -20,21 +20,23 @@ router.post("/createRating",(req,res)=>{
     .then((rating)=>{
       if(rating){
         errors.reviewPair = "Review already exists."
-        return res.status(400).json({reviewPair: "This reviewPair already exists."})
+        return res.status(400).json({reviewPair: "You've already rated your TagAlong partner."})
       }else{
         const newRating = new Rating({
           rating: req.body.rating,
           reviewPair: req.body.reviewPair,
+          ratedByOwner: req.body.reviewPair[0],
+          ratedByAccepted: req.body.reviewPair[1]
         });
         newRating.save().then(rating => {
-          User.findOne({id:newRating.reviewPair[1]})
+          User.findOne({_id:newRating.reviewPair[1]})
           .then((user)=>{
             user.rating = user.rating + newRating.rating
             user.markModified("rating");
             user.save();
           })
           return res.json(rating)
-        }).catch(err=>res.status(404).json({duplicateFound:"You've already rated your TagAlong."}))
+        }).catch(err=>res.status(404).json({duplicateFound:"You've already rated your TagAlong partner."}))
       }
     })
 })

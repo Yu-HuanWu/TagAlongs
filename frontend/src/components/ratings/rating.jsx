@@ -19,10 +19,14 @@ class RatingForm extends React.Component {
     }
 
     sendRating(value) {
-        let rate = {
-            rating: value
+        let ownerId = this.props.tagAlong.user;
+        let acceptedId = this.props.tagAlong.acceptedBy[0];
+
+        let rating = {
+            rating: value,
+            reviewPair: [ownerId, acceptedId]
         };
-        this.props.giveCookie(rate);
+        this.props.giveCookie(rating);
     }
 
     renderErrors() {

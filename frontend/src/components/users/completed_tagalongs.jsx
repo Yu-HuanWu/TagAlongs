@@ -31,7 +31,7 @@ class CompletedTagAlongs
                                 <p>Category: &nbsp; <h3>{tagalong.category}</h3></p>
                                 <p>Starting Point: &nbsp; <h3>{tagalong.startLocation}</h3></p>
                                 <p>End Point: &nbsp; <h3>{tagalong.endLocation}</h3></p>
-                                 <RatingsForm tagalong={tagalong} />
+                                 <RatingsForm tagAlong={tagalong} />
                         </li>
                     ))}
                 </ul>

@@ -108,6 +108,30 @@
     }
 }
 
+.filter-bar-item {
+    .filter-bar-button {
+        outline: none;
+    }
+}
+
+.filter-bar-button {
+    color: #4f6d7a;
+    border: 2px solid #4f6d7a;
+    margin-right: 1px;
+
+    &:hover {
+        color: white;
+        background-color: #4f6d7a;
+    }
+
+    &:active {
+        background-color: #4f6d7a;
+        position: relative;
+        top: 2px;
+        box-shadow: 1px 1px 3px rgb(88, 88, 88);
+    }
+}
+
 @media screen and (max-width: 800px){
     .mapindex {
         display: flex;
