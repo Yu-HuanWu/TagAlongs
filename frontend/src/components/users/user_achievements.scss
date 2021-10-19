@@ -2,10 +2,21 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    // height: 700px;
-    // overflow: scroll;
+
     h1 {
-        padding: 5px;
+        align-content: center;
+        font-weight: bolder;
+        border-bottom: 1px solid #4F6D7A;
+        padding-bottom: 10px;
+    }
+
+    h2 {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    h3 {
+        font-weight: lighter;
     }
 
     .user-achievement-badge {

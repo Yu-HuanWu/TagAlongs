@@ -26,7 +26,7 @@ class MyTagAlongs extends React.Component {
     renderButton(tagAlong){
       if(tagAlong.completed === false){
         return(
-          <button className="my-tagalongs-button"onClick={()=>this.handleComplete(tagAlong._id)}>Complete</button>
+          <button className="my-tagalongs-button" onClick={()=>this.handleComplete(tagAlong._id)}>Complete</button>
           )
         }else{
           return(
