@@ -54,6 +54,12 @@ export class MapIndex extends Component {
         height: "500px",
         position:"relative"
       }
+    } else if (window.innerWidth < 321) {
+      style = {
+        width: "265px",
+        height: "265px",
+        position: "relative"
+      }
     } else {
       style = {
         width: "300px",

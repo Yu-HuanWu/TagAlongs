@@ -24,7 +24,7 @@ const App = () => (
             <div className="header">
                 <NavBar /> 
             </div>
-                <Switch>
+                <Switch className="switch">
                     <AuthRoute exact path="/login" component={LoginFormContainer} />
                     <AuthRoute exact path="/signup" component={SignupFormContainer} />
                     <ProtectedRoute exact path="/newtagalong" component={TagAlongFormContainer} />
