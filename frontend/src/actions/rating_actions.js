@@ -21,6 +21,6 @@ export const createRating = rating => dispatch => (
     APIUtil.giveCookie(rating).then(rating => (
         dispatch(receiveRating(rating))
     ), errors => (
-        dispatch(receiveRatingErrors(errors))
+        dispatch(receiveRatingErrors(errors.response.data))
     ))
 )

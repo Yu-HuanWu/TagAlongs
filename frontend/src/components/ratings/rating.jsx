@@ -14,15 +14,15 @@ class RatingForm extends React.Component {
         this.renderErrors = this.renderErrors.bind(this);
     }
 
-    // componentWillReceiveProps(nextProps) {
-    //     this.setState( {errors: nextProps.errors} )
-    // }
+    componentWillReceiveProps(nextProps) {
+        this.setState( { errors: nextProps.errors })
+    }
 
-    sendRating() {
-        let rating = {
-
+    sendRating(value) {
+        let rate = {
+            rating: value
         };
-        this.props.giveCookie(rating);
+        this.props.giveCookie(rate);
     }
 
     renderErrors() {
@@ -44,12 +44,12 @@ class RatingForm extends React.Component {
                 <ul className="cookie-form">
                     <li>
                         <img src={DownCookie} 
-                            onClick={() => this.sendRating()}
+                            onClick={() => this.sendRating(-1)}
                             alt="downCookie" />
                     </li>
                     <li>
                         <img src={UpCookie} 
-                            onClick={() => this.sendRating()}
+                            onClick={() => this.sendRating(1)}
                             alt="upCookie" />
                     </li>
                     { this.renderErrors() }
