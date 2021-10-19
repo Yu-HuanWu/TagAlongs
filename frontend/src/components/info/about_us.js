@@ -75,7 +75,7 @@ const AboutUs = () => {
                         <p className="bio">When he's not coding, John is probably reading a book or deciding what book to read next. 
                         He spent his time writing TagAlong's frontend for request creation, as well as frontend components for user authentication. 
                         John also enjoys providing the user an experience that is lasting, which is why coding out the user profile for achievements, avatar selection, and history was a joy. 
-                        <br/><br/>John's favorite cookies are crispy ones with white chocolate macadamia.
+                        <br/><br/>John's favorite cookies are crispy white chocolate macadamia.
                                 </p>
                                 <div className="links">
                                     <a href="https://github.com/atjohnfeng" target="_blank">
