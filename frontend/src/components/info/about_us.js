@@ -22,9 +22,7 @@ const AboutUs = () => {
                                 <h1 className="headshot-title">TEAM <br/> LEAD </h1>
                                 <img className="headshots" src={Yu}/>
                             </div>
-                            <p className="bio">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                                when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                        <p className="bio">Yu-Huan is a fullstack developer located in the San Francisco Bay Area. He is passionate about serving members of his community, which is his inspiration behind TagAlongs. While developing this site, Yu-Huan enjoyed expanding accessibility by restructuring TagAlongs to be mobile-friendly. He also enjoyed supporting his team by setting up the database using MongoDB, and implementing user authentication. <br/> Yu-Huan's favorite cookie is fudge-covered oreos
                             </p>
                             <div className="links">
                                 <a href="https://github.com/Yu-HuanWu" target="_blank">
