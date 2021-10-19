@@ -13,7 +13,7 @@
 .my-tagalongs-button{
     color: #4f6d7a;
     border: 2px solid #4f6d7a;
-    margin-right: 1px;
+    margin-top: 7px;
 
     &:active {
         position: relative;
@@ -29,5 +29,7 @@
 }
 
 .my-tagalongs-completed-label {
-  font-weight: bold;
+  padding-top: 5px;
+  border-top: 1px solid #C0D6DF;
+  margin-top: 10px;
 }
