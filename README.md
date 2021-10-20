@@ -9,9 +9,11 @@ TagAlongs is a Volunteer based Buddy system website that allows users to request
 ## Functionality and MVP
 
 * User Authentication
+
 ![User Auth](readme_img/readme_user.gif)
 
 * Create / Read / Update / Delete on requests
+
 ![User Auth](readme_img/readme_crud.gif)
 
 * Google Map API
@@ -56,14 +58,17 @@ TagAlongs is a Volunteer based Buddy system website that allows users to request
 ```
 
 * Filter requests and update Map
+
 ![User Auth](readme_img/readme_filter.gif)
 
 * Upvote / Downvote Users
+
 ![User Auth](readme_img/readme_upvote.gif)
 
 * Volunteer profile page and badges
 
 * Mobile Friendly
+
 ![User Auth](readme_img/readme_mobile.gif)
 
 ## Technologies and Technical Challenges
