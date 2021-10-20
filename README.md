@@ -43,12 +43,12 @@ Day 1 - Oct 11
 
 Day 2 - Oct 12
 * Build nav bar form and design splash page - Jim
-* Finish auth forms and start front end tagalongs component - John 
+* Finish auth forms and start frontend tagalongs component - John 
 * Start working on CSS for form pages - Yu-Huan
 * Start request model and google maps API - Tony
 
 Day 3 - Oct 13
-* Front end tagalongs - John 
+* Frontend tagalongs - John 
 * Styling nav bar and other finished components - Yu-Huan
 * Finish maps API and create routes for specific functions - Tony 
 * Finish splash page and help with styling - Jim
