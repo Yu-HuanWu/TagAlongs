@@ -18,7 +18,7 @@ const AboutUs = () => {
                         <div className="personal-info">
                             <div className="headshot-container">
                                 <h1 className="headshot-title">TEAM <br/> LEAD </h1>
-                                <img className="headshots" src={Yu} alt="yu-huan-photo"/>
+                                <img className="headshots" src={Yu} alt="yu-huan"/>
                             </div>
                         <p className="bio">As the project lead, Yu-Huan enjoyed supporting his team of capable full stack developers, by setting up the database using MongoDB and implementing user authentication.
                             He also had fun expanding accessibility by restructuring TagAlongs to be mobile-friendly.
@@ -43,7 +43,7 @@ const AboutUs = () => {
                         <div className="personal-info">
                             <div className="headshot-container">
                                 <h1 className="headshot-title">BACK <br/> END <br /> LEAD </h1>
-                                <img className="headshots" src={tony} alt="tony-photo"/>
+                                <img className="headshots" src={tony} alt="tony"/>
                             </div>
                         <p className="bio">Tony is a full stack developer in the San Francisco Bay Area. 
                         On his spare time, he enjoys wandering the bay area to look for new foods to try out. 
@@ -68,7 +68,7 @@ const AboutUs = () => {
                         <div className="personal-info">
                             <div className="headshot-container">
                                 <h1 className="headshot-title">FLEX </h1>
-                                <img className="headshots" src={john} alt="john-photo"/>
+                                <img className="headshots" src={john} alt="john"/>
                             </div>
                         <p className="bio">When he's not coding, John is probably reading a book or deciding what book to read next. 
                         He spent his time writing TagAlong's frontend for request creation, as well as frontend components for user authentication. 
@@ -93,7 +93,7 @@ const AboutUs = () => {
                         <div className="personal-info">
                             <div className="headshot-container">
                                 <h1 className="headshot-title2">FRONT <br/> END <br /> LEAD </h1>
-                                <img className="headshots" src={jim} alt="jim-photo"/>
+                                <img className="headshots" src={jim} alt="jim"/>
                             </div>
                         <p className="bio">Jim is a full stack developer based in the New York Metropolitan area. He has always 
                         enjoyed volunteering for numerous organizations across the globe in his spare time. Jim loved handling 
