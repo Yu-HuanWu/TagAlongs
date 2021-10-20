@@ -13,14 +13,14 @@ const RatingSchema = new Schema({
     type:[Schema.Types.ObjectId],
     required:true
   },
-  reviewedByOwner:{
-    type: Boolean,
-    default: false
-  },
-  reviewedByAccepted:{
-    type: Boolean,
-    default: false
-  }
+  // reviewedByOwner:{
+  //   type: Boolean,
+  //   default: false
+  // },
+  // reviewedByAccepted:{
+  //   type: Boolean,
+  //   default: false
+  // }
 })
 
 

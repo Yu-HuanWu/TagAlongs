@@ -8,7 +8,6 @@ import happyAvatar from '../users/avatars/happy.svg';
 import tongueAvatar from '../users/avatars/tongue.svg';
 import teethAvatar from '../users/avatars/teeth.svg';
 import grinAvatar from '../users/avatars/grin.svg';
-import Resources from "../info/resources"
 
 class Nav extends React.Component{
     constructor(props) {

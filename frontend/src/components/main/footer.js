@@ -7,7 +7,7 @@ const Footer = () => {
     return (
         <div className="footer">
           <div className="footer-container-center">
-              <a href="https://github.com/Yu-HuanWu/TagAlongs" target="_blank" className="footer-github-repo-link">
+              <a href="https://github.com/Yu-HuanWu/TagAlongs" target="_blank" rel="noreferrer" className="footer-github-repo-link">
                 Github Repo:
                 <FontAwesomeIcon icon={faGithub} />
               </a>
