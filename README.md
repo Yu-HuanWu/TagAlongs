@@ -1,5 +1,5 @@
 # TagAlongs
-Companionship request app that strive to serve the local communities.
+Companionship request app that strives to serve local communities.
 
 
 ## Background and Overview
