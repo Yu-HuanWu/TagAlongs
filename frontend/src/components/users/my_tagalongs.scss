@@ -4,18 +4,32 @@
   padding-bottom: 20px;
 }
 
-.my-tagalongs-button{
-  padding:5px;
-  border-radius: 5px;
+.accepted-tagalong-item {
+  .my-tagalongs-button {
+    outline: none;
+  }
 }
 
+.my-tagalongs-button{
+    color: #4f6d7a;
+    border: 2px solid #4f6d7a;
+    margin-top: 7px;
 
-.my-tagalongs-button:hover{
-  background-color: #E8DAB2;
+    &:active {
+        position: relative;
+        top: 2px;
+        box-shadow: 1px 1px 6px white;
+  }
 }
 
 .accepted-tagalongs-list{
   height:650px;
   overflow: scroll;
   padding: 5px;
+}
+
+.my-tagalongs-completed-label {
+  padding-top: 5px;
+  border-top: 1px solid #C0D6DF;
+  margin-top: 10px;
 }

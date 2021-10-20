@@ -161,10 +161,9 @@ a.nav-buttons{
 }
 
 .nav-user-info > .users-name {
-	color: #242424;
-	// font-weight: bold;
+	color: #4F6D7A;
+	font-weight: lighter;
 	margin-right: 17px;
-	text-shadow: 1px 1px 2px #EAEAEA;
 }
 
 #login {
@@ -273,6 +272,10 @@ a.nav-buttons{
 	}
 
 	.nav-divider {
+		height: 60px;
+	}
+	
+	.nav-button {
 		height: 60px;
 	}
 

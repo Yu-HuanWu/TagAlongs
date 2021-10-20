@@ -165,7 +165,7 @@ router.post("/completeTagAlong/:tagalongID",(req,res)=>{
     tag.completed = true;
     tag.markModified("completed");
     tag.save();
-    User.findOne({id: tag.acceptedBy})
+    User.findOne({_id: tag.acceptedBy})
     .then((user)=>{
       user.tagAlongsCompleted++;
       user.markModified("tagAlongsCompleted");

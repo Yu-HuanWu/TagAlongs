@@ -26,11 +26,11 @@ class MyTagAlongs extends React.Component {
     renderButton(tagAlong){
       if(tagAlong.completed === false){
         return(
-          <button className="my-tagalongs-button"onClick={()=>this.handleComplete(tagAlong._id)}>Complete</button>
+          <button className="my-tagalongs-button" onClick={()=>this.handleComplete(tagAlong._id)}>Mark as Complete</button>
           )
         }else{
           return(
-            <div className="my-tagalongs-completed-label">Completed</div>
+            <div className="my-tagalongs-completed-label">TagAlong Completed!</div>
             )
           }
     }
@@ -39,7 +39,7 @@ class MyTagAlongs extends React.Component {
         return (
             <div className="accepted-tagalongs-list">
                 <ul className="accepted-tagalongs user-achievement-list">
-                    {this.state.tagAlongs.map((tagalong, i) => (
+                    {this.state.tagAlongs.slice(0).reverse().map((tagalong, i) => (
                         <li key={`tagalong-${i}`}
                             className="accepted-tagalong-item user-achievement-badge">
                                 <h1>{tagalong.title}</h1>

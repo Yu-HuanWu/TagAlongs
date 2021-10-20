@@ -89,22 +89,49 @@
     & p {
         display: flex;
         align-items: center;
-        font-weight: bold;
+        font-weight: normal;
     }
 
     & h1 {
         font-weight: bold;
         font-size: 16px;
+        border-bottom: 1px solid #4f6d7a;
+        padding-bottom: 4px;
+        margin-bottom: 6px;
     }
 
     & h3 {
-        font-weight: normal;
+        font-weight: lighter;
         font-size: 16px;
     }
 
     & h2 {
         font-weight: normal;
         font-size: 12px;
+    }
+}
+
+.filter-bar-item {
+    .filter-bar-button {
+        outline: none;
+    }
+}
+
+.filter-bar-button {
+    color: #4f6d7a;
+    border: 2px solid #4f6d7a;
+    margin-right: 1px;
+
+    &:hover {
+        color: white;
+        background-color: #4f6d7a;
+    }
+
+    &:active {
+        background-color: #4f6d7a;
+        position: relative;
+        top: 2px;
+        box-shadow: 1px 1px 3px rgb(88, 88, 88);
     }
 }
 

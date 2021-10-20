@@ -1,7 +1,7 @@
 import React from 'react';
 import UserAchievementsContainer from './user_achievements_container';
 import AcceptedTagAlongsContainer from './accepted_tagalongs_container';
-import CompletedTagAlongsContainer from './completed_tagalongs_contaner';
+import CompletedTagAlongsContainer from './completed_tagalongs_container';
 import MyTagAlongsContainer from './my_tagalongs_container';
 import { withRouter } from 'react-router-dom';
 import './user_profile.scss';
@@ -192,9 +192,11 @@ class UserProfile extends React.Component {
             <div className="user-profile">
                 <div className="user-profile-left">
                     { this.renderAvatar() }
-                    <h1>{ user.firstName.toUpperCase() } { user.lastName.toUpperCase() }</h1>
-                    <p>Earned <b>{ user.rating }</b> Cookies</p>
-                    <p>Tagged Along <b>{ user.tagAlongsCompleted }</b> Times</p>
+                    <div>
+                        <h1>{ user.firstName.toUpperCase() } { user.lastName.toUpperCase() }</h1>
+                        <p>Earned <b>{ user.rating }</b> Cookies</p>
+                        <p>Tagged Along <b>{ user.tagAlongsCompleted }</b> Times</p>
+                    </div>
                     <div className="user-profile-nav">
                         <ul className="user-profile-nav-list">
                             <li className="user-profile-nav-item">
