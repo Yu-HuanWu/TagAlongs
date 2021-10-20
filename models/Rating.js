@@ -12,6 +12,14 @@ const RatingSchema = new Schema({
   reviewPair:{
     type:[Schema.Types.ObjectId],
     required:true
+  },
+  reviewedByOwner:{
+    type: Boolean,
+    default: false
+  },
+  reviewedByAccepted:{
+    type: Boolean,
+    default: false
   }
 })
 

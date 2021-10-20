@@ -1,0 +1,21 @@
+.cookie-form-container {
+    margin-top: 10px;
+    border-top: 1px solid #C0D6DF;
+    padding-top: 10px;
+
+    .cookie-form {
+        display: flex;
+
+        li {
+            img {
+                max-width: 50px;
+                padding: 5px;
+                
+                &:hover {
+                    cursor: pointer;
+                    background-color: #C0D6DF;
+                }
+            }
+        }
+    }
+}
