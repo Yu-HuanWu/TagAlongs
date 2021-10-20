@@ -6,6 +6,10 @@ import './user_achievements.scss';
 class UserAchievements extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            state: 'default'
+        }
     }
 
     renderBadgeClass(cookieCount) {

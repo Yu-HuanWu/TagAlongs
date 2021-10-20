@@ -4,7 +4,8 @@ import { createRating } from '../../actions/rating_actions';
 
 const mapStateToProps = (state, ownProps) => ({
     tagAlong: ownProps.tagAlong,
-    errors: state.errors.ratings
+    errors: state.errors.ratings,
+    currentUser: state.session.user
 });
 
 const mapDispatchToProps = dispatch => ({

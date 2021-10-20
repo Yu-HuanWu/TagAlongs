@@ -41,10 +41,28 @@ export class MapComponent extends Component {
   }
 
   handleAccept(){
-    acceptTag(this.state.items._id,{userID:this.props.currentUser._id})
-    this.props.history.push("/")
+    if (this.props.currentUser._id !== this.props.TagAlong[0].user) {
+      acceptTag(this.state.items._id,{userID:this.props.currentUser._id})
+      this.props.history.push("/")
+    } else {
+      alert("You cannot accept your own TagAlong.");
+    }
   }
 
+  renderButton() {
+    if (!this.props.currentUser) {
+      return null;
+    }
+    if (this.props.currentUser._id === this.props.TagAlong[0].user) {
+      return null;
+    }
+
+    return (
+       <div className="tagalongs-map-button-div">
+              <button className="tagalongs-map-button"onClick={()=>this.handleAccept()}>Accept this TagAlong</button>
+        </div>
+    )
+  }
 
   render() {
 
@@ -121,9 +139,8 @@ export class MapComponent extends Component {
               </div>
             </div>
 
-            <div className="tagalongs-map-button-div">
-              <button className="tagalongs-map-button"onClick={()=>this.handleAccept()}>Accept this TagAlong</button>
-            </div>
+            { this.renderButton() }
+           
           </div>
 
           <div className="mapshow">

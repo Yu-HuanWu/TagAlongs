@@ -3,6 +3,10 @@ import React from 'react';
 class AcceptedTagAlongs extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            state: 'default'
+        }
     }
 
     componentDidMount() {

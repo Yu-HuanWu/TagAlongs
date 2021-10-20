@@ -7,8 +7,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faAngellist, faGithub, faLinkedin} from "@fortawesome/free-brands-svg-icons";
 import './info.scss'
 
-
-
 const AboutUs = () => {
     return (
         <div className="main-textbox">
@@ -20,7 +18,7 @@ const AboutUs = () => {
                         <div className="personal-info">
                             <div className="headshot-container">
                                 <h1 className="headshot-title">TEAM <br/> LEAD </h1>
-                                <img className="headshots" src={Yu}/>
+                                <img className="headshots" src={Yu} alt="yu-huan"/>
                             </div>
                         <p className="bio">As the project lead, Yu-Huan enjoyed supporting his team of capable full stack developers, by setting up the database using MongoDB and implementing user authentication.
                             He also had fun expanding accessibility by restructuring TagAlongs to be mobile-friendly.
@@ -28,13 +26,13 @@ const AboutUs = () => {
                         <br/><br/>Yu-Huan's favorite cookies are fudge-covered oreos.
                             </p>
                             <div className="links">
-                                <a href="https://github.com/Yu-HuanWu" target="_blank">
+                                <a href="https://github.com/Yu-HuanWu" target="_blank" rel="noreferrer">
                                         <FontAwesomeIcon icon={faGithub} />
                                 </a>
-                                <a href="https://angel.co/u/yu-huan-wu" target="_blank">
+                                <a href="https://angel.co/u/yu-huan-wu" target="_blank" rel="noreferrer">
                                         <FontAwesomeIcon icon={faAngellist} />
                                 </a>
-                                <a href="https://www.linkedin.com/in/yu-huan-wu/" target="_blank">
+                                <a href="https://www.linkedin.com/in/yu-huan-wu/" target="_blank" rel="noreferrer">
                                         <FontAwesomeIcon icon={faLinkedin} />
                                 </a>
                             </div>
@@ -45,7 +43,7 @@ const AboutUs = () => {
                         <div className="personal-info">
                             <div className="headshot-container">
                                 <h1 className="headshot-title">BACK <br/> END <br /> LEAD </h1>
-                                <img className="headshots" src={tony}/>
+                                <img className="headshots" src={tony} alt="tony"/>
                             </div>
                         <p className="bio">Tony is a full stack developer in the San Francisco Bay Area. 
                         On his spare time, he enjoys wandering the bay area to look for new foods to try out. 
@@ -53,13 +51,13 @@ const AboutUs = () => {
                         <br/><br/>Tony’s favorite cookies are matcha macadamia cookies.
                             </p>
                             <div className="links">
-                                <a href="https://github.com/tozhang665" target="_blank">
+                                <a href="https://github.com/tozhang665" target="_blank" rel="noreferrer">
                                         <FontAwesomeIcon icon={faGithub} />
                                 </a>
-                                <a href="https://angel.co/u/tony-zhang-33" target="_blank">
+                                <a href="https://angel.co/u/tony-zhang-33" target="_blank" rel="noreferrer">
                                     <FontAwesomeIcon icon={faAngellist} />
                                 </a>
-                                <a href="https://www.linkedin.com/in/tonykzhang/" target="_blank">
+                                <a href="https://www.linkedin.com/in/tonykzhang/" target="_blank" rel="noreferrer">
                                         <FontAwesomeIcon icon={faLinkedin} />
                                 </a>
                             </div>
@@ -70,7 +68,7 @@ const AboutUs = () => {
                         <div className="personal-info">
                             <div className="headshot-container">
                                 <h1 className="headshot-title">FLEX </h1>
-                                <img className="headshots" src={john} />
+                                <img className="headshots" src={john} alt="john"/>
                             </div>
                         <p className="bio">When he's not coding, John is probably reading a book or deciding what book to read next. 
                         He spent his time writing TagAlong's frontend for request creation, as well as frontend components for user authentication. 
@@ -78,13 +76,13 @@ const AboutUs = () => {
                         <br/><br/>John's favorite cookies are crispy white chocolate macadamia.
                                 </p>
                                 <div className="links">
-                                    <a href="https://github.com/atjohnfeng" target="_blank">
+                                    <a href="https://github.com/atjohnfeng" target="_blank" rel="noreferrer">
                                             <FontAwesomeIcon icon={faGithub} />
                                     </a>
-                                    <a href="https://angel.co/u/john-feng-5" target="_blank">
+                                    <a href="https://angel.co/u/john-feng-5" target="_blank" rel="noreferrer">
                                         <FontAwesomeIcon icon={faAngellist} />
                                     </a>
-                                    <a href="https://www.linkedin.com/in/john-feng-316220215/" target="_blank">
+                                    <a href="https://www.linkedin.com/in/atjohnfeng/" target="_blank" rel="noreferrer">
                                             <FontAwesomeIcon icon={faLinkedin} />
                                     </a>
                                 </div>
@@ -95,7 +93,7 @@ const AboutUs = () => {
                         <div className="personal-info">
                             <div className="headshot-container">
                                 <h1 className="headshot-title2">FRONT <br/> END <br /> LEAD </h1>
-                                <img className="headshots" src={jim} />
+                                <img className="headshots" src={jim} alt="jim"/>
                             </div>
                         <p className="bio">Jim is a full stack developer based in the New York Metropolitan area. He has always 
                         enjoyed volunteering for numerous organizations across the globe in his spare time. Jim loved handling 
@@ -104,13 +102,13 @@ const AboutUs = () => {
                         <br/><br/>Jim's favorite cookies are snickerdoodles.
                             </p>
                             <div className="links">
-                                <a href="https://github.com/jnardi1223" target="_blank">
+                                <a href="https://github.com/jnardi1223" target="_blank" rel="noreferrer">
                                         <FontAwesomeIcon icon={faGithub} />
                                 </a>
-                                <a href="https://angel.co/u/jim-nardi" target="_blank">
+                                <a href="https://angel.co/u/jim-nardi" target="_blank" rel="noreferrer">
                                     <FontAwesomeIcon icon={faAngellist} />
                                 </a>
-                                <a href="https://www.linkedin.com/in/jim-nardi-3355a11a0/" target="_blank">
+                                <a href="https://www.linkedin.com/in/jim-nardi-3355a11a0/" target="_blank" rel="noreferrer">
                                         <FontAwesomeIcon icon={faLinkedin} />
                                 </a>
                             </div>
@@ -121,4 +119,4 @@ const AboutUs = () => {
     )
 }
 
-export default AboutUs
+export default AboutUs;
