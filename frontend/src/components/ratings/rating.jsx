@@ -19,14 +19,12 @@ class RatingForm extends React.Component {
     }
 
     sendRating(value) {
-        let idA;
+        let idA = this.props.currentUser._id;
         let idB;
 
         if (this.props.tagAlong.user === this.props.currentUser._id) {
-            idA = this.props.tagAlong.user;
             idB = this.props.tagAlong.acceptedBy[0];
         } else {
-            idA = this.props.tagAlong.acceptedBy[0];
             idB = this.props.tagAlong.user;
         }
 
