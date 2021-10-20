@@ -9,12 +9,62 @@ TagAlongs is a Volunteer based Buddy system website that allows users to request
 ## Functionality and MVP
 
 * User Authentication
+![User Auth](readme_img/readme_user.gif)
+
 * Create / Read / Update / Delete on requests
+![User Auth](readme_img/readme_crud.gif)
+
 * Google Map API
-* Search function on Map API
+```
+<Map
+    google={this.props.google}
+    zoom={12}
+    style={mapStyles}
+    initialCenter={
+    {
+        lat: 37.762301,
+        lng: -122.437640,
+    }
+    }
+    >
+    <Marker id="map-marker-css"
+    onClick={this.onMarkerClick}
+    name={items.startLocation}
+    position={{
+        lat: items.startLatLng[0],
+        lng: items.startLatLng[1]
+    }}
+    />
+    <Marker
+    onClick={this.onMarkerClick}
+    name={items.endLocation}
+    position={{
+        lat: items.endLatLng[0],
+        lng: items.endLatLng[1]
+    }}
+    />
+    <InfoWindow
+    marker={this.state.activeMarker}
+    visible={this.state.showingInfoWindow}
+    onClose={this.onClose}
+    >
+    <div>
+        <h4>{this.state.selectedPlace.name}</h4>
+    </div>
+    </InfoWindow>
+</Map>
+```
+
 * Filter requests and update Map
+![User Auth](readme_img/readme_filter.gif)
+
 * Upvote / Downvote Users
+![User Auth](readme_img/readme_upvote.gif)
+
+* Volunteer profile page and badges
+
 * Mobile Friendly
+![User Auth](readme_img/readme_mobile.gif)
 
 ## Technologies and Technical Challenges
 
@@ -24,14 +74,14 @@ TagAlongs is a Volunteer based Buddy system website that allows users to request
 
 ## Group Member and Work Breakdown
 
- * Yu-Huan wu
- * Jim Nardi
- * John Feng
- * Tony Zhang
+* Yu-Huan Wu - Team Lead and Backend/Frontend/Design Assistant
+* Jim Nardi - Frontend Lead
+* John Feng - Flex Developer
+* Tony Zhang - Backend Lead
 
 
 
-Oct 11  - 15
+### Oct 11  - 15
 
 
 Day 1 - Oct 11
@@ -64,18 +114,4 @@ Day 5 - Oct 15
 * Start ratings and add to footer - Tony 
 * finish up some styling and making mobile friendly Yu-Huan/Jim
 * Upvote and downvote cookies - John
-
-* ## User account and login
-
-* ## Create, read, update, delete request
-
-* ## Google Map API 
-
-* ## Search function on Map 
-
-* ## Filter request and update map
-
-* ## Upvote and downvore users
-
-* ## Mobile Friendly
 

@@ -123,39 +123,6 @@
     }
 }
 
-<<<<<<< HEAD
-@media screen and (max-width: 800px) {
-    .user-profile { 
-        display: flex;
-        color: #E8DAB2;
-        flex-direction: column;
-        align-items: center;
-        background-color: #4F6D7A;
-        width: 40vh;
-        padding: 20px;
-
-        h1 {
-            padding: 10px;
-            font-size: 24px;
-            font-weight: bolder;
-        }
-
-        p {
-            padding: 2px;
-            margin-top: -5px;
-            margin-bottom: 5px;
-        }
-
-        b {
-            text-decoration: underline;
-        }
-
-        .user-profile-right { 
-            color: #4F6D7A;
-            background: #C0D6DF;
-            width: 40vh;
-            padding: 20px;
-=======
 
 @media screen and (max-width: 800px){
     .user-profile {
@@ -267,7 +234,6 @@
                     }
                 }
             }
->>>>>>> main
         }
     }
 }
