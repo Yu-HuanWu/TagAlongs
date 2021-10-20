@@ -3,6 +3,7 @@ import './resources.scss'
 import SAH from "./img/SAH.jpeg"
 import TrevorProject from "./img/trevor_project.jpeg"
 import SPL from "./img/SPL_logo.jpeg"
+import HB from "./img/HB.png"
 
 const Resources = () => {
     return (
@@ -20,6 +21,18 @@ const Resources = () => {
                             Americans and Pacific Islanders in the United States. You can visit their website <a href="https://stopaapihate.org/"  target="_blank">here</a>
                         </div>
                     </div>
+            </div>
+            <div className="resource-box">
+                <h1 className="resource-title">Hollaback!</h1>
+                <div className="resources-info">
+                    <a href="https://www.ihollaback.org/bystander-resources/" target="_blank">
+                        <img className="resources-img" src={HB} />
+                    </a>
+                    <div className="info-para-r">Hollaback!'s mission is to end harassment in all its forms by transforming the culture that perpetuates hate and harassment.
+                        Started in 2005, Hollaback! works to end gender-based harassment in public space, also known as street harassment.
+                        You can learn more about the Bystander Intervention from Hollaback!, such as the 5D's strategy (Distract, Delegate, Document, Delay, and Direct),<a href="https://www.ihollaback.org/bystander-resources/" target="_blank">here</a>
+                    </div>
+                </div>
             </div>
             <div className="resource-box">
                 <h1 className="resource-title">The Trevor Project</h1>
