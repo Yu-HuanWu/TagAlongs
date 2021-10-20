@@ -44,8 +44,9 @@ export class MapComponent extends Component {
     if (this.props.currentUser._id !== this.props.TagAlong[0].user) {
       acceptTag(this.state.items._id,{userID:this.props.currentUser._id})
       this.props.history.push("/")
+    } else {
+      alert("You cannot accept your own TagAlong.");
     }
-    alert("You cannot accept your own TagAlong.");
   }
 
   renderButton() {
