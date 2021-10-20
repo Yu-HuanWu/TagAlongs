@@ -181,7 +181,7 @@ router.post("/completeTagAlong/:tagalongID",(req,res)=>{
 router.get("/myCompletedTags/:userID",(req,res)=>{
   TagAlong.find().then((data)=>{
     let filtered = data.filter(tags=>{
-      if(tags.completed === true && tags.acceptedBy.includes(req.params.userID)){
+      if(tags.completed === true && (tags.acceptedBy.includes(req.params.userID) || tags.user._id === req.params.userID)){
         return tags
       }
     })
