@@ -84,7 +84,7 @@ const AboutUs = () => {
                                     <a href="https://angel.co/u/john-feng-5" target="_blank">
                                         <FontAwesomeIcon icon={faAngellist} />
                                     </a>
-                                    <a href="https://www.linkedin.com/in/john-feng-316220215/" target="_blank">
+                                    <a href="https://www.linkedin.com/in/atjohnfeng/" target="_blank">
                                             <FontAwesomeIcon icon={faLinkedin} />
                                     </a>
                                 </div>
