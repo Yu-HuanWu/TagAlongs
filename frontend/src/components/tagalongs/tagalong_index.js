@@ -37,7 +37,7 @@ class TagAlongIndex extends React.Component {
         }
         return (
             <ul className="tagalong-index-list">
-                { tagAlongs.map((tagalong, i) => (
+                { tagAlongs.splice(0).reverse().map((tagalong, i) => (
                     <li key={`tagalong-${i}`}
                         className="tagalong-index-item">
                             <Link to={`/map/${tagalong._id}`}>

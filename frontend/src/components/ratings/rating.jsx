@@ -49,10 +49,6 @@ class RatingForm extends React.Component {
         );
     }
 
-    renderForm() {
-        
-    }
-
     render() {
         return (
             <div className="cookie-form-container">
