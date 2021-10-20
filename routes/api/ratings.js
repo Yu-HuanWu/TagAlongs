@@ -25,12 +25,12 @@ router.post("/createRating",(req,res)=>{
         const newRating = new Rating({
           rating: req.body.rating,
           reviewPair: req.body.reviewPair,
-          ratedByOwner: req.body.ratedByOwner,
-          ratedByAccepted: req.body.ratedByAccepted
+          // ratedByOwner: req.body.ratedByOwner,
+          // ratedByAccepted: req.body.ratedByAccepted
         });
         newRating.save().then(rating => {
           User.findOne({_id:newRating.reviewPair})
-          .then( (user  ) => {
+          .then( (user) => {
             user.rating = user.rating + newRating.rating
             user.markModified("rating");
             user.save();

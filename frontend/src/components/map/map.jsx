@@ -50,6 +50,9 @@ export class MapComponent extends Component {
   }
 
   renderButton() {
+    if (!this.props.currentUser) {
+      return null;
+    }
     if (this.props.currentUser._id === this.props.TagAlong[0].user) {
       return null;
     }
