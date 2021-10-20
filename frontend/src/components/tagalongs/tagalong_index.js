@@ -16,6 +16,7 @@ class TagAlongIndex extends React.Component {
 
     componentDidMount() {
         this.props.fetchTagAlongs();
+        window.scrollTo(0, 0)
     }
 
     filter(category) {
