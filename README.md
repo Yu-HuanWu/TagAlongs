@@ -4,7 +4,7 @@ Companionship request app that strives to serve local communities.
 
 ## Background and Overview
 
-TagAlongs is a volunteer-based buddy system that allows users to request companionship for a certain route or location. This is meant to help the elderly as well as anybody that does not feel safe walking around by themselves.
+TagAlongs is a volunteer-based buddy system that allows users to request companionship for a certain route or location. 
 
 ## Functionality and MVP
 
