@@ -11,6 +11,7 @@ class AcceptedTagAlongs extends React.Component {
 
     componentDidMount() {
         this.props.fetchAccepted(this.props.currentUser._id);
+        window.scrollTo(0, 0);
     }
 
     render() {

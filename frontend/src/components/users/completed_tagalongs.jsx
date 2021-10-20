@@ -18,6 +18,7 @@ class CompletedTagAlongs
 
     componentDidMount() {
         this.props.fetchCompleted(this.props.currentUser._id);
+        window.scrollTo(0, 0)
     }
 
     render() {

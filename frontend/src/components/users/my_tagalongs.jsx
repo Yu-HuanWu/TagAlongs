@@ -15,8 +15,9 @@ class MyTagAlongs extends React.Component {
         
       }
 
-    // componentDidMount() {
-    // }
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    };
 
     handleComplete(tagAlong){
       completeTag(tagAlong)
