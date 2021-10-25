@@ -7,6 +7,13 @@ import './tagalong.scss'
 class TagAlongForm extends React.Component {
     constructor(props) {
         super(props);
+        var date = new Date();
+        date.setHours(date.getHours() - 7);
+
+        // now you can get the string
+        var isodate = date.toISOString();
+        console.log(isodate)
+
 
         this.state = {
             title: '',
@@ -16,11 +23,13 @@ class TagAlongForm extends React.Component {
             endLocation: '',
             category: 'chat',
             date:"",
-            startingTime:"",
-            duration:"",
+            startingTime: isodate.slice(0, 16),
+            duration:"30 minutes",
             user: this.props.currentUser.id,
             errors: {}
         }
+  
+        //   .toISOString().slice(0, 16))
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
@@ -73,6 +82,7 @@ class TagAlongForm extends React.Component {
     }
 
     render() {
+        let today = new Date() 
         return (
             <div className="tagalong-form-container">
                 <form onSubmit={this.handleSubmit}>
@@ -129,30 +139,36 @@ class TagAlongForm extends React.Component {
                             <label className="tagalong-form-label">Type of TagAlong:</label>
                         </div>
 
-                        <div className="input-container-date">
-                            <input type="date"
-                                value={this.state.date}
-                                onChange={this.update('date')}
-                            />
-                            <label className="tagalong-form-label">Date</label>
-                        </div>
-
                         <div className="input-container">
-                            <input type="text"
+                            {/* <input type="text"
                                 value={this.state.startingTime}
                                 onChange={this.update('startingTime')}
                                 required
                             />
-                            <label className="tagalong-form-label">Starting Time</label>
+                            <label className="tagalong-form-label">Starting Time</label> */}
+                            <input type="datetime-local" id="meeting-time"
+                                name="meeting-time" value={this.state.startingTime}
+                                min={this.state.startingTime} 
+                                onChange={this.update('startingTime')}>
+                            </input>
                         </div>
 
                         <div className="input-container">
-                            <input type="text"
-                                value={this.state.duration}
+                            {/* <input type="te"
+                                // value={this.state.duration}
                                 onChange={this.update('duration')}
                                 required 
-                            />
-                            <label className="tagalong-form-label">Duration</label>
+                            /> */}
+                                <select onChange={this.update('duration')}  value={this.state.duration}>
+                               
+                                    <option value="30 minutes">30 minutes</option>
+                                    <option value="1 hour">1 hour</option>
+                                    <option value="1 hour 30 minutes">1 hour 30 minutes</option>
+                                    <option value="2 hours">2 hours</option>
+                                    <option value="2 hours 30 minutes">2 hours 30 minutes</option>
+                                    <option value="3 hours">3 hours</option>
+                                </select>
+                            {/* <label className="tagalong-form-label">Duration</label> */}
                         </div>
 
 
