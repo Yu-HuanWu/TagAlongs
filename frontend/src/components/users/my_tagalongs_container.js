@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import MyTagAlongs from './my_tagalongs';
-import { fetchMyTagAlongs  } from '../../actions/tagalong_actions';
+import { fetchMyTagAlongs, deleteTag } from '../../actions/tagalong_actions';
 
 const mapStateToProps = state => {
     return {
@@ -11,7 +11,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchMyTags: userId => dispatch(fetchMyTagAlongs(userId))
+        fetchMyTags: userId => dispatch(fetchMyTagAlongs(userId)),
+        deleteTag: (tagAlongId, i) => dispatch(deleteTag(tagAlongId, i))
     }
 }
 

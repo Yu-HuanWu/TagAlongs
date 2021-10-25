@@ -21,19 +21,33 @@ class MyTagAlongs extends React.Component {
 
     handleComplete(tagAlong){
       completeTag(tagAlong)
-      .then(()=>window.location.reload(false))
+        .then(() => window.location.reload(false))
+    }
+
+    handleDelete(tagAlong, i){
+      this.props.deleteTag(tagAlong, i)
+        .then(() => this.props.fetchMyTags(this.props.currentUser._id).then((data)=>this.setState({tagAlongs:data.tagAlongs.data})))
     }
     
-    renderButton(tagAlong){
-      if(tagAlong.completed === false){
-        return(
-          <button className="my-tagalongs-button" onClick={()=>this.handleComplete(tagAlong._id)}>Mark as Complete</button>
+    renderButton(tagAlong, i){
+      if(tagAlong.completed === false && tagAlong.acceptedBy.length > 0){
+        return (
+          <div>
+            <button className="my-tagalongs-button" onClick={()=>this.handleComplete(tagAlong._id)}>Mark as Complete</button>
+            <button className="my-tagalongs-button" onClick={()=>this.handleDelete(tagAlong._id, i)}>Delete TagAlong</button>
+          </div>
           )
-        }else{
+        } else if (tagAlong.completed === true) {
           return(
             <div className="my-tagalongs-completed-label">TagAlong Completed!</div>
             )
-          }
+        } else {
+          return (
+            <div className="my-tagalongs-completed-label">TagAlong has not been accepted by another user yet.
+              <button className="my-tagalongs-button" onClick={()=>this.handleDelete(tagAlong._id, i)}>Delete TagAlong</button>
+            </div>
+          )
+        }
     }
     
     render() {
@@ -47,7 +61,7 @@ class MyTagAlongs extends React.Component {
                                 <p>Category: &nbsp; <h3>{tagalong.category}</h3></p>
                                 <p>Starting Point: &nbsp; <h3>{tagalong.startLocation}</h3></p>
                                 <p>End Point: &nbsp; <h3>{tagalong.endLocation}</h3></p>
-                                {this.renderButton(tagalong)}
+                                {this.renderButton(tagalong, i)}
                                 
                         </li>
                     ))}

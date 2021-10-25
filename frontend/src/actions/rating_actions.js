@@ -24,3 +24,11 @@ export const createRating = rating => dispatch => (
         dispatch(receiveRatingErrors(errors.response.data))
     ))
 )
+
+export const fetchRating = reviewPair => dispatch => (
+    APIUtil.getRating(reviewPair).then(rating => (
+        dispatch(receiveRating(rating))
+    ), errors => (
+        dispatch(receiveRatingErrors(errors.response.data))
+    ))
+)

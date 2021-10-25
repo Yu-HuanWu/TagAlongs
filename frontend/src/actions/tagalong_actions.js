@@ -3,6 +3,7 @@ import * as APIUtil from '../util/tagalong_api_util';
 export const RECEIVE_TAGALONG = "RECEIVE_TAGALONG";
 export const RECEIVE_TAGALONGS = "RECEIVE_TAGALONGS";
 export const RECEIVE_ACCEPTED_TAGALONGS = "RECEIVE_ACCEPTED_TAGALONGS";
+export const DELETE_TAGALONG = "DELETE_TAGALONG";
 
 const receiveTagAlong = tagAlong => {
     return {
@@ -15,6 +16,14 @@ const receiveTagAlongs = tagAlongs => {
     return {
         type: RECEIVE_TAGALONGS,
         tagAlongs
+    }
+}
+
+const deleteTagAlong = (tagAlong, i) => {
+    return {
+        type: DELETE_TAGALONG,
+        tagAlong,
+        index: i
     }
 }
 
@@ -52,8 +61,13 @@ export const fetchMyTagAlongs = userId => dispatch => (
         dispatch(receiveTagAlongs(myTags)))
 )
 
-
 export const fetchCompletedTags = userId => dispatch =>(
   APIUtil.completedTags(userId).then(completedTagAlongs=>
     dispatch(receiveAcceptedTagAlongs(completedTagAlongs)))
+)
+
+export const deleteTag = (tagAlongId, i) => dispatch => (
+    APIUtil.deleteTag(tagAlongId).then(tagAlong => (
+        dispatch(dispatch(deleteTagAlong(tagAlong, i)))
+    ))
 )
