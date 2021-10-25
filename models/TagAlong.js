@@ -34,12 +34,8 @@ const TagAlongSchema = new Schema({
     type: String,
     required:true
   },
-  date:{
-      type: Date,
-      required: true
-    },
   startingTime:{
-    type:String,
+    type: Date,
     required:true
   },
   duration:{

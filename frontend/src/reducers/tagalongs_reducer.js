@@ -1,7 +1,8 @@
 import { 
     RECEIVE_TAGALONG,
     RECEIVE_TAGALONGS,
-    RECEIVE_ACCEPTED_TAGALONGS
+    RECEIVE_ACCEPTED_TAGALONGS,
+    DELETE_TAGALONG
 } from "../actions/tagalong_actions";
 
 const tagAlongsReducer = (initialState = {}, action) => {
@@ -19,6 +20,9 @@ const tagAlongsReducer = (initialState = {}, action) => {
         case RECEIVE_ACCEPTED_TAGALONGS:
             let nextState = Object.assign({}, action.acceptedTagAlongs.data);
             return nextState;
+        case DELETE_TAGALONG:
+            let updatedState = Object.assign({}, initialState);
+            return updatedState.delete(action.tagAlong.data)
         default:
             return initialState;
     }

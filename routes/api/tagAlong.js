@@ -42,7 +42,6 @@ router.post("/createTagAlong",
           endLocation: req.body.endLocation,
           endLatLng: req.body.endLatLng,
           category: req.body.category,
-          date: req.body.date,
           startingTime: req.body.startingTime,
           duration: req.body.duration,
           completed:false,
@@ -95,7 +94,6 @@ passport.authenticate("jwt", { session: false }),
           tagAlong.endLocation = req.body.endLocation,
           tagAlong.endLatLng = req.body.endLatLng,
           tagAlong.category = req.body.category,
-          tagAlong.date = req.body.date,
           tagAlong.startingTime = req.body.startingTime,
           tagAlong.duration = req.body.duration
 
@@ -107,7 +105,6 @@ passport.authenticate("jwt", { session: false }),
           tagAlong.markModified("endLocation");
           tagAlong.markModified("endLatLng");
           tagAlong.markModified("category");
-          tagAlong.markModified("date");
           tagAlong.markModified("startingTime");
           tagAlong.markModified("duration");
           tagAlong.save();
@@ -118,7 +115,7 @@ passport.authenticate("jwt", { session: false }),
 })
 
 router.post("/delete/:id",(req,res)=>{
-  TagAlong.deleteOne({id:req.params.id})
+  TagAlong.deleteOne({_id:req.params.id})
     .then(() => res.json({deleted: "TagAlong was deleted"}))
     .catch(err=> res.status(404).json({noTagAlongFound: "No TagAlong was found with that ID"}))
 })
@@ -162,6 +159,9 @@ router.get("/myPostedTags/:userID",(req,res)=>{
 router.post("/completeTagAlong/:tagalongID",(req,res)=>{
   TagAlong.findOne({_id: req.params.tagalongID})
   .then((tag)=>{
+    if (tag.acceptedBy.length < 1) {
+      return res.status(400).json({notAccepted: "This TagAlong was not accepted by another user and cannot be marked complete."})
+    }
     tag.completed = true;
     tag.markModified("completed");
     tag.save();

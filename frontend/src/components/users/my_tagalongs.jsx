@@ -25,15 +25,19 @@ class MyTagAlongs extends React.Component {
     }
     
     renderButton(tagAlong){
-      if(tagAlong.completed === false){
+      if(tagAlong.completed === false && tagAlong.acceptedBy.length > 0){
         return(
           <button className="my-tagalongs-button" onClick={()=>this.handleComplete(tagAlong._id)}>Mark as Complete</button>
           )
-        }else{
+        } else if (tagAlong.completed === true) {
           return(
             <div className="my-tagalongs-completed-label">TagAlong Completed!</div>
             )
-          }
+        } else {
+          return (
+            <div className="my-tagalongs-completed-label">TagAlong has not been accepted by another user yet.</div>
+          )
+        }
     }
     
     render() {
