@@ -15,6 +15,8 @@ class LoginForm extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
+        this.loginDemo = this.loginDemo.bind(this);
+        this.renderDemo = this.renderDemo.bind(this);
     }
 
     componentWillReceiveProps(nextProps) {
@@ -54,19 +56,43 @@ class LoginForm extends React.Component {
         );
     }
 
-    loginDemo() {
-        let user = {
-            handle: "CookieMonster",
-            password: "password"
-        };
+    loginDemo(e) {
 
-        this.props.login(user);
+        e.preventDefault();
+        const demo = { handle: "CookieMonster", password: "password" };
+
+        const usernameAnimate = setInterval(() => {
+            if (this.state.handle !== demo.handle) {
+                const temp = demo.handle.slice(0, this.state.handle.length + 1);
+                this.setState({ handle: temp });
+            } else {
+                clearInterval(usernameAnimate);
+                passwordAnimate();
+            }
+        }, 100);
+
+        const passwordAnimate = () => {
+            const processLogin = setInterval(() => {
+                if (this.state.password !== demo.password) {
+                    const temp = demo.password.slice(0, this.state.password.length + 1);
+                    this.setState({ password: temp });
+                } else {
+                    clearInterval(processLogin);
+                    this.props.login(demo);
+                }
+            }, 100);
+        };
+    }
+
+    renderDemo(e) {
+        return (
+            <input type="submit" onClick={this.loginDemo} value="Demo Login" className="form-button"/>
+        )
     }
 
     render() {
         return (
         <div className="splash">
-        {/* <div className="main"></div> */}
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit}>
                     <div className="login-form">
@@ -88,12 +114,8 @@ class LoginForm extends React.Component {
                             />
                             <label>Password</label>
                         </div>
-
+                        {this.renderDemo()}
                         <input className="form-button" type="submit" value="Log In" />
-                        <button className="form-button"
-                            id="demo-button" 
-                            onClick={() => this.loginDemo()}
-                            >Demo Login</button>
                         {this.renderErrors()}
                     </div>
                 </form>
