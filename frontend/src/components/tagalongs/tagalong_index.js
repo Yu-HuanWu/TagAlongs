@@ -36,6 +36,7 @@ class TagAlongIndex extends React.Component {
         } else {
             tagAlongs = filtered;
         }
+       
         return (
             <ul className="tagalong-index-list">
                 { tagAlongs.splice(0).reverse().map((tagalong, i) => (
@@ -46,6 +47,8 @@ class TagAlongIndex extends React.Component {
                                 <p>Category: &nbsp; <h3>{tagalong.category}</h3></p>
                                 <p>Starting Point: &nbsp; <h3>{tagalong.startLocation}</h3></p>
                                 <p>End Point: &nbsp; <h3>{tagalong.endLocation}</h3></p>
+                                <p>Start Time: &nbsp; <h3>{tagalong.startingTime}</h3></p>
+                                <p>Duration: &nbsp; <h3>{tagalong.duration}</h3></p>
                             </Link>
                     </li>
                 ))}
