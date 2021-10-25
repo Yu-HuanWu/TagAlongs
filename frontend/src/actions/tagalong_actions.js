@@ -19,10 +19,11 @@ const receiveTagAlongs = tagAlongs => {
     }
 }
 
-const deleteTagAlong = tagAlong => {
+const deleteTagAlong = (tagAlong, i) => {
     return {
         type: DELETE_TAGALONG,
-        tagAlong
+        tagAlong,
+        index: i
     }
 }
 
@@ -65,8 +66,8 @@ export const fetchCompletedTags = userId => dispatch =>(
     dispatch(receiveAcceptedTagAlongs(completedTagAlongs)))
 )
 
-export const deleteTag = tagAlongId => dispatch => (
+export const deleteTag = (tagAlongId, i) => dispatch => (
     APIUtil.deleteTag(tagAlongId).then(tagAlong => (
-        dispatch(dispatch(deleteTagAlong(tagAlong)))
+        dispatch(dispatch(deleteTagAlong(tagAlong, i)))
     ))
 )
