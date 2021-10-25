@@ -22,7 +22,9 @@ const tagAlongsReducer = (initialState = {}, action) => {
             return nextState;
         case DELETE_TAGALONG:
             let updatedState = Object.assign({}, initialState);
-            return updatedState.delete(action.tagAlong.data)
+            console.log(action)
+            delete updatedState[action.index];
+            return updatedState;
         default:
             return initialState;
     }
