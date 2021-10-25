@@ -23,13 +23,18 @@ class MyTagAlongs extends React.Component {
       completeTag(tagAlong)
       .then(()=>window.location.reload(false))
     }
+
+    handleDelete(tagAlong){
+      this.props.deleteTag(tagAlong)
+        .then(() => window.location.reload(false))
+    }
     
     renderButton(tagAlong){
       if(tagAlong.completed === false && tagAlong.acceptedBy.length > 0){
         return (
           <div>
             <button className="my-tagalongs-button" onClick={()=>this.handleComplete(tagAlong._id)}>Mark as Complete</button>
-            <button className="my-tagalongs-button" onClick={()=>this.props.deleteTag(tagAlong._id)}>Delete TagAlong</button>
+            <button className="my-tagalongs-button" onClick={()=>this.handleDelete(tagAlong._id)}>Delete TagAlong</button>
           </div>
           )
         } else if (tagAlong.completed === true) {
