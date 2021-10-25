@@ -59,10 +59,10 @@ class Resources extends React.Component {
                         <h1 className="resource-title">Southern Poverty Law Center</h1>
                             <div className="resources-info">
                                 <a href="https://www.splcenter.org/reporthate" target="_blank" rel="noreferrer">
-                                    <img className="resources-img"src={SPL}/>
+                                    <img className="resources-img"src={SPL} alt="splc"/>
                                 </a>
                                 <div className="info-para-r">The SPLC is a catalyst for racial justice in the South and beyond, working in partnership with communities to dismantle white supremacy, strengthen 
-                                intersectional movements, and advance the human rights of all people. You can report a hate incident <a href="https://www.splcenter.org/reporthate"  target="_blank">here</a>
+                                intersectional movements, and advance the human rights of all people. You can report a hate incident <a href="https://www.splcenter.org/reporthate"  target="_blank" rel="noreferrer">here</a>
                                 </div>
                             </div>
                     </div>

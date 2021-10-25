@@ -48,23 +48,30 @@ class RatingForm extends React.Component {
         );
     }
 
+    renderForm() {
+        return (
+            <ul className="cookie-form">
+                Rate your TagAlong:
+                <br />
+                <li>
+                    <img src={DownCookie} 
+                        onClick={() => this.sendRating(-1)}
+                        alt="downCookie" />
+                </li>
+                <li>
+                    <img src={UpCookie} 
+                        onClick={() => this.sendRating(1)}
+                        alt="upCookie" />
+                </li>
+                { this.renderErrors() }
+            </ul>
+        )
+    }
+
     render() {
         return (
             <div className="cookie-form-container">
-                Rate your TagAlong:
-                <ul className="cookie-form">
-                    <li>
-                        <img src={DownCookie} 
-                            onClick={() => this.sendRating(-1)}
-                            alt="downCookie" />
-                    </li>
-                    <li>
-                        <img src={UpCookie} 
-                            onClick={() => this.sendRating(1)}
-                            alt="upCookie" />
-                    </li>
-                    { this.renderErrors() }
-                </ul>
+                { this.renderForm() }
             </div>
         )
     }

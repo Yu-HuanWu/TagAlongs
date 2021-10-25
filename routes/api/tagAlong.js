@@ -162,6 +162,9 @@ router.get("/myPostedTags/:userID",(req,res)=>{
 router.post("/completeTagAlong/:tagalongID",(req,res)=>{
   TagAlong.findOne({_id: req.params.tagalongID})
   .then((tag)=>{
+    if (tag.acceptedBy.length < 1) {
+      return res.status(400).json({notAccepted: "This TagAlong was not accepted by another user and cannot be marked complete."})
+    }
     tag.completed = true;
     tag.markModified("completed");
     tag.save();
