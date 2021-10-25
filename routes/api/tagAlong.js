@@ -42,7 +42,6 @@ router.post("/createTagAlong",
           endLocation: req.body.endLocation,
           endLatLng: req.body.endLatLng,
           category: req.body.category,
-          date: req.body.date,
           startingTime: req.body.startingTime,
           duration: req.body.duration,
           completed:false,
@@ -95,7 +94,6 @@ passport.authenticate("jwt", { session: false }),
           tagAlong.endLocation = req.body.endLocation,
           tagAlong.endLatLng = req.body.endLatLng,
           tagAlong.category = req.body.category,
-          tagAlong.date = req.body.date,
           tagAlong.startingTime = req.body.startingTime,
           tagAlong.duration = req.body.duration
 
@@ -107,7 +105,6 @@ passport.authenticate("jwt", { session: false }),
           tagAlong.markModified("endLocation");
           tagAlong.markModified("endLatLng");
           tagAlong.markModified("category");
-          tagAlong.markModified("date");
           tagAlong.markModified("startingTime");
           tagAlong.markModified("duration");
           tagAlong.save();
