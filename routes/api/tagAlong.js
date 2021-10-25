@@ -118,7 +118,7 @@ passport.authenticate("jwt", { session: false }),
 })
 
 router.post("/delete/:id",(req,res)=>{
-  TagAlong.deleteOne({id:req.params.id})
+  TagAlong.deleteOne({_id:req.params.id})
     .then(() => res.json({deleted: "TagAlong was deleted"}))
     .catch(err=> res.status(404).json({noTagAlongFound: "No TagAlong was found with that ID"}))
 })
