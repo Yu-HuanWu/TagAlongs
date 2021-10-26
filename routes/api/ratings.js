@@ -19,16 +19,18 @@ router.post("/createRating",(req,res)=>{
   Rating.findOne({ reviewPair: req.body.reviewPair })
     .then((rating)=>{
       if(rating){
+        const oldRating = rating.rating
         rating.rating = req.body.rating;
         rating.markModified("rating");
         rating.save();
         User.findOne({_id:rating.reviewPair[1]})
           .then((user)=>{
-            if(rating.rating === 1){
-              user.rating = user.rating + 2
-            }else{
-              user.rating = user.rating - 2
-            }
+            user.rating = user.rating + (-1*oldRating) + rating.rating
+            // if(rating.rating === 1){
+            //   user.rating = user.rating + 2
+            // }else{
+            //   user.rating = user.rating - 2
+            // }
             user.markModified("rating");
             user.save();
           })
