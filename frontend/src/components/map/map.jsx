@@ -94,6 +94,18 @@ export class MapComponent extends Component {
       )
     }else{
       let items = this.state.items;
+      let day = new Date(items.startingTime).toString().slice(0, 3);
+      let date = new Date(items.startingTime).toString().slice(4, 15);
+      let hour;
+      let ampm;
+      if (new Date(items.startingTime).toString().slice(16, 18) > 12) {
+        hour = new Date(items.startingTime).toString().slice(16, 18) - 12;
+        ampm = 'PM';
+      } else {
+        hour = new Date(items.startingTime).toString().slice(16, 18);
+        ampm = 'AM';
+      }
+      let minutes = new Date(items.startingTime).toString().slice(19, 21)
       return (
         <div className="tagalongs-index-container">
           <div className="tagalongs-index-section">
@@ -136,6 +148,24 @@ export class MapComponent extends Component {
               </div>
               <div>
               {items.endLocation}
+              </div>
+            </div>
+
+            <div>
+              <div className="tagalongs-show-banner">
+                Starting Time:
+              </div>
+              <div>
+                {day}, {date}, {hour}:{minutes} {ampm}
+              </div>
+            </div>
+
+            <div>
+              <div className="tagalongs-show-banner">
+                Duration:
+              </div>
+              <div>
+                {items.duration}
               </div>
             </div>
 

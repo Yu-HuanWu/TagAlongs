@@ -9,11 +9,8 @@ class TagAlongForm extends React.Component {
         super(props);
         var date = new Date();
         date.setHours(date.getHours() - 7);
-
         // now you can get the string
         var isodate = date.toISOString();
-        console.log(isodate)
-
 
         this.state = {
             title: '',
@@ -82,7 +79,6 @@ class TagAlongForm extends React.Component {
     }
 
     render() {
-        let today = new Date() 
         return (
             <div className="tagalong-form-container">
                 <form onSubmit={this.handleSubmit}>
@@ -154,21 +150,15 @@ class TagAlongForm extends React.Component {
                         </div>
 
                         <div className="input-container">
-                            {/* <input type="te"
-                                // value={this.state.duration}
-                                onChange={this.update('duration')}
-                                required 
-                            /> */}
-                                <select onChange={this.update('duration')}  value={this.state.duration}>
-                               
-                                    <option value="30 minutes">30 minutes</option>
-                                    <option value="1 hour">1 hour</option>
-                                    <option value="1 hour 30 minutes">1 hour 30 minutes</option>
-                                    <option value="2 hours">2 hours</option>
-                                    <option value="2 hours 30 minutes">2 hours 30 minutes</option>
-                                    <option value="3 hours">3 hours</option>
-                                </select>
-                            {/* <label className="tagalong-form-label">Duration</label> */}
+                            <select onChange={this.update('duration')}  value={this.state.duration}>
+                                <option value="30 minutes">30 minutes</option>
+                                <option value="1 hour">1 hour</option>
+                                <option value="1 hour 30 minutes">1 hour 30 minutes</option>
+                                <option value="2 hours">2 hours</option>
+                                <option value="2 hours 30 minutes">2 hours 30 minutes</option>
+                                <option value="3 hours">3 hours</option>
+                                <option value="More than 3 hours"> More than 3 hours</option>
+                            </select>
                         </div>
 
 
