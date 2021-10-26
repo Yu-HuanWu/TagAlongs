@@ -98,6 +98,7 @@ class RatingForm extends React.Component {
                     <li>
                         <img src={UpCookie} 
                             // onClick={() => this.sendRating(1)}
+                            className="unclickable-cookie"
                             alt="upCookie" />
                     </li>
                     { this.renderErrors() }
@@ -109,7 +110,8 @@ class RatingForm extends React.Component {
                     Rate your TagAlong:
                     <br />
                     <li>
-                        <img src={DownCookie} 
+                        <img src={DownCookie}
+                            className="unclickable-cookie"
                             // onClick={() => this.sendRating(-1)}
                             alt="downCookie" />
                     </li>
