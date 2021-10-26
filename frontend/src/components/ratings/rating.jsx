@@ -89,7 +89,6 @@ class RatingForm extends React.Component {
           return (
                 <ul className="cookie-form2">
                     Rate your TagAlong:
-                    {this.state.rating.rating}
                     <br />
                     <li>
                         <img className="validRatingPress" src={DownCookie} 
@@ -108,7 +107,6 @@ class RatingForm extends React.Component {
           return (
                 <ul className="cookie-form2">
                     Rate your TagAlong:
-                    {this.state.rating.rating}
                     <br />
                     <li>
                         <img src={DownCookie} 
