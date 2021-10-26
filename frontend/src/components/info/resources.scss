@@ -43,14 +43,20 @@
 
 .info-para-r {
     padding-top: 2%;
-    font-size: 26px;
+    font-size: 1.3em;
+    line-height: 1.6em;
     margin-left: 2%;
 }
 
 .resource-title {
-    font-size: 36px;
+    font-size: 2em;
+    font-weight: bold;
     text-align: center;
     padding: 1%;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        font-size: 2.1em;
+    }
 }
 
 .resources-img {

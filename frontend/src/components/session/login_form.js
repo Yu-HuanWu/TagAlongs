@@ -114,8 +114,8 @@ class LoginForm extends React.Component {
                             />
                             <label>Password</label>
                         </div>
-                        {this.renderDemo()}
                         <input className="form-button" type="submit" value="Log In" />
+                        {this.renderDemo()}
                         {this.renderErrors()}
                     </div>
                 </form>
