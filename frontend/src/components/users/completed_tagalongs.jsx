@@ -41,5 +41,4 @@ class CompletedTagAlongs
     }
 }
 
-export default CompletedTagAlongs
-;
+export default CompletedTagAlongs;

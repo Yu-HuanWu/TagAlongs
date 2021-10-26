@@ -8,10 +8,26 @@ class RatingForm extends React.Component {
         super(props);
 
         this.state = {
-            errors: {}
+            errors: {},
+            rating: null
         }
 
         this.renderErrors = this.renderErrors.bind(this);
+    }
+
+    componentDidMount() {
+        let idA = this.props.currentUser._id;
+        let idB;
+
+        if (this.props.tagAlong.user === this.props.currentUser._id) {
+            idB = this.props.tagAlong.acceptedBy[0];
+        } else {
+            idB = this.props.tagAlong.user;
+        }
+        console.log(this.state.rating)
+        this.props.fetchRating({reviewPair: [idA, idB]})
+            .then(rating => {
+                this.setState({rating: rating.rating.data})});
     }
 
     componentWillReceiveProps(nextProps) {
@@ -48,24 +64,27 @@ class RatingForm extends React.Component {
         );
     }
 
-    renderForm() {
-        return (
-            <ul className="cookie-form">
-                Rate your TagAlong:
-                <br />
-                <li>
-                    <img src={DownCookie} 
-                        onClick={() => this.sendRating(-1)}
-                        alt="downCookie" />
-                </li>
-                <li>
-                    <img src={UpCookie} 
-                        onClick={() => this.sendRating(1)}
-                        alt="upCookie" />
-                </li>
-                { this.renderErrors() }
-            </ul>
-        )
+    renderForm() { 
+        console.log(this.state);   
+        if (!this.state.rating) {
+            return (
+                <ul className="cookie-form">
+                    Rate your TagAlong:
+                    <br />
+                    <li>
+                        <img src={DownCookie} 
+                            onClick={() => this.sendRating(-1)}
+                            alt="downCookie" />
+                    </li>
+                    <li>
+                        <img src={UpCookie} 
+                            onClick={() => this.sendRating(1)}
+                            alt="upCookie" />
+                    </li>
+                    { this.renderErrors() }
+                </ul>
+            ) 
+        }
     }
 
     render() {

@@ -55,9 +55,10 @@ router.post("/createRating",(req,res)=>{
     })
 })
 
-router.get("/show", (req, res) => {
+router.post("/show", (req, res) => {
   Rating.findOne({reviewPair: req.body.reviewPair})
-    .then(rating => res.json(rating))
+    .then(rating => { 
+      return res.json(rating)})
     .catch(err => res.status(404).json({noRatingFound: "No Ratings was found with that pair"}))
 });
 
