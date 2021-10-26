@@ -84,7 +84,7 @@ class TagAlongIndex extends React.Component {
                             </li>
                             <li className="filter-bar-item">
                                 <button className="filter-bar-button"
-                                    onClick={() => this.filter('chores')}>Other Trip</button>
+                                    onClick={() => this.filter('chores')}>Others</button>
                             </li>
                             <li className="filter-bar-item">
                                 <button className="filter-bar-button"
