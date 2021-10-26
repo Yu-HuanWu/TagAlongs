@@ -44,12 +44,13 @@ class RatingForm extends React.Component {
             idB = this.props.tagAlong.user;
         }
 
-        let rating = {
+        let rating2 = {
             rating: value,
             reviewPair: [idA, idB]
         };
         
-        this.props.giveCookie(rating);
+        this.props.giveCookie(rating2);
+        this.setState({rating: rating2})
     }
 
     renderErrors() {
@@ -78,6 +79,44 @@ class RatingForm extends React.Component {
                     </li>
                     <li>
                         <img src={UpCookie} 
+                            onClick={() => this.sendRating(1)}
+                            alt="upCookie" />
+                    </li>
+                    { this.renderErrors() }
+                </ul>
+            ) 
+        }else if(this.state.rating.rating === 1){
+          return (
+                <ul className="cookie-form2">
+                    Rate your TagAlong:
+                    {this.state.rating.rating}
+                    <br />
+                    <li>
+                        <img className="validRatingPress" src={DownCookie} 
+                            onClick={() => this.sendRating(-1)}
+                            alt="downCookie" />
+                    </li>
+                    <li>
+                        <img src={UpCookie} 
+                            // onClick={() => this.sendRating(1)}
+                            alt="upCookie" />
+                    </li>
+                    { this.renderErrors() }
+                </ul>
+            ) 
+        }else if(this.state.rating.rating === -1){
+          return (
+                <ul className="cookie-form2">
+                    Rate your TagAlong:
+                    {this.state.rating.rating}
+                    <br />
+                    <li>
+                        <img src={DownCookie} 
+                            // onClick={() => this.sendRating(-1)}
+                            alt="downCookie" />
+                    </li>
+                    <li>
+                        <img className="validRatingPress" src={UpCookie} 
                             onClick={() => this.sendRating(1)}
                             alt="upCookie" />
                     </li>
