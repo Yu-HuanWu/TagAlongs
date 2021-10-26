@@ -19,8 +19,22 @@ router.post("/createRating",(req,res)=>{
   Rating.findOne({ reviewPair: req.body.reviewPair })
     .then((rating)=>{
       if(rating){
-        errors.reviewPair = "Review already exists."
-        return res.status(400).json({reviewPair: "Rating already submitted. You may only rate a user once."})
+        const oldRating = rating.rating
+        rating.rating = req.body.rating;
+        rating.markModified("rating");
+        rating.save();
+        User.findOne({_id:rating.reviewPair[1]})
+          .then((user)=>{
+            user.rating = user.rating + (-1*oldRating) + rating.rating
+            // if(rating.rating === 1){
+            //   user.rating = user.rating + 2
+            // }else{
+            //   user.rating = user.rating - 2
+            // }
+            user.markModified("rating");
+            user.save();
+          })
+        return res.json(rating)
       }else{
         const newRating = new Rating({
           rating: req.body.rating,
@@ -41,9 +55,10 @@ router.post("/createRating",(req,res)=>{
     })
 })
 
-router.get("/show", (req, res) => {
+router.post("/show", (req, res) => {
   Rating.findOne({reviewPair: req.body.reviewPair})
-    .then(rating => res.json(rating))
+    .then(rating => { 
+      return res.json(rating)})
     .catch(err => res.status(404).json({noRatingFound: "No Ratings was found with that pair"}))
 });
 

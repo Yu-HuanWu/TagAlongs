@@ -22,5 +22,34 @@
                 }
             }
         }
-    }
+      }
+
+      .cookie-form2 {
+        display: flex;
+
+        li {
+          img{
+            max-width: 50px;
+            padding: 5px;
+          }
+          
+          .validRatingPress {
+                &:hover {
+                    cursor: pointer;
+                    background-color: #C0D6DF;
+                    border-radius: 40%;
+                }
+                &:active {
+                    margin-top: 3px;
+                    margin-bottom: -3px;
+                }
+            }
+
+        }
+      }
+}
+
+
+.unclickable-cookie{
+  opacity: .6;
 }

@@ -5,5 +5,6 @@ export const giveCookie = rating => {
 };
 
 export const getRating = reviewPair => {
-    return axios.get('/api/ratings/show', reviewPair);
+    // console.log(reviewPair);
+    return axios.post('/api/ratings/show', reviewPair);
 };
