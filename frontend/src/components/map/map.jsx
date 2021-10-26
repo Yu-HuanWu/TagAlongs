@@ -94,18 +94,25 @@ export class MapComponent extends Component {
       )
     }else{
       let items = this.state.items;
-      let day = new Date(items.startingTime).toString().slice(0, 3);
-      let date = new Date(items.startingTime).toString().slice(4, 15);
+      let year = items.startingTime.slice(0,4);
+      let month = items.startingTime.toString().slice(5, 7);
+      let date = items.startingTime.toString().slice(8,10);
       let hour;
       let ampm;
-      if (new Date(items.startingTime).toString().slice(16, 18) > 12) {
-        hour = new Date(items.startingTime).toString().slice(16, 18) - 12;
+      if (items.startingTime.toString().slice(11, 13) === 12) {
+        hour = 12;
+        ampm = 'PM';
+      } else if (items.startingTime.toString().slice(11, 13) === 24) {
+        hour = 12;
+        ampm = 'AM';
+      } else if (items.startingTime.toString().slice(11, 13) > 12) {
+        hour = items.startingTime.toString().slice(11, 13) - 12;
         ampm = 'PM';
       } else {
-        hour = new Date(items.startingTime).toString().slice(16, 18);
+        hour = items.startingTime.toString().slice(11, 13);
         ampm = 'AM';
       }
-      let minutes = new Date(items.startingTime).toString().slice(19, 21)
+      let minutes = items.startingTime.toString().slice(14, 16)
       return (
         <div className="tagalongs-index-container">
           <div className="tagalongs-index-section">
@@ -156,7 +163,7 @@ export class MapComponent extends Component {
                 Starting Time:
               </div>
               <div>
-                {day}, {date}, {hour}:{minutes} {ampm}
+                {month}/ {date}/ {year}, {hour}:{minutes} {ampm}
               </div>
             </div>
 

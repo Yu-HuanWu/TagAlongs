@@ -40,24 +40,25 @@ class TagAlongIndex extends React.Component {
         return (
             <ul className="tagalong-index-list">
                 { tagAlongs.splice(0).reverse().map((tagalong, i) => {
-                    let day = new Date(tagalong.startingTime).toString().slice(0,3);
-                    let date = new Date(tagalong.startingTime).toString().slice(4, 15);
+                    let year = tagalong.startingTime.slice(0, 4);
+                    let month = tagalong.startingTime.toString().slice(5, 7);
+                    let date = tagalong.startingTime.toString().slice(8, 10);
                     let hour;
                     let ampm;
-                    if (new Date(tagalong.startingTime).toString().slice(16, 18) === 12) {
+                    if (tagalong.startingTime.toString().slice(11, 13) === 12) {
                         hour = 12;
                         ampm = 'PM';
-                    } else if (new Date(tagalong.startingTime).toString().slice(16, 18) === 24) {
+                    } else if (tagalong.startingTime.toString().slice(11, 13) === 24) {
                         hour = 12;
                         ampm = 'AM';
-                    } else if (new Date(tagalong.startingTime).toString().slice(16, 18)> 12) {
-                        hour = new Date(tagalong.startingTime).toString().slice(16, 18) - 12;
-                        ampm= 'PM';
+                    } else if (tagalong.startingTime.toString().slice(11, 13) > 12) {
+                        hour = tagalong.startingTime.toString().slice(11, 13) - 12;
+                        ampm = 'PM';
                     } else {
-                        hour = new Date(tagalong.startingTime).toString().slice(16, 18);
-                        ampm= 'AM';
+                        hour = tagalong.startingTime.toString().slice(11, 13);
+                        ampm = 'AM';
                     }
-                    let minutes = new Date(tagalong.startingTime).toString().slice(19, 21)
+                    let minutes = tagalong.startingTime.toString().slice(14, 16)
                     return (
                     <li key={`tagalong-${i}`}
                     className="tagalong-index-item">
@@ -67,7 +68,7 @@ class TagAlongIndex extends React.Component {
                                 <span><p>Category: &nbsp;</p><h3>{tagalong.category}</h3></span>
                                 <span><p>Starting Point: &nbsp; </p><h3>{tagalong.startLocation}</h3></span>
                                 <span><p>End Point: &nbsp;</p> <h3>{tagalong.endLocation}</h3></span>
-                                <span><p>Start Time: &nbsp;</p> <h3>{day}, {date}, {hour}:{minutes} {ampm}</h3></span>
+                                <span><p>Start Time: &nbsp;</p> <h3>{month}/ {date}/ {year}, {hour}:{minutes} {ampm}</h3></span>
                                 <span><p>Duration: &nbsp;</p> <h3>{tagalong.duration}</h3></span>
                             </Link>
                     </li> )
