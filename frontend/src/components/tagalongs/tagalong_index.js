@@ -44,7 +44,13 @@ class TagAlongIndex extends React.Component {
                     let date = new Date(tagalong.startingTime).toString().slice(4, 15);
                     let hour;
                     let ampm;
-                    if (new Date(tagalong.startingTime).toString().slice(16, 18)> 12) {
+                    if (new Date(tagalong.startingTime).toString().slice(16, 18) === 12) {
+                        hour = 12;
+                        ampm = 'PM';
+                    } else if (new Date(tagalong.startingTime).toString().slice(16, 18) === 24) {
+                        hour = 12;
+                        ampm = 'AM';
+                    } else if (new Date(tagalong.startingTime).toString().slice(16, 18)> 12) {
                         hour = new Date(tagalong.startingTime).toString().slice(16, 18) - 12;
                         ampm= 'PM';
                     } else {
