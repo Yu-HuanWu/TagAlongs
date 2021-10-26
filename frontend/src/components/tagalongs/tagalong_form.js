@@ -79,6 +79,10 @@ class TagAlongForm extends React.Component {
     }
 
     render() {
+        var date = new Date();
+        date.setHours(date.getHours() - 7);
+        var isodate = date.toISOString();
+        let min = isodate.slice(0, 16)
         return (
             <div className="tagalong-form-container">
                 <form onSubmit={this.handleSubmit}>
@@ -144,7 +148,7 @@ class TagAlongForm extends React.Component {
                             <label className="tagalong-form-label">Starting Time</label> */}
                             <input type="datetime-local" id="meeting-time"
                                 name="meeting-time" value={this.state.startingTime}
-                                min={this.state.startingTime} 
+                                min={min} 
                                 onChange={this.update('startingTime')}>
                             </input>
                         </div>
