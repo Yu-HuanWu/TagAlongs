@@ -6,8 +6,10 @@
     h1 {
         align-content: center;
         font-weight: bolder;
-        border-bottom: 1px solid #C0D6DF;
+        border-bottom: 1px solid #ffffff;
+        margin-top: 10px;
         padding-bottom: 10px;
+        padding-left: 1em;
         margin-bottom: 10px;
     }
 
@@ -16,19 +18,24 @@
         padding-bottom: 5px;
     }
 
-    h3 {
-        font-weight: lighter;
+    p {
+        font-weight: bold;
     }
 
-    .user-achievement-badge {
+    h3 {
+        // font-weight: lighter;
+    }
+
+    .user-achievement-style {
         padding: 10px;
         margin-bottom: 5px;
-        border: 1px solid #4F6D7A;
-        background: #EAEAEA;
+        border: 2px solid #4F6D7A;
+        border-radius: 20px;
+        background: #C0D6DF;
+        transition: all 0.3s ease-in-out;
 
         &:hover {
-            background-color: #4F6D7A;
-            color: white;
+            background-color: #b6ced8;
         }
 
         .selected-badge {
@@ -40,4 +47,43 @@
             opacity: 0.3;
         }
     }
+
+    .user-achievement-badge {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        margin-bottom: 5px;
+        border: 2px solid #4F6D7A;
+        border-radius: 20px;
+        background: #C0D6DF;
+        transition: all 0.3s ease-in-out;
+
+        h4 {
+            padding-left: 1em;
+        }
+
+        &:hover {
+            background-color: #b6ced8;
+        }
+
+        .selected-badge {
+            max-width: 50px;
+        }
+
+        .not-earned {
+            max-width: 50px;
+            opacity: 0.3;
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .user-achievement-list {
+
+        h1 {
+            padding-left: 0.2em;
+        }
+       
+    }
+
 }

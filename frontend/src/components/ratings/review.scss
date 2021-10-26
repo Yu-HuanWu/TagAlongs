@@ -1,7 +1,8 @@
 .cookie-form-container {
     margin-top: 10px;
-    border-top: 1px solid #C0D6DF;
+    border-top: 1px solid #ffffff;
     padding-top: 10px;
+    padding-left: 1em;
 
     .cookie-form {
         display: flex;
@@ -10,10 +11,11 @@
             img {
                 max-width: 50px;
                 padding: 5px;
-                
+                transition: all 0.3s ease-in-out;
+
                 &:hover {
                     cursor: pointer;
-                    background-color: #C0D6DF;
+                    background-color: #4f6d7ab7;
                     border-radius: 40%;
                 }
                 &:active {
@@ -34,9 +36,10 @@
           }
           
           .validRatingPress {
+            transition: all 0.3s ease-in-out;
                 &:hover {
                     cursor: pointer;
-                    background-color: #C0D6DF;
+                    background-color: #4f6d7ab7;
                     border-radius: 40%;
                 }
                 &:active {
