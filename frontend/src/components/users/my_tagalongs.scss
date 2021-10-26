@@ -2,11 +2,19 @@
 .accepted-tagalong-item{
   padding-top: 5px;
   padding-bottom: 20px;
-}
+  border-radius: 10px;
 
-.accepted-tagalong-item {
   .my-tagalongs-button {
     outline: none;
+  }
+
+  span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1em;
+    line-height: 1.5em;
+    padding-left: 1em;
   }
 }
 
@@ -26,10 +34,26 @@
   height:650px;
   overflow: scroll;
   padding: 5px;
+  padding-top:15px;
 }
 
 .my-tagalongs-completed-label {
-  padding-top: 5px;
-  border-top: 1px solid #C0D6DF;
+  padding-top: 15px;
+  padding-left: 1em;
+  border-top: 1px solid #ffffff;
   margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 800px) {
+
+    .accepted-tagalong-item{
+        span {
+            font-size: 0.8em;
+        }
+    }
+    .my-tagalongs-completed-label {
+      font-size: 0.8em;
+      padding-left: 0.2em;
+    }
 }

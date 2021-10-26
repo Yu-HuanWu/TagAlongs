@@ -144,16 +144,17 @@ class TagAlongForm extends React.Component {
                                 value={this.state.startingTime}
                                 onChange={this.update('startingTime')}
                                 required
-                            />
+                                />
                             <label className="tagalong-form-label">Starting Time</label> */}
                             <input type="datetime-local" id="meeting-time"
                                 name="meeting-time" value={this.state.startingTime}
                                 min={min} 
                                 onChange={this.update('startingTime')}>
                             </input>
+                            <label className="tagalong-form-label">Starting Time</label>
                         </div>
 
-                        <div className="input-container">
+                        <div className="input-container-select">
                             <select onChange={this.update('duration')}  value={this.state.duration}>
                                 <option value="30 minutes">30 minutes</option>
                                 <option value="1 hour">1 hour</option>
@@ -163,6 +164,7 @@ class TagAlongForm extends React.Component {
                                 <option value="3 hours">3 hours</option>
                                 <option value="More than 3 hours"> More than 3 hours</option>
                             </select>
+                            <label className="tagalong-form-label">Duration</label>
                         </div>
 
 

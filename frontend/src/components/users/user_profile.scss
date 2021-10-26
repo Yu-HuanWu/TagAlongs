@@ -3,8 +3,15 @@
     margin-top: 30px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin-bottom: 30px;
+    border-radius: 20px;
     border: 2px solid #EAEAEA;
-
+    background: #EAEAEA;
+    box-shadow: 5px 5px 0px #DD6E42;
+    transition: all 0.7s ease-in-out;
+    &:hover {
+      box-shadow: 13px 13px 0px #DD6E42;
+    }
+    
     .user-profile-left {
         display: flex;
         color: #E8DAB2;
@@ -13,6 +20,7 @@
         background-color: #4F6D7A;
         width: 40vh;
         padding: 20px;
+        border-radius: 20px;
 
         h1 {
             padding: 10px;
@@ -51,7 +59,7 @@
             border-top: 1px solid #C0D6DF;
             border-bottom: 1px solid #C0D6DF;
             width: 40vh;
-            padding: 10px;
+            padding: 20px;
             margin-top: 5px;
             background-color: #46606b;
             color: #E8DAB2;
@@ -71,10 +79,10 @@
 
     .user-profile-right {
         color: #4F6D7A;
-        background: #C0D6DF;
+        background: #EAEAEA;
         width: 80vh;
         padding: 20px;
-
+        border-radius: 20px;
         
         .avatar-selection-list {
             display: flex;
@@ -179,7 +187,7 @@
                 border: none;
                 border: 1px solid #C0D6DF;
                 width: 30vw;
-                padding: 10px;
+                padding: 5px;
                 margin-top: 5px;
                 background-color: #46606b;
                 color: #E8DAB2;
@@ -197,7 +205,7 @@
         }
         .user-profile-right {
             color: #4F6D7A;
-            background: #C0D6DF;
+            background: #EAEAEA;
             width: 90vw;
             padding: 10px;
 
