@@ -163,7 +163,7 @@ export class MapComponent extends Component {
                 Starting Time:
               </div>
               <div>
-                {month}/ {date}/ {year}, {hour}:{minutes} {ampm}
+                {month} / {date} / {year}, {hour}:{minutes} {ampm}
               </div>
             </div>
 

@@ -68,7 +68,7 @@ class TagAlongIndex extends React.Component {
                                 <span><p>Category: &nbsp;</p><h3>{tagalong.category}</h3></span>
                                 <span><p>Starting Point: &nbsp; </p><h3>{tagalong.startLocation}</h3></span>
                                 <span><p>End Point: &nbsp;</p> <h3>{tagalong.endLocation}</h3></span>
-                                <span><p>Start Time: &nbsp;</p> <h3>{month}/ {date}/ {year}, {hour}:{minutes} {ampm}</h3></span>
+                                <span><p>Start Time: &nbsp;</p> <h3>{month} / {date} / {year}, {hour}:{minutes} {ampm}</h3></span>
                                 <span><p>Duration: &nbsp;</p> <h3>{tagalong.duration}</h3></span>
                             </Link>
                     </li> )
