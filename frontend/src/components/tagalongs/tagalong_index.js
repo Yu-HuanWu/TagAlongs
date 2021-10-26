@@ -36,22 +36,36 @@ class TagAlongIndex extends React.Component {
         } else {
             tagAlongs = filtered;
         }
-       
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
         return (
             <ul className="tagalong-index-list">
-                { tagAlongs.splice(0).reverse().map((tagalong, i) => (
+                { tagAlongs.splice(0).reverse().map((tagalong, i) => {
+                    let day = new Date(tagalong.startingTime).toString().slice(0,3);
+                    let date = new Date(tagalong.startingTime).toString().slice(4, 15);
+                    let hour;
+                    let ampm;
+                    if (new Date(tagalong.startingTime).toString().slice(16, 18)> 12) {
+                        hour = new Date(tagalong.startingTime).toString().slice(16, 18) - 12;
+                        ampm= 'PM';
+                    } else {
+                        hour = new Date(tagalong.startingTime).toString().slice(16, 18);
+                        ampm= 'AM';
+                    }
+                    let minutes = new Date(tagalong.startingTime).toString().slice(19, 21)
+                    return (
                     <li key={`tagalong-${i}`}
-                        className="tagalong-index-item">
+                    className="tagalong-index-item">
+                            
                             <Link to={`/map/${tagalong._id}`}>
                                 <h1>{tagalong.title}</h1>
-                                <p>Category: &nbsp; <h3>{tagalong.category}</h3></p>
-                                <p>Starting Point: &nbsp; <h3>{tagalong.startLocation}</h3></p>
-                                <p>End Point: &nbsp; <h3>{tagalong.endLocation}</h3></p>
-                                <p>Start Time: &nbsp; <h3>{tagalong.startingTime}</h3></p>
-                                <p>Duration: &nbsp; <h3>{tagalong.duration}</h3></p>
+                                <span><p>Category: &nbsp;</p><h3>{tagalong.category}</h3></span>
+                                <span><p>Starting Point: &nbsp; </p><h3>{tagalong.startLocation}</h3></span>
+                                <span><p>End Point: &nbsp;</p> <h3>{tagalong.endLocation}</h3></span>
+                                <span><p>Start Time: &nbsp;</p> <h3>{day}, {date}, {hour}:{minutes} {ampm}</h3></span>
+                                <span><p>Duration: &nbsp;</p> <h3>{tagalong.duration}</h3></span>
                             </Link>
-                    </li>
-                ))}
+                    </li> )
+                })}
             </ul>
         )
     }

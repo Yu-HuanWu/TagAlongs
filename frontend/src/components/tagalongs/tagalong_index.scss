@@ -65,9 +65,9 @@
     overflow-y: scroll;
     overflow-x: hidden;
 }
+
 .tagalong-index-item {
     background-color: #C0D6DF;
-    // background-color: #EAEAEA;
     padding: 10px;
     margin: 10px;
     border-radius: 10px;
@@ -88,11 +88,19 @@
         color: #2a4049;
     }
 
+    & span {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0.08em;
+    }
+
     & p {
         display: flex;
         align-items: center;
-        font-weight: normal;
+        font-weight: bold;
         padding: 3px;
+        color: #4f6d7a;
     }
 
     & h1 {
@@ -104,7 +112,7 @@
     }
 
     & h3 {
-        font-weight: lighter;
+        // font-weight: lighter;
         font-size: 16px;
         color: black;
     }
