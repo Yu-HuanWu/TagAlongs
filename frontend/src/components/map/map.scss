@@ -30,6 +30,24 @@
   margin-top: 10px;
 }
 
+.tagalongs-item-section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: #EAEAEA;
+    padding: 20px;
+    margin: 30px;
+    margin-top: 7%;
+    height: 540px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 1px #DD6E42;
+    transition: all 0.8s ease-in-out;
+    &:hover {
+      box-shadow: 10px 10px 1px #DD6E42;
+    }
+}
+
 .tagalongs-map-button-div{
   margin-top: 10px;
 }
@@ -52,6 +70,25 @@
     display: flex;
     flex-direction: column;
     width: 80vh;
+  }
+  
+  .tagalongs-item-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: #EAEAEA;
+    padding: 10px;
+    margin: 10px;
+    margin-top: 7%;
+    width: 90%;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 1px #DD6E42;
+    transition: all 0.8s ease-in-out;
+    &:hover {
+        box-shadow: 10px 10px 1px #DD6E42;
+    }
   }
 
   .element.style {

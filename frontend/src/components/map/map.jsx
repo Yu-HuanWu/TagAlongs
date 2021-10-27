@@ -115,21 +115,18 @@ export class MapComponent extends Component {
       let minutes = items.startingTime.toString().slice(14, 16)
       return (
         <div className="tagalongs-index-container">
-          <div className="tagalongs-index-section">
+          <div className="tagalongs-item-section">
 
             <div>
-
               <div className="tagalongs-show-banner">
                 Title:
               </div>
               <div>
                 {items.title}
               </div>
-
             </div>
 
             <div>
-
               <div className="tagalongs-show-banner">
                 Description:
               </div>
