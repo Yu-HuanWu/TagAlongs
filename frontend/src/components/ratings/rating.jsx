@@ -24,7 +24,6 @@ class RatingForm extends React.Component {
         } else {
             idB = this.props.tagAlong.user;
         }
-        console.log(this.state.rating)
         this.props.fetchRating({reviewPair: [idA, idB]})
             .then(rating => {
                 this.setState({rating: rating.rating.data})});
@@ -65,8 +64,7 @@ class RatingForm extends React.Component {
         );
     }
 
-    renderForm() { 
-        console.log(this.state);   
+    renderForm() {  
         if (!this.state.rating) {
             return (
                 <ul className="cookie-form">
