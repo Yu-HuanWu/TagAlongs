@@ -136,22 +136,16 @@ class TagAlongForm extends React.Component {
                                 <option value="chores">Other Trip</option>
                                 <option value="misc">Miscellaneous</option>
                             </select>
-                            <label className="tagalong-form-label">Type of TagAlong:</label>
+                            <label className="tagalong-form-label">Type of TagAlong</label>
                         </div>
 
                         <div className="input-container">
-                            {/* <input type="text"
-                                value={this.state.startingTime}
-                                onChange={this.update('startingTime')}
-                                required
-                                />
-                            <label className="tagalong-form-label">Starting Time</label> */}
                             <input type="datetime-local" id="meeting-time"
                                 name="meeting-time" value={this.state.startingTime}
                                 min={min} 
-                                onChange={this.update('startingTime')}>
-                            </input>
-                            <label className="tagalong-form-label">Starting Time</label>
+                                onChange={this.update('startingTime')}
+                                required/>
+                            <label className="tagalong-form-label-starting">Starting Time</label>
                         </div>
 
                         <div className="input-container-select">

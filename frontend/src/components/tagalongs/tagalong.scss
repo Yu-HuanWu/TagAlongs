@@ -48,6 +48,18 @@
     transition: all 0.3s ease-in-out;
 }
 
+.input-container{
+  .tagalong-form-label-starting{
+    position:absolute;
+    left:0;
+    top:10px;
+    font-size:14px;
+    color:#555;	
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
 .input-container input,
 .input-container textarea{
   margin-top: 20px;
